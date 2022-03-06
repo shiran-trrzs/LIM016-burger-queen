@@ -33,7 +33,7 @@
 .nav-login {
     @include d-flex(flex, space-around, center, row);
     padding-top: 5%;
-    margin-left: 6.5%;
+    margin-left: 5%;
 }
 
 .img-logo {
@@ -51,18 +51,27 @@
 }
 
 .logo h1 {
-    font-size: 6rem;
+    font-size: 3rem;
 }
 
-.btn-font {
-    @include text(black, ('Montserrat', sans-serif), 600, 1.7rem, 1px);
-    @include button(none, 60px, #F0E5D9, 20px);
-    cursor: pointer;
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 70px;
 
-    &:hover {
-        @include button(none, 60px, #000000, 20px);
-        @include text(rgb(255, 255, 255), ('Montserrat', sans-serif), 900, 1.7rem, 1px);
-    }
+    .btn-font {
+        @include text(black, ('Montserrat', sans-serif), 600, 1.7rem, 1px);
+        @include button(none, 60px, #F0E5D9, 20px);
+        cursor: pointer;
+    
+        &:hover {
+            @include button(none, 60px, #000000, 20px);
+            @include text(rgb(255, 255, 255), ('Montserrat', sans-serif), 900, 1.7rem, 1px);
+        }
+    } 
+}
 
-} 
+.app-form-container {
+    padding-top: 150px
+}
 
