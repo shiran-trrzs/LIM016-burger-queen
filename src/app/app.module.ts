@@ -14,7 +14,6 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule,
     SharedModule,
     ModulesModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
