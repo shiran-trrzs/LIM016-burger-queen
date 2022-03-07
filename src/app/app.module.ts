@@ -7,13 +7,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModulesModule } from './modules/modules.module';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HeaderLoginComponent } from './header-login/header-login.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderLoginComponent
   ],
   imports: [
-    BrowserModule,
+    AppRoutingModule,
     ModulesModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
