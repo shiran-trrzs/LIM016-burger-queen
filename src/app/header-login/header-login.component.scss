@@ -48,16 +48,19 @@
 .logo {
     @include d-flex(flex, space-around, center, row);
     column-gap: 9px;
+    & h1 {
+        font-size: 3rem;
+        font-family: 'Noto Serif', serif;
+    }
 }
 
-.logo h1 {
-    font-size: 3rem;
-}
+
 
 .buttons-container {
     display: flex;
     justify-content: space-between;
-    column-gap: 70px;
+    column-gap: 110px;
+    margin-left: 20px;
 
     .btn-font {
         @include text(black, ('Montserrat', sans-serif), 600, 1.7rem, 1px);
