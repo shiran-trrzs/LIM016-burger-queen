@@ -1,0 +1,17 @@
+.about-us {
+    display: flex;
+    height: 50vh;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    text-align: center;
+    margin-right: 107px;
+    padding-top: 30px;
+
+    p {
+        width: 35vw;
+        font-weight: bolder;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.5rem;
+    }
+}
