@@ -54,8 +54,6 @@
     }
 }
 
-
-
 .buttons-container {
     display: flex;
     justify-content: space-between;
@@ -74,3 +72,11 @@
     } 
 }
 
+
+.btn-suggestion {
+    display: flex;
+    justify-content: flex-end;
+    width: 81.5vw;
+    height: 20vh;
+    align-items: flex-end;
+}
