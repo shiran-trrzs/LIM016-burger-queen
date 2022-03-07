@@ -54,8 +54,6 @@
     }
 }
 
-
-
 .buttons-container {
     display: flex;
     justify-content: space-between;
@@ -72,10 +70,6 @@
             @include text(rgb(255, 255, 255), ('Montserrat', sans-serif), 900, 1.7rem, 1px);
         }
     } 
-}
-
-.app-form-container {
-    padding-top: 150px
 }
 
 .btn-suggestion {
