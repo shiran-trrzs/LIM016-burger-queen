@@ -4,20 +4,21 @@
     margin-left: 48%;
     align-items: flex-end;
     height: 35vh;
-}
-.btn-login {
-    display: flex;
-    align-items: center;
-    padding-left: 7%;
-	width: 18vw;
-	height: 5vh;
-	background: rgba(255, 255, 255, 0.465);
-	border-radius: 30px;
-	text-align: center;
-	margin: 93px;
-	color: rgba(244, 164, 43, 1);
-	font-size: 20px;
-    border: 2.8px solid #F4A42B;
+      
+        .btn-login {
+            display: flex;
+            align-items: center;
+            padding-left: 7%;
+            width: 18vw;
+            height: 5vh;
+            background: rgba(255, 255, 255, 0.465);
+            border-radius: 30px;
+            text-align: center;
+            margin: 93px;
+            color: rgba(244, 164, 43, 1);
+            font-size: 20px;
+            border: 2.8px solid #F4A42B;
+        }
 }
 
 .login-box {
@@ -36,6 +37,7 @@ input::placeholder {
 
 input:focus {
 	outline: none;
+    background-color:#ffffff00;
 }
 
 .btn {
