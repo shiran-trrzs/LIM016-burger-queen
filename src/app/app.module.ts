@@ -5,6 +5,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModulesModule } from './modules/modules.module';
+import { HttpClientModule } from '@angular/common/http'; // to make HTTP calls
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +19,7 @@ import { HeaderLoginComponent } from './header-login/header-login.component';
   imports: [
     AppRoutingModule,
     ModulesModule,
+    HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
