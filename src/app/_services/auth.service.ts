@@ -42,5 +42,13 @@ export class AuthService {
       'Something bad happened; please try again later.');
   }
 
-  
+  loginForm(data: any): Observable<LoginResponse> {
+    return this.http
+      .post<LoginResponse>(this.basePath + 'auth', data, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      );
+  }
+
 }
