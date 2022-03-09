@@ -6,15 +6,14 @@ import { Router } from '@angular/router';
 
 interface LoginResponse {
   access_token: string;
-  data: any;
-  name: string;
-  status: string;
-  message: string;
+  email: string;
+  password: string;
 }
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
 
   basePath = 'https://bbqueen.herokuapp.com/';
@@ -24,11 +23,16 @@ export class AuthService {
     private http: HttpClient
   ) { }
 
+  
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
   };
+
+  getAllUsers() {
+    return this.http.get(this.basePath + 'users')
+  }
 
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
@@ -42,13 +46,14 @@ export class AuthService {
       'Something bad happened; please try again later.');
   }
 
-  loginForm(data: any): Observable<LoginResponse> {
-    return this.http
+  loginForm(data: any): Observable <LoginResponse> {
+    let response: any = this.http
       .post<LoginResponse>(this.basePath + 'auth', data, this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError)
       );
+    return response
   }
 
 }
