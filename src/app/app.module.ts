@@ -9,7 +9,9 @@ import { HttpClientModule } from '@angular/common/http'; // to make HTTP calls
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { JwtModule } from '@auth0/angular-jwt';
 import { HeaderLoginComponent } from './header-login/header-login.component';
+
 
 @NgModule({
   declarations: [
@@ -20,13 +22,22 @@ import { HeaderLoginComponent } from './header-login/header-login.component';
     AppRoutingModule,
     ModulesModule,
     HttpClientModule,
+    BrowserModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('token');
+        },
+  
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

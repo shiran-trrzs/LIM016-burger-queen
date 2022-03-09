@@ -17,7 +17,6 @@ export class AppComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-    // this.appService.loginForm()
-    // .subscribe((data: any) => console.log(this.tareas = data))
+   
   }
 }
