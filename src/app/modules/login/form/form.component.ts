@@ -8,10 +8,23 @@ import { AuthService } from '../../../_services/auth.service';
 })
 export class FormComponent implements OnInit {
 
+  model: any = {};
+
   constructor(
-    public authService: AuthService
-  ) { }
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {}
 
+  login() {
+    this.model.action = 'login';
+    this.authService.loginForm(this.model).subscribe(response => {
+      if (response.token) {
+        console.log(response.token)
+        this.authService.setUser(response);
+      }
+    }, error => {
+      console.error(error);
+    });
+  }
 }
