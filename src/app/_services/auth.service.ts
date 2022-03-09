@@ -31,10 +31,6 @@ export class AuthService {
     })
   };
 
-  getAllUsers() {
-    return this.http.get(this.basePath + 'users')
-  }
-
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       console.error('An error occurred:', error.error.message);
@@ -48,13 +44,30 @@ export class AuthService {
   }
 
   loginForm(data: LoginPayload): Observable <LoginResponse> {
-    let response: any = this.http
+   return this.http
       .post<LoginResponse>(this.basePath + 'auth', data, this.httpOptions)
-      // .pipe(
-      //   retry(2),
-      //   catchError(this.handleError)
-      // );
-    return response
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      );
+  }
+
+  setUser(resp: LoginResponse) {
+    localStorage.setItem('token', resp.token);
+    this.router.navigate(['/aboutus']);
+  }
+
+  isLoggedIn() {
+    return localStorage.getItem('token') != null;
+  }
+
+  getData(data: LoginPayload): Observable<LoginResponse> {
+    return this.http
+      .post<LoginResponse>(this.basePath + 'users', data, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      );
   }
 
 }
