@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { FormComponent } from './form/form.component';
 import { LoginRoutingModule } from './login-routing.module';
+import { FormsModule } from '@angular/forms';
 import { QuoteComponent } from './quote/quote.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 
@@ -15,7 +16,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
   ],
   imports: [
     CommonModule,
-    LoginRoutingModule
+    LoginRoutingModule,
+    FormsModule
   ],
   exports: [
     FormComponent
