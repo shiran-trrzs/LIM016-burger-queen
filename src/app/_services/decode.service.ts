@@ -1,23 +1,17 @@
 import { Injectable } from '@angular/core';
-import * as jwt_decode from 'jwt-decode';
+import jwt_decode from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
 })
 
-// export class DecodeService {
-
-//   constructor() { }
-// }
-
-// @Injectable()
-export class JWTTokenService {
-
-    jwtToken: string;
-    decodedToken: { [key: string]: string };
+export class DecodeService {
 
     constructor() {
     }
+
+    jwtToken: string;
+    decodedToken: { [key: string]: string };
 
     setToken(token: string) {
       if (token) {
@@ -37,21 +31,21 @@ export class JWTTokenService {
 
     getUser() {
       this.decodeToken();
-      return this.decodedToken ? this.decodedToken.displayname : null;
+      return this.decodedToken ? this.decodedToken['displayname'] : null;
     }
 
     getEmailId() {
       this.decodeToken();
-      return this.decodedToken ? this.decodedToken.email : null;
+      return this.decodedToken ? this.decodedToken['email'] : null;
     }
 
     getExpiryTime() {
       this.decodeToken();
-      return this.decodedToken ? this.decodedToken.exp : null;
+      return this.decodedToken ? this.decodedToken['exp'] : null;
     }
 
     isTokenExpired(): boolean {
-      const expiryTime: number = this.getExpiryTime();
+      const expiryTime: any = this.getExpiryTime();
       if (expiryTime) {
         return ((1000 * expiryTime) - (new Date()).getTime()) < 5000;
       } else {
