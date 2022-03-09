@@ -15,6 +15,7 @@ interface LoginResponse {
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
 
   basePath = 'https://bbqueen.herokuapp.com/';
@@ -23,6 +24,10 @@ export class AuthService {
     private router: Router,
     private http: HttpClient
   ) { }
+
+  getAllUsers() {
+    return this.http.get(this.basePath + 'users')
+  }
 
   httpOptions = {
     headers: new HttpHeaders({
