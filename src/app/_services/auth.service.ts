@@ -4,8 +4,9 @@ import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
-interface LoginResponse {
-  access_token: string;
+import { LoginResponse } from '../interface/loginInterface';
+
+interface LoginPayload {
   email: string;
   password: string;
 }
@@ -46,13 +47,13 @@ export class AuthService {
       'Something bad happened; please try again later.');
   }
 
-  loginForm(data: any): Observable <LoginResponse> {
+  loginForm(data: LoginPayload): Observable <LoginResponse> {
     let response: any = this.http
       .post<LoginResponse>(this.basePath + 'auth', data, this.httpOptions)
-      .pipe(
-        retry(2),
-        catchError(this.handleError)
-      );
+      // .pipe(
+      //   retry(2),
+      //   catchError(this.handleError)
+      // );
     return response
   }
 
