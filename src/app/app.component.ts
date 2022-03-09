@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './_services/auth.service';
-import { DecodeService } from './_services/decode.service';
 
 @Component({
   selector: 'app-root',
@@ -15,11 +14,10 @@ export class AppComponent implements OnInit {
 
   constructor (
     private appService: AuthService,
-    private decodeService: DecodeService
   ){}
 
   ngOnInit(): void {
-    // this.appService.getAllUsers()
+    // this.appService.loginForm()
     // .subscribe((data: any) => console.log(this.tareas = data))
   }
 }

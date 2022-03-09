@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../../_services/auth.service';
 
 @Component({
   selector: 'app-form',
@@ -7,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  constructor() { }
-  ngOnInit(): void {
-  }
+  constructor(
+    public authService: AuthService
+  ) { }
+
+  ngOnInit(): void {}
 
 }
