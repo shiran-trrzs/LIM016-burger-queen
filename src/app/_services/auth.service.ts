@@ -11,18 +11,44 @@ interface LoginPayload {
   password: string;
 }
 
+interface User {
+  roles:     Roles;
+  _id:       string;
+  email:     string;
+  password:  string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+interface Roles {
+  admin: boolean;
+  name:  string;
+}
+
+
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthService {
 
-  basePath = 'https://bbqueen.herokuapp.com/';
+  private basePath = 'https://bbqueen.herokuapp.com/';
+  public user = {
+    email: '',
+    roles: {
+      admin: false,
+      name: '',
+    },
+  }
+
+  private token = ''
 
   constructor(
     private router: Router,
-    private http: HttpClient
-  ) { }
+    private http: HttpClient,
+  ) { 
+    this.token = localStorage.getItem('token') || ''
+  }
 
   
   httpOptions = {
@@ -44,6 +70,7 @@ export class AuthService {
   }
 
   loginForm(data: LoginPayload): Observable <LoginResponse> {
+   this.user.email= data.email
    return this.http
       .post<LoginResponse>(this.basePath + 'auth', data, this.httpOptions)
       .pipe(
@@ -54,7 +81,11 @@ export class AuthService {
 
   setUser(resp: LoginResponse) {
     localStorage.setItem('token', resp.token);
-    this.router.navigate(['/aboutus']);
+    this.token = resp.token
+    this.getUser().subscribe((res) => {
+      console.log(res)
+    })
+    this.router.navigate(['/waiter']);
   }
 
   isLoggedIn() {
@@ -69,5 +100,14 @@ export class AuthService {
         catchError(this.handleError)
       );
   }
+
+  getUser(): Observable<User> {
+    return this.http.get<User>(this.basePath + `users/${this.user.email}`)
+    .pipe(
+      retry(2),
+      catchError(this.handleError)
+    );
+  }
+
 
 }
