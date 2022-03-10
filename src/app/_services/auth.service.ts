@@ -69,6 +69,7 @@ export class AuthService {
       'Something bad happened; please try again later.');
   }
 
+  // Get email and password from server to capture the token
   loginForm(data: LoginPayload): Observable <LoginResponse> {
    this.user.email= data.email
    return this.http
@@ -79,6 +80,7 @@ export class AuthService {
       );
   }
 
+  //  After login save token and other values(if any) in localStorage
   setUser(resp: LoginResponse) {
     localStorage.setItem('token', resp.token);
     this.token = resp.token
@@ -92,6 +94,7 @@ export class AuthService {
     return localStorage.getItem('token') != null;
   }
 
+  // Get data from backend (users object)
   getData(data: LoginPayload): Observable<LoginResponse> {
     return this.http
       .post<LoginResponse>(this.basePath + 'users', data, this.httpOptions)
@@ -101,6 +104,7 @@ export class AuthService {
       );
   }
 
+  // Captures the email address to identify which user is logging in
   getUser(): Observable<User> {
     return this.http.get<User>(this.basePath + `users/${this.user.email}`)
     .pipe(
@@ -109,5 +113,11 @@ export class AuthService {
     );
   }
 
+
+  // After clearing localStorage redirect to login screen
+  logout() {
+    localStorage.clear();
+    this.router.navigate(['/aboutus']);
+  }
 
 }
