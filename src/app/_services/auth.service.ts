@@ -53,7 +53,9 @@ export class AuthService {
   
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Bearer-Token': `${this.token}`,
+      'Authorization': `Bearer ${this.token}`
     })
   };
 
