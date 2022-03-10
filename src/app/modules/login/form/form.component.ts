@@ -18,13 +18,20 @@ export class FormComponent implements OnInit {
 
   login() {
     this.model.action = 'login';
-    this.authService.loginForm(this.model).subscribe(response => {
-      if (response.token) {
-        console.log(response.token)
-        this.authService.setUser(response);
+    this.authService.loginForm(this.model).subscribe({
+      next: response => {
+        if (response.token) {
+          console.log(response.token)
+          this.authService.setUser(response);
+        }
+      }, 
+      error: error => {
+        console.error(error);
+      },
+      complete: () => {
+        console.log('Request complete');
       }
-    }, error => {
-      console.error(error);
     });
   }
+  
 }

@@ -54,7 +54,7 @@ export class AuthService {
 
   setUser(resp: LoginResponse) {
     localStorage.setItem('token', resp.token);
-    this.router.navigate(['/aboutus']);
+    this.router.navigate(['/waiter']);
   }
 
   isLoggedIn() {
@@ -68,6 +68,12 @@ export class AuthService {
         retry(2),
         catchError(this.handleError)
       );
+  }
+
+  // After clearing localStorage redirect to login screen
+  logout() {
+    localStorage.clear();
+    this.router.navigate(['/aboutus']);
   }
 
 }
