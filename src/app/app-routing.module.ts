@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundMessageComponent } from './modules/not-found/not-found-message/not-found-message.component';
 import { HeaderLoginComponent } from './header-login/header-login.component';
+import { AuthGuard } from './_guards/auth.guard';
+import { WaiterPanelComponent } from './modules/waiter/waiter-panel/waiter-panel.component';
 
 const routes: Routes = [  
     {
@@ -21,9 +23,19 @@ const routes: Routes = [
         ]
     },
     {
+        path: 'waiter',
+        canActivate: [AuthGuard],
+        component: WaiterPanelComponent
+    },
+    {
+        path: 'chef',
+        canActivate: [AuthGuard],
+        component: WaiterPanelComponent
+    },
+    {
         path: '**',
         component: NotFoundMessageComponent
-    },
+    }
 ]
 
 
