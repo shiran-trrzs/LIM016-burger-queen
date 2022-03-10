@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../../_services/auth.service';
 
 @Component({
   selector: 'app-form',
@@ -7,8 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  constructor() { }
-  ngOnInit(): void {
-  }
+  model: any = {};
 
+  constructor(
+    private authService: AuthService
+  ) {}
+
+  ngOnInit(): void {}
+
+  login() {
+    this.model.action = 'login';
+    this.authService.loginForm(this.model).subscribe(response => {
+      if (response.token) {
+        console.log(response.token)
+        this.authService.setUser(response);
+      }
+    }, error => {
+      console.error(error);
+    });
+  }
 }
