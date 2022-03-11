@@ -41,21 +41,21 @@ export class AuthService {
     },
   }
 
-  private token = ''
+  // private token = ''
 
   constructor(
     private router: Router,
     private http: HttpClient,
   ) { 
-    this.token = localStorage.getItem('token') || ''
   }
-
+  
+  token = localStorage.getItem('token')
   
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
       // 'Bearer-Token': `${this.token}`,
-      // 'Authorization': `Bearer ${this.token}`
+      'Authorization' : `Bearer ${this.token}`
     })
   };
 
@@ -75,7 +75,7 @@ export class AuthService {
   loginForm(data: LoginPayload): Observable <LoginResponse> {
    this.user.email= data.email
    return this.http
-      .post<LoginResponse>(this.basePath + 'auth', data, this.httpOptions)
+      .post<LoginResponse>(this.basePath + 'auth', data)
       .pipe(
         retry(2),
         catchError(this.handleError)
@@ -85,9 +85,11 @@ export class AuthService {
   //  After login save token and other values(if any) in localStorage
   setUser(resp: LoginResponse) {
     localStorage.setItem('token', resp.token);
+    
     this.token = resp.token
     this.getUser().subscribe((res) => {
-      console.log(res)
+      console.log(res.roles.name)
+      localStorage.setItem('rol', res.roles.name);
     })
     this.router.navigate(['/waiter']);
   }
@@ -108,13 +110,17 @@ export class AuthService {
 
   // Captures the email address to identify which user is logging in
   getUser(): Observable<User> {
-    return this.http.get<User>(this.basePath + `users/${this.user.email}`)
+    return this.http
+    .get<User>(this.basePath + `users/${this.user.email}`, this.httpOptions)
     .pipe(
       retry(2),
       catchError(this.handleError)
     );
   }
 
+  // getUser(email:string): Observable<User> {
+  //   return this.http.get<User>(this.basePath + `users/${email}`);
+  // }
 
   // After clearing localStorage redirect to login screen
   logout() {
