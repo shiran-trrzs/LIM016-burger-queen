@@ -85,7 +85,6 @@ export class AuthService {
   //  After login save token and other values(if any) in localStorage
   setUser(resp: LoginResponse) {
     localStorage.setItem('token', resp.token);
-    
     this.token = resp.token
     this.getUser().subscribe((res) => {
       console.log(res.roles.name)
