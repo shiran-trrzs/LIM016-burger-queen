@@ -4,6 +4,7 @@ import { NotFoundMessageComponent } from './modules/not-found/not-found-message/
 import { HeaderLoginComponent } from './header-login/header-login.component';
 import { WaiterPanelComponent } from './modules/waiter/waiter-panel/waiter-panel.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { ChefPanelComponent } from './modules/chef/chef-panel/chef-panel.component';
 
 const routes: Routes = [  
     {
@@ -24,13 +25,13 @@ const routes: Routes = [
     },
     {
         path: 'waiter',
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
         component: WaiterPanelComponent
     },
     {
         path: 'chef',
-        canActivate: [AuthGuard],
-        component: WaiterPanelComponent
+        // canActivate: [AuthGuard],
+        component: ChefPanelComponent
     },
     {
         path: '**',
