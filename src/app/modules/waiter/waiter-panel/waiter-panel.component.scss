@@ -1,10 +1,104 @@
 .container-waiter-panel {
-    overflow: hidden;
-    background-color: #F0E5D9;
-    background-image: url('../../../../assets/images/waiter-panel-background.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    height: 960px;
+  overflow-y: hidden;
+  background-color: #f0e5d9;
+  background-image: url("../../../../assets/images/waiter-panel-background.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  height: 100vh;
+}
+
+.glass-panel {
+  margin: 45px;
+  background-color: rgba(255, 255, 255, 0.35);
+  // backdrop-filter: blur(22px);
+  border-radius: 50px;
+  height: 86%;
+  display: flex;
+
+  &-dashboard {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.871);
+    border-radius: 50px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    align-items: center;
+  }
+  &-container-routing {
+    flex: 5;
+    // background-color: rgba(117, 191, 43, 0.59);
+    border-radius: 50px;
+  }
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-item {
+  height: 75px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 17px;
+  font-weight: bold;
+  height: 70%;
+  width: 75%;
+  display: flex;
+  align-items: center;
+  // padding: 0 32px;
+  position: relative;
+  transition: all 200ms ease;
+  // justify-content: center;
+
+  .icon {
+    width: 32px;
+    margin-right: 12px;
+    margin-left: 12px;
+  }
+
+  &-logoutbtn {
+    height: 10%;
+    width: 70%;
+  }
+
+  &:hover {
+    background-color: rgb(255, 252, 248);
+    color: rgba(255, 167, 81, 1);
+    border: 1px solid rgb(255, 167, 81);
+    border-radius: 20px;
+    .icon {
+      filter: invert(80%) sepia(7%) saturate(4814%) hue-rotate(326deg)
+        brightness(101%) contrast(101%);
+    }
+  }
+}
+
+.container-btns {
+  width: 90%;
+
+  .img-waiter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -10px;
+    margin-bottom: 30px;
+  }
 }
