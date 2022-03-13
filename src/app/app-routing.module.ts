@@ -26,7 +26,19 @@ const routes: Routes = [
     {
         path: 'waiter',
         // canActivate: [AuthGuard],
-        component: WaiterPanelComponent
+        component: WaiterPanelComponent,
+        children: [
+            {
+              path:'menu',
+              loadChildren: ()=>
+              import ('./modules/login/login.module').then((m)=> m.LoginModule)
+            },
+            {
+                path:'orders',
+                loadChildren: ()=>
+                import ('./modules/login/login.module').then((m)=> m.LoginModule)
+              }
+          ]
     },
     {
         path: 'chef',
