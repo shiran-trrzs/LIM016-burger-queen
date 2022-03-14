@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
-import { LoginResponse, LoginPayload, User, Roles } from '../interface/loginInterface';
+import { LoginResponse, LoginPayload, User, Roles, Products } from '../interface/loginInterface';
 
 @Injectable({
   providedIn: 'root'
@@ -109,4 +109,13 @@ export class AuthService {
     this.router.navigate(['/aboutus']);
   }
 
+  // Get json with all products
+  getProducts(): Observable<Products> {
+    return this.http
+    .get<Products>(this.basePath + 'products', this.httpOptions())
+    .pipe(
+      retry(2),
+      catchError(this.handleError)
+    );
+  }
 }

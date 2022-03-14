@@ -20,4 +20,14 @@ export interface Roles {
     admin: boolean;
     name:  string;
   }
-  
+
+export interface Products {
+    name:      string;
+    price:     number;
+    image:     string;
+    type:      string;
+    _id:       string;
+    dateEntry: Date;
+    createdAt: Date;
+    updatedAt: Date;
+}
