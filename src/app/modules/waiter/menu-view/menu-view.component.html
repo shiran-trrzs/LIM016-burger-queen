@@ -1,5 +1,23 @@
 <div class="container-menu-view">
-  <div class="section-menu-container-routing"></div>
+
+  <div class="section-menu-container-routing">
+      <nav class="nav-btns-menu">
+        <a class="nav-menu" routerLink="/waiter/menu/breakfast">
+            Breakfast
+          </a>
+          <a class="nav-menu" routerLink="/waiter/menu/lunch">
+            Lunch
+          </a>
+          <a class="nav-menu" routerLink="/waiter/menu/all">
+            All
+          </a>
+      </nav>
+
+      <div class="menu-container-routing">
+        <router-outlet></router-outlet>
+      </div>
+
+  </div>
 
   <div class="container-food-order">
     <div class="food-order-card">
