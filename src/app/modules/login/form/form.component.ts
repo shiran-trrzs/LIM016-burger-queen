@@ -14,7 +14,7 @@ export class FormComponent implements OnInit {
     private authService: AuthService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {} 
 
   login() {
     this.model.action = 'login';

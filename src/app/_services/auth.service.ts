@@ -4,27 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
-import { LoginResponse } from '../interface/loginInterface';
-
-interface LoginPayload {
-  email: string;
-  password: string;
-}
-
-interface User {
-  roles:     Roles;
-  _id:       string;
-  email:     string;
-  password:  string;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-interface Roles {
-  admin: boolean;
-  name:  string;
-}
-
+import { LoginResponse, LoginPayload, User, Roles } from '../interface/loginInterface';
 
 @Injectable({
   providedIn: 'root'
@@ -112,8 +92,6 @@ export class AuthService {
   isLoggedIn() {
     return localStorage.getItem('token') != null;
   }
-
-
 
   // Captures the email address to identify which user is logging in
   getUser(): Observable<User> {

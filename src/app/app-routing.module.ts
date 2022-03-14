@@ -25,7 +25,7 @@ const routes: Routes = [
     },
     {
         path: 'waiter',
-        // canActivate: [AuthGuard],
+        canActivate: [AuthGuard],
         component: WaiterPanelComponent,
         children: [
             {
@@ -48,7 +48,7 @@ const routes: Routes = [
     },
     {
         path: 'chef',
-        // canActivate: [AuthGuard],
+        canActivate: [AuthGuard],
         component: ChefPanelComponent
     },
     {
