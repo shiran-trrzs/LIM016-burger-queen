@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { WaiterPanelComponent } from './waiter-panel/waiter-panel.component';
+import { MenuViewModule } from './menu-view/menu-view.module';
 
 @NgModule({ 
   declarations: [
-    WaiterPanelComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MenuViewModule
   ]
 })
 export class WaiterModule { }
