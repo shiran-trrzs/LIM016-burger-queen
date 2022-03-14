@@ -51,12 +51,12 @@ export class AuthService {
   
   token = localStorage.getItem('token')
   
-  httpOptions = {
+  httpOptions = () => ({
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization' : `Bearer ${this.token}`
     })
-  };
+  });
 
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
@@ -84,7 +84,7 @@ export class AuthService {
     // Get data from backend (users object)
     getData(data: LoginPayload): Observable<LoginResponse> {
       return this.http
-        .post<LoginResponse>(this.basePath + 'users', data, this.httpOptions)
+        .post<LoginResponse>(this.basePath + 'users', data, this.httpOptions())
         .pipe(
           retry(2),
           catchError(this.handleError)
@@ -118,7 +118,7 @@ export class AuthService {
   // Captures the email address to identify which user is logging in
   getUser(): Observable<User> {
     return this.http
-    .get<User>(this.basePath + `users/${this.user.email}`, this.httpOptions)
+    .get<User>(this.basePath + `users/${this.user.email}`, this.httpOptions())
     .pipe(
       retry(2),
       catchError(this.handleError)
