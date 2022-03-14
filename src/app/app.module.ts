@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { JwtModule } from '@auth0/angular-jwt';
 import { HeaderLoginComponent } from './header-login/header-login.component';
-import { WaiterPanelComponent } from './modules/waiter/waiter-panel/waiter-panel.component';
+import { WaiterPanelComponent } from './waiter-panel/waiter-panel.component';
 
 
 @NgModule({
