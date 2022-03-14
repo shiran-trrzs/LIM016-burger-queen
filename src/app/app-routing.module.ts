@@ -35,7 +35,7 @@ const routes: Routes = [
             },
             {
                 path:'menu',
-                loadChildren: ()=>
+                loadChildren: ()=> 
                 import ('./modules/waiter/menu-view/menu-view.module').then((m)=> m.MenuViewModule)
             }
 
