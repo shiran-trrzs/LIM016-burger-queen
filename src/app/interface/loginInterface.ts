@@ -22,7 +22,6 @@ export interface Roles {
   }
 
 export interface Products {
-    array: any;
     name:      string;
     price:     number;
     image:     string;

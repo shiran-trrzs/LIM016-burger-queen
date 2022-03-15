@@ -1,21 +1,35 @@
 <div class="container-menu-view">
 
   <div class="section-menu-container-routing">
-      <nav class="nav-btns-menu">
-        <a class="nav-menu" routerLink="/waiter/menu/breakfast">
+      <nav class="nav-btns-menu" (click)="filterCategories($event)">
+        <a class="nav-menu" data-value="breakfast">
             Breakfast
           </a>
-          <a class="nav-menu" routerLink="/waiter/menu/lunch">
+          <a class="nav-menu" data-value="lunch">
             Lunch
           </a>
-          <a class="nav-menu" routerLink="/waiter/menu/all">
+          <a class="nav-menu" data-value="">
             All
           </a>
       </nav>
 
-      <div class="menu-container-routing">
-          
-        <router-outlet></router-outlet>
+      <div class="menu-container-routing" >
+        <div class="food-card-container">
+          <div class="products-container" *ngFor="let category of categories">
+        
+            <div class="food-card">
+              <div class="food-img">
+                <img [src]="category.image" />
+              </div>
+              <div class="food-info">
+                <h4>{{ category.name }}</h4>
+                <p>${{ category.price }}</p>
+              </div>
+            </div>
+        
+          </div>
+        </div>
+      
       </div>
 
   </div>
