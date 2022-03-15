@@ -27,7 +27,8 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
-    height: 960px;
+    height: 100%;
+    overflow-y: hidden;
 }
 
 .nav-login {
