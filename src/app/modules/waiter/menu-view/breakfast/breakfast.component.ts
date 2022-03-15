@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-breakfast',
@@ -7,9 +8,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BreakfastComponent implements OnInit {
 
-  constructor() { }
+allProducts: any = [];
+allBreakfast: any = []
 
-  ngOnInit(): void {
+  constructor(
+    private authService: AuthService
+  ) {}
+
+  // Get products into an array
+  ngOnInit() {
+    this.authService.getProducts().subscribe({
+      next: response => {
+        this.allProducts = response;
+        // console.log(response)
+
+        this.allBreakfast = this.allProducts.forEach(function(v: any) {
+          const breakfast = [];
+          // console.log(v);
+          if(v.type=== 'breakfast') {
+            breakfast.push(v)
+            console.log(breakfast);
+          }
+          console.log(breakfast)
+          return breakfast
+        })
+      },
+      error: error => {
+        console.error('There was an error!', error);
+    }
+    })
   }
-
+  
 }
