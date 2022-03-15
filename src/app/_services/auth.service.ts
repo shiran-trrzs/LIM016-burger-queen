@@ -106,7 +106,7 @@ export class AuthService {
   // After clearing localStorage redirect to login screen
   logout() {
     localStorage.clear();
-    this.router.navigate(['/aboutus']);
+    // this.router.navigate(['Home/aboutus']);
   }
 
   // Get json with all products
