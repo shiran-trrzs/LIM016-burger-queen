@@ -39,6 +39,7 @@ export interface Order {
   type:      string;
   _id:       string;
   qty:       number;
+  totalPrice:number;
   dateEntry: Date;
   createdAt: Date;
   updatedAt: Date;
