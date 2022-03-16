@@ -58,7 +58,7 @@
                       <p> {{order.qty}} </p>
                       <img src="../../../../assets/images/menos.png" (click)="deleteQty(order)" />
                     </div>
-                    <p>$ {{order.price}} </p>
+                    <p>$ {{order.totalPrice}} </p>
                   </div>
                 </div>
               </div>
@@ -79,7 +79,7 @@
           />
         </div>
         <div class="total-and-btn-send">
-          <p>Total: $60</p>
+          <p>Total: ${{0}}</p>
           <button>Send <img src="../../../../assets/images/Icon.png" /></button>
         </div>
       </div>

@@ -49,15 +49,16 @@ export class MenuViewComponent implements OnInit {
     const result = this.arrOrder.find(((x:any) => x._id == product._id))
 
     if (result == undefined) {
-      this.arrOrder.push({...product, qty: 1})
+      this.arrOrder.push({...product, qty: 1, totalPrice: product.price, totalPriceOrder: 0})
     } else {
-      this.arrOrder = this.arrOrder.map((x:any) => x._id == product._id ? {...x, qty: x.qty + 1} : x)
+      this.arrOrder = this.arrOrder.map((x:any) => x._id == product._id ? {...x, qty: x.qty + 1, totalPrice: x.price * (x.qty + 1) } : x)
     }
     console.log(this.arrOrder)
   }
 
   addQty(order: Order) {
-    this.arrOrder = this.arrOrder.map((x:any) => x._id == order._id ? {...x, qty: x.qty + 1} : x)
+
+    this.arrOrder = this.arrOrder.map((x:any) => x._id == order._id ? {...x, qty: x.qty + 1, totalPrice: x.price * (x.qty + 1) } : x)
   }
 
   deleteQty(order: Order) {
