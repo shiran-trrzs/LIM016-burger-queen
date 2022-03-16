@@ -68,6 +68,7 @@ export class MenuViewComponent implements OnInit {
 
   deleteProduct(product: Products) {
     this.arrOrder = this.arrOrder.filter((x:any) => x !== product)
+    // console.log(this.arrOrder)
   }
 
   deleteOrder() {

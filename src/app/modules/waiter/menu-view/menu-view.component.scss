@@ -230,3 +230,13 @@ h2, h4 {
     flex-wrap: nowrap;
     justify-content: space-around;
 }
+
+.btn-add-product {
+    background-color: #78ce1b;
+    color: white;
+    border: none;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 80%;
+    border-radius: 10%;
+}
