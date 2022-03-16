@@ -35,67 +35,39 @@
 
     </section>
 
-  <section class="container-food-order">
+  <section class="container-food-order" >
     <div class="food-order-card">
       <div class="container-position">
-        <h2>Order #1</h2>
-        <h4>To: Mitch</h4>
+        <h2>Order #{{1}}</h2>
+        <h4>To: <input type="text" class="name-client"> </h4> 
 
-        <div class="order-container">
-          <div class="order-list-container">
-            <div class="order">
-              <div class="img-food-order">
-                <img
-                  src="../../../../assets/images/simple bur 2.png"
-                  class="img-order"
-                />
-              </div>
-              <div class="order-info">
-                <h4>Simple burger</h4>
-
-                <div class="add-and-price">
-                  <div class="add-or-less">
-                    <img src="../../../../assets/images/màs.png" />
-                    <p>1</p>
-                    <img src="../../../../assets/images/menos.png" />
+      <div class="container-product">
+        <div class="order-container" *ngFor="let order of arrOrder">
+            <div class="order-list-container">
+              <div class="order">
+                <div class="img-food-order">
+                  <img [src]="order.image"
+                    class="img-order"/>
+                </div>
+                <div class="order-info">
+                  <h4> {{order.name}} </h4>
+  
+                  <div class="add-and-price">
+                    <div class="add-or-less">
+                      <img src="../../../../assets/images/màs.png" />
+                      <p> {{order.qty}} </p>
+                      <img src="../../../../assets/images/menos.png" />
+                    </div>
+                    <p>$ {{order.price}} </p>
                   </div>
-                  <p>$25</p>
                 </div>
               </div>
-            </div>
-            <div class="plus-trash">
-              <button class="plus-btn">Plus</button>
-              <img src="../../../../assets/images/trash-item.png" />
-            </div>
-          </div>
-
-          <div class="order-list-container">
-            <div class="order">
-              <div class="img-food-order">
-                <img
-                  src="../../../../assets/images/simple bur 2.png"
-                  class="img-order"
-                />
-              </div>
-              <div class="order-info">
-                <h4>Double burger</h4>
-
-                <div class="add-and-price">
-                  <div class="add-or-less">
-                    <img src="../../../../assets/images/màs.png" />
-                    <p>4</p>
-                    <img src="../../../../assets/images/menos.png" />
-                  </div>
-                  <p>$25</p>
-                </div>
+              <div class="plus-trash">
+                <img src="../../../../assets/images/trash-item.png" />
               </div>
             </div>
-            <div class="plus-trash">
-              <button class="plus-btn">Plus</button>
-              <img src="../../../../assets/images/trash-item.png" />
-            </div>
-          </div>
         </div>
+      </div>  
       </div>
 
       <div class="total-container">
