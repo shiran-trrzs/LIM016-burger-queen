@@ -1,6 +1,6 @@
 <div class="container-menu-view">
 
-  <div class="section-menu-container-routing">
+  <section class="section-menu-container-routing">
       <nav class="nav-btns-menu" (click)="filterCategories($event)">
         <a class="nav-menu" data-value="breakfast">
             Breakfast
@@ -24,6 +24,7 @@
               <div class="food-info">
                 <h4>{{ category.name }}</h4>
                 <p>${{ category.price }}</p>
+                <button type="button" (click)="addProduct(category)">+</button>
               </div>
             </div>
         
@@ -32,9 +33,9 @@
       
       </div>
 
-  </div>
+    </section>
 
-  <div class="container-food-order">
+  <section class="container-food-order">
     <div class="food-order-card">
       <div class="container-position">
         <h2>Order #1</h2>
@@ -110,5 +111,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </div>
