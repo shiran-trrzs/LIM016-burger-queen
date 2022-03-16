@@ -63,7 +63,7 @@ export class MenuViewComponent implements OnInit {
 
   deleteQty(order: Order) {
     if (order.qty != 1) {
-      this.arrOrder = this.arrOrder.map((x:any) => x._id == order._id ? {...x, qty: x.qty - 1} : x)
+      this.arrOrder = this.arrOrder.map((x:any) => x._id == order._id ? {...x, qty: x.qty - 1, totalPrice: x.price * (x.qty - 1)} : x)
     }
   }
 
