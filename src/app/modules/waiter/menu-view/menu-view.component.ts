@@ -13,7 +13,7 @@ export class MenuViewComponent implements OnInit {
 
   allProducts: any = [];
 
-  carrito: any = [];
+  cart: any = [];
 
   constructor(
     private authService: AuthService
@@ -45,14 +45,14 @@ export class MenuViewComponent implements OnInit {
 
   addProduct(product:any) {
     // console.log(product)
-    const result = this.carrito.find(((x:any) => x._id == product._id))
+    const result = this.cart.find(((x:any) => x._id == product._id))
 
     if (result == undefined) {
-      this.carrito.push({...product, qty: 1})
+      this.cart.push({...product, qty: 1})
     } else {
-      this.carrito = this.carrito.map((x:any) => x._id == product._id ? {...x, qty: x.qty + 1} : x)
+      this.cart = this.cart.map((x:any) => x._id == product._id ? {...x, qty: x.qty + 1} : x)
       
     }
-    console.log(this.carrito)
+    console.log(this.cart)
   }
 }
