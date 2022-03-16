@@ -112,7 +112,7 @@ export class AuthService {
   // Get json with all products
   getProducts(): Observable<Products> {
     return this.http
-    .get<Products>(this.basePath + 'products', this.httpOptions())
+    .get<Products>(this.basePath + 'products?limit=12', this.httpOptions())
     .pipe(
       retry(2),
       catchError(this.handleError)
