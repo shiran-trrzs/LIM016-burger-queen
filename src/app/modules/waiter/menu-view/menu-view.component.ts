@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/_services/auth.service';
-import {Products} from '../../../interface/loginInterface'
+import {Products, Order} from '../../../interface/loginInterface'
 
 @Component({
   selector: 'app-menu-view',
@@ -13,7 +14,7 @@ export class MenuViewComponent implements OnInit {
 
   allProducts: any = [];
 
-  cart: any = [];
+  arrOrder: any = [];
 
   constructor(
     private authService: AuthService
@@ -43,16 +44,34 @@ export class MenuViewComponent implements OnInit {
     return this.categories
   }
 
-  addProduct(product:any) {
+  addProduct(product: Products ) {
     // console.log(product)
-    const result = this.cart.find(((x:any) => x._id == product._id))
+    const result = this.arrOrder.find(((x:any) => x._id == product._id))
 
     if (result == undefined) {
-      this.cart.push({...product, qty: 1})
+      this.arrOrder.push({...product, qty: 1})
     } else {
-      this.cart = this.cart.map((x:any) => x._id == product._id ? {...x, qty: x.qty + 1} : x)
-      
+      this.arrOrder = this.arrOrder.map((x:any) => x._id == product._id ? {...x, qty: x.qty + 1} : x)
     }
-    console.log(this.cart)
+    console.log(this.arrOrder)
   }
+
+  addQty(order: Order) {
+    this.arrOrder = this.arrOrder.map((x:any) => x._id == order._id ? {...x, qty: x.qty + 1} : x)
+  }
+
+  deleteQty(order: Order) {
+    if (order.qty != 1) {
+      this.arrOrder = this.arrOrder.map((x:any) => x._id == order._id ? {...x, qty: x.qty - 1} : x)
+    }
+  }
+
+  deleteProduct(product: Products) {
+    this.arrOrder = this.arrOrder.filter((x:any) => x !== product)
+  }
+
+  deleteOrder() {
+    this.arrOrder.length = 0
+  }
+
 }

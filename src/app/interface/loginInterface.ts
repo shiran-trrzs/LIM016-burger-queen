@@ -31,3 +31,15 @@ export interface Products {
     createdAt: Date;
     updatedAt: Date;
 }
+
+export interface Order {
+  name:      string;
+  price:     number;
+  image:     string;
+  type:      string;
+  _id:       string;
+  qty:       number;
+  dateEntry: Date;
+  createdAt: Date;
+  updatedAt: Date;
+}
