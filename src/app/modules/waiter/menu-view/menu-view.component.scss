@@ -34,7 +34,7 @@ h2, h4 {
     background-color: rgb(255, 255, 255);
     display:flex;
     flex-direction: column;
-    height: 87%;
+    height: 92%;
     padding: 22px;
     border-radius: 20px;
     justify-content: space-between;
@@ -220,7 +220,8 @@ h2, h4 {
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
-    height: 59vh
+    height: 59vh;
+    margin-top: 10%
 }
 
 .container-position {

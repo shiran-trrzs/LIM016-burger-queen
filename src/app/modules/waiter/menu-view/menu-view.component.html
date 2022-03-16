@@ -4,13 +4,13 @@
       <nav class="nav-btns-menu" (click)="filterCategories($event)">
         <a class="nav-menu" data-value="breakfast">
             Breakfast
-          </a>
-          <a class="nav-menu" data-value="lunch">
+        </a>
+        <a class="nav-menu" data-value="lunch">
             Lunch
-          </a>
-          <a class="nav-menu" data-value="">
+        </a>
+        <a class="nav-menu" data-value="">
             All
-          </a>
+        </a>
       </nav>
 
       <div class="menu-container-routing" >
@@ -54,16 +54,16 @@
   
                   <div class="add-and-price">
                     <div class="add-or-less">
-                      <img src="../../../../assets/images/màs.png" />
+                      <img src="../../../../assets/images/màs.png" (click)="addQty(order)" />
                       <p> {{order.qty}} </p>
-                      <img src="../../../../assets/images/menos.png" />
+                      <img src="../../../../assets/images/menos.png" (click)="deleteQty(order)" />
                     </div>
                     <p>$ {{order.price}} </p>
                   </div>
                 </div>
               </div>
               <div class="plus-trash">
-                <img src="../../../../assets/images/trash-item.png" />
+                <img src="../../../../assets/images/trash-item.png" (click)="deleteProduct(order)" />
               </div>
             </div>
         </div>
@@ -75,6 +75,7 @@
           <img
             src="../../../../assets/images/Trash.png"
             class="img-trash-final"
+            (click)="deleteOrder()"
           />
         </div>
         <div class="total-and-btn-send">
