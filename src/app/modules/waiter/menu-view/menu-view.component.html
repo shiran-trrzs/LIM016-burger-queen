@@ -1,7 +1,7 @@
 <div class="container-menu-view">
 
   <section class="section-menu-container-routing">
-      <nav class="nav-btns-menu" (click)="filterCategories($event)">
+      <nav class="nav-btns-menu" data-value="" (click)="filterCategories($event)">
         <a class="nav-menu" data-value="breakfast">
             Breakfast
         </a>
@@ -38,7 +38,7 @@
   <section class="container-food-order" >
     <div class="food-order-card">
       <div class="container-position">
-        <h2>Order #{{1}}</h2>
+        <!-- <h2>Order #{{1}}</h2> -->
         <h4>To: <input type="text" class="name-client" #inputName> </h4> 
 
       <div class="container-product">

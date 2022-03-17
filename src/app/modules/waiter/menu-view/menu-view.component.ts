@@ -21,7 +21,7 @@ export class MenuViewComponent implements OnInit {
 
   data: any = {};
 
-  totalPriceOrder!: any
+  totalPriceOrder: any = 0;
 
   constructor(
     private authService: AuthService
@@ -62,7 +62,6 @@ export class MenuViewComponent implements OnInit {
     }
 
     this.arrTotalPrice()
-    // console.log(this.arrOrder)
   }
 
   addQty(order: Order) {
@@ -73,15 +72,19 @@ export class MenuViewComponent implements OnInit {
   deleteQty(order: Order) {
     if (order.qty != 1) {
       this.arrOrder = this.arrOrder.map((x:any) => x._id == order._id ? {...x, qty: x.qty - 1, totalPrice: x.price * (x.qty - 1)} : x)
+      this.arrTotalPrice()
     }
   }
 
   deleteProduct(product: Products) {
     this.arrOrder = this.arrOrder.filter((x:any) => x !== product)
+    this.arrTotalPrice() 
   }
 
   deleteOrder() {
-    this.arrOrder.length = 0
+    this.arrOrder.length = 0;
+    this.totalPriceOrder = 0;
+    this.inputName.nativeElement.value = '';
   }
 
   eachProduct() { 
@@ -103,28 +106,31 @@ export class MenuViewComponent implements OnInit {
   }
 
   addNewOrder(){
-    const valueInput = this.inputName.nativeElement.value;
+    let valueInput = this.inputName.nativeElement.value;
 
     const idUser = localStorage.getItem('idUser')
 
-    const objOrder:any= {
+    const objOrder: any = {
       "userId": idUser,
       "client": valueInput,
       "products": this.eachProduct()
     }
+  
+    this.authService.newOrder(objOrder).subscribe({
+      next: response => {
+        console.log(response)
+        }, 
+      error: error => {
+        console.error(error);
+      },
+      complete: () => {
+        console.log('Request complete');
+      }
     
+    }) 
+    this.inputName.nativeElement.value = '';
+    this.arrOrder.length = 0;
+    this.totalPriceOrder = 0;
+  } 
 
-  this.authService.newOrder(objOrder).subscribe({
-    next: response => {
-      console.log(response)
-      }, 
-    error: error => {
-      console.error(error);
-    },
-    complete: () => {
-      console.log('Request complete');
-    }
-   
-  }) 
-} 
 }
