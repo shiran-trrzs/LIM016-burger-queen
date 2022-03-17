@@ -18,7 +18,7 @@ import { WaiterPanelComponent } from './waiter-panel/waiter-panel.component';
   declarations: [
     AppComponent,
     HeaderLoginComponent,
-    WaiterPanelComponent
+    WaiterPanelComponent,
   ],
   imports: [
     AppRoutingModule,

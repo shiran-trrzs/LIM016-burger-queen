@@ -37,13 +37,13 @@ const routes: Routes = [
                 path:'menu',
                 loadChildren: ()=> 
                 import ('./modules/waiter/menu-view/menu-view.module').then((m)=> m.MenuViewModule)
-            }
+            },
 
-            // {
-            //     path:'orders',
-            //     loadChildren: ()=>
-            //     import ('./modules/waiter/orders-view/orders-view.module').then((m)=> m.OrdersViewModule)
-            // }
+            {
+                path:'orders',
+                loadChildren: ()=>
+                import ('./modules/waiter/orders-view/orders-view.module').then((m)=> m.OrdersViewModule)
+            }
         ]
     },
     {
