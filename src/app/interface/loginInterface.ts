@@ -44,3 +44,43 @@ export interface Order {
   createdAt: Date;
   updatedAt: Date;
 }
+
+export interface NewOrder {
+    _id:           string;
+    userId:        string;
+    client:        string;
+    products:      ProductElement[];
+    status:        string;
+    dateEntry:     Date;
+    dateProcessed: Date;
+    createdAt:     Date;
+    updatedAt:     Date;
+}
+
+export interface ProductElement {
+    qty:     number;
+    product: ProductProduct;
+    _id:     string;
+}
+
+export interface ProductProduct {
+    _id:       string;
+    name:      string;
+    price:     number;
+    image:     string;
+    type:      string;
+    dateEntry: Date;
+    createdAt: Date;
+    updatedAt: Date;
+}
+
+export interface OrderInfo {
+  userId:   string;
+  client:   string;
+  products: Product[];
+}
+
+export interface Product {
+  qty:       number;
+  productId: string;
+}

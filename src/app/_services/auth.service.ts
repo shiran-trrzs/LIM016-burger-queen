@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
-import { LoginResponse, LoginPayload, User, Roles, Products } from '../interface/loginInterface';
+import { LoginResponse, LoginPayload, User, Roles, Products, NewOrder, OrderInfo } from '../interface/loginInterface';
 
 @Injectable({
   providedIn: 'root'
@@ -77,6 +77,7 @@ export class AuthService {
     this.token = resp.token
     this.getUser().subscribe((res) => {
       localStorage.setItem('idUser', res._id);
+     console.log(res)
       if (res.roles.name === 'chef') {
         console.log('Log in chef')
         this.router.navigate(['/chef']);
@@ -117,5 +118,10 @@ export class AuthService {
       retry(2),
       catchError(this.handleError)
     );
+  }
+
+  newOrder(data: OrderInfo): Observable<NewOrder> {
+    return this.http
+    .post<NewOrder>(this.basePath+ 'orders', data, this.httpOptions())
   }
 }

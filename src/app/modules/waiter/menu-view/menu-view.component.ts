@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AuthService } from 'src/app/_services/auth.service';
+import { AuthService,  } from 'src/app/_services/auth.service';
 import {Products, Order} from '../../../interface/loginInterface'
 
 @Component({
@@ -10,11 +10,18 @@ import {Products, Order} from '../../../interface/loginInterface'
 })
 export class MenuViewComponent implements OnInit {
 
+  @ViewChild('inputName')
+  inputName!: ElementRef;
+
   categories: any = [];
 
   allProducts: any = [];
 
   arrOrder: any = [];
+
+  data: any = {};
+
+  totalPriceOrder!: any
 
   constructor(
     private authService: AuthService
@@ -32,6 +39,7 @@ export class MenuViewComponent implements OnInit {
         console.error('There was an error!', error);
     }
     })
+    
   }
 
   filterCategories(e: any) {
@@ -52,11 +60,14 @@ export class MenuViewComponent implements OnInit {
     } else {
       this.arrOrder = this.arrOrder.map((x:any) => x._id == product._id ? {...x, qty: x.qty + 1, totalPrice: x.price * (x.qty + 1) } : x)
     }
-    console.log(this.arrOrder)
+
+    this.arrTotalPrice()
+    // console.log(this.arrOrder)
   }
 
   addQty(order: Order) {
     this.arrOrder = this.arrOrder.map((x:any) => x._id == order._id ? {...x, qty: x.qty + 1, totalPrice: x.price * (x.qty + 1) } : x)
+    this.arrTotalPrice()
   }
 
   deleteQty(order: Order) {
@@ -73,4 +84,47 @@ export class MenuViewComponent implements OnInit {
     this.arrOrder.length = 0
   }
 
+  eachProduct() { 
+    const detailProductData = this.arrOrder.map((e:any) => {
+      this.data = {
+        qty: e.qty,
+        productId: e._id
+      };
+      return this.data
+    })
+    return detailProductData
+  }
+  
+  arrTotalPrice() {
+    this.totalPriceOrder = this.arrOrder.map((e:any) => {
+      return e.totalPrice
+    })
+    return this.totalPriceOrder = this.totalPriceOrder.reduce((acc: number, num: number) => acc + num)
+  }
+
+  addNewOrder(){
+    const valueInput = this.inputName.nativeElement.value;
+
+    const idUser = localStorage.getItem('idUser')
+
+    const objOrder:any= {
+      "userId": idUser,
+      "client": valueInput,
+      "products": this.eachProduct()
+    }
+    
+
+  this.authService.newOrder(objOrder).subscribe({
+    next: response => {
+      console.log(response)
+      }, 
+    error: error => {
+      console.error(error);
+    },
+    complete: () => {
+      console.log('Request complete');
+    }
+   
+  }) 
+} 
 }
