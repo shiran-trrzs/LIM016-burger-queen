@@ -38,9 +38,10 @@
   <section class="container-food-order" >
     <div class="food-order-card">
       <div class="container-position">
-        <h2>Order #{{1}}</h2>
-        <h4>To: <input type="text" class="name-client" #inputName> </h4> 
-
+        <div class="container-name">
+          <h4>Table # <input type="text" class="number-table" #inputNumberTable> </h4>
+          <h4>To: <input type="text" class="name-client" #inputName> </h4> 
+        </div>
       <div class="container-product">
         <div class="order-container" *ngFor="let order of arrOrder">
             <div class="order-list-container">
