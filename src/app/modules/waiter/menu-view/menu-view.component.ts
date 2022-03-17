@@ -45,7 +45,6 @@ export class MenuViewComponent implements OnInit {
   }
 
   addProduct(product: Products ) {
-    // console.log(product)
     const result = this.arrOrder.find(((x:any) => x._id == product._id))
 
     if (result == undefined) {
@@ -57,19 +56,17 @@ export class MenuViewComponent implements OnInit {
   }
 
   addQty(order: Order) {
-
     this.arrOrder = this.arrOrder.map((x:any) => x._id == order._id ? {...x, qty: x.qty + 1, totalPrice: x.price * (x.qty + 1) } : x)
   }
 
   deleteQty(order: Order) {
     if (order.qty != 1) {
-      this.arrOrder = this.arrOrder.map((x:any) => x._id == order._id ? {...x, qty: x.qty - 1} : x)
+      this.arrOrder = this.arrOrder.map((x:any) => x._id == order._id ? {...x, qty: x.qty - 1, totalPrice: x.price * (x.qty - 1)} : x)
     }
   }
 
   deleteProduct(product: Products) {
     this.arrOrder = this.arrOrder.filter((x:any) => x !== product)
-    // console.log(this.arrOrder)
   }
 
   deleteOrder() {

@@ -76,7 +76,7 @@ export class AuthService {
     localStorage.setItem('token', resp.token);
     this.token = resp.token
     this.getUser().subscribe((res) => {
-     console.log(res)
+      localStorage.setItem('idUser', res._id);
       if (res.roles.name === 'chef') {
         console.log('Log in chef')
         this.router.navigate(['/chef']);
