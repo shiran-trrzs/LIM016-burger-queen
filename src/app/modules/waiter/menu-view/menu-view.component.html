@@ -24,7 +24,7 @@
               <div class="food-info">
                 <h4>{{ category.name }}</h4>
                 <p>${{ category.price }}</p>
-                <button type="button" (click)="addProduct(category)" class="btn-add-product">+</button>
+                <button type="button" (click)="addProduct(category)"  class="btn-add-product">+</button>
               </div>
             </div>
         
@@ -39,7 +39,7 @@
     <div class="food-order-card">
       <div class="container-position">
         <h2>Order #{{1}}</h2>
-        <h4>To: <input type="text" class="name-client"> </h4> 
+        <h4>To: <input type="text" class="name-client" #inputName> </h4> 
 
       <div class="container-product">
         <div class="order-container" *ngFor="let order of arrOrder">
@@ -79,8 +79,8 @@
           />
         </div>
         <div class="total-and-btn-send">
-          <p>Total: ${{0}}</p>
-          <button>Send <img src="../../../../assets/images/Icon.png" /></button>
+          <p>Total: ${{totalPriceOrder}}</p>
+          <button (click)="addNewOrder()">Send <img src="../../../../assets/images/Icon.png" /></button>
         </div>
       </div>
     </div>
