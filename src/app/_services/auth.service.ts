@@ -124,4 +124,14 @@ export class AuthService {
     return this.http
     .post<NewOrder>(this.basePath+ 'orders', data, this.httpOptions())
   }
+
+  // Get json with all orders
+  getOrders(): Observable<NewOrder> {
+    return this.http
+    .get<NewOrder>(this.basePath + 'orders', this.httpOptions())
+    .pipe(
+      retry(2),
+      catchError(this.handleError)
+    )
+  }
 }
