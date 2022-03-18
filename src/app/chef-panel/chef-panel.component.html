@@ -1,0 +1,39 @@
+<div class="container-chef-panel">
+
+    <div class="glass-panel">
+      <aside class="glass-panel-dashboard">
+        <div class="container-btns">
+          <div class="img-chef">
+            <img src="../../../../assets/images/chefx.png" />
+          </div>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a class="nav-link"  routerLink="/chef/orders">
+                <img
+                  class="icon icon-dashboard"
+                  src="../../../../assets/images/icon-orders.png"
+                  alt=""
+                />
+                ORDERS
+              </a>
+            </li>
+          </ul>
+        </div>
+  
+        <a class="nav-link nav-link-logoutbtn" href="" (click)="logoutUser()">
+          <img
+            class="icon icon-dashboard"
+            src="../../../../assets/images/icon-logout.png"
+            alt=""
+          />
+          LOG OUT
+        </a>
+      </aside>
+  
+      <div class="glass-panel-container-routing">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    
+  </div>
+  

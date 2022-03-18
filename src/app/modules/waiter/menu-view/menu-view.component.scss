@@ -239,3 +239,26 @@ h2, h4 {
     margin-left: 80%;
     border-radius: 10%;
 }
+
+input {
+    border-radius: 30px;
+    font-size: 16px;
+    border: 2.8px solid #F4A42B;
+    width: 70%;
+    margin: 1.5%;
+    padding: 1%;
+}
+
+input:focus {
+	outline: none;
+    background-color:#ffffff00;
+}
+
+.name-client {
+    margin-left: 13.5%;
+}
+
+.container-name {
+    display: flex;
+    flex-direction: column;
+}

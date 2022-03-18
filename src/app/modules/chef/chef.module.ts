@@ -1,15 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ChefPanelComponent } from './chef-panel/chef-panel.component';
-
-
+import { ChefViewModule } from './chef-view/chef-view.module';
 
 @NgModule({
   declarations: [
-    ChefPanelComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ChefViewModule
   ]
 })
 export class ChefModule { }

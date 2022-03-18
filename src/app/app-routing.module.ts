@@ -4,7 +4,7 @@ import { NotFoundMessageComponent } from './modules/not-found/not-found-message/
 import { HeaderLoginComponent } from './header-login/header-login.component';
 import { WaiterPanelComponent } from './waiter-panel/waiter-panel.component';
 import { AuthGuard } from './_guards/auth.guard';
-import { ChefPanelComponent } from './modules/chef/chef-panel/chef-panel.component';
+import { ChefPanelComponent } from './chef-panel/chef-panel.component';
 
 const routes: Routes = [  
     {
@@ -37,19 +37,32 @@ const routes: Routes = [
                 path:'menu',
                 loadChildren: ()=> 
                 import ('./modules/waiter/menu-view/menu-view.module').then((m)=> m.MenuViewModule)
-            }
+            },
 
-            // {
-            //     path:'orders',
-            //     loadChildren: ()=>
-            //     import ('./modules/waiter/orders-view/orders-view.module').then((m)=> m.OrdersViewModule)
-            // }
+            {
+                path:'orders',
+                loadChildren: ()=>
+                import ('./modules/waiter/orders-view/orders-view.module').then((m)=> m.OrdersViewModule)
+            }
         ]
     },
     {
         path: 'chef',
         canActivate: [AuthGuard],
-        component: ChefPanelComponent
+        component: ChefPanelComponent,
+        children: [
+            {
+              path:'',
+              pathMatch:'full', 
+              redirectTo:'orders'
+            },
+            {
+                path:'orders',
+                loadChildren: ()=>
+                import ('./modules/chef/chef-view/chef-view.module').then((m)=> m.ChefViewModule)
+            }
+        ]
+        
     },
     {
         path: '**',
