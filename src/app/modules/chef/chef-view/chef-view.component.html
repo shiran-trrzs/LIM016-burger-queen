@@ -1,2 +1,74 @@
-<p>chef-view works!</p>
+<div class="container-chef-view">
+
+    <section class="section-orders-container-routing">
+        <nav class="nav-btns-menu" data-value="">
+          <a class="nav-menu" data-value="all">
+              All
+          </a>
+          <a class="nav-menu" data-value="pending">
+              Pending
+          </a>
+          <a class="nav-menu" data-value="cooking">
+              Cooking
+          </a>
+          <a class="nav-menu" data-value="ready-to-serve">
+            Ready to serve
+          </a>
+        </nav>
+  
+        <div class="menu-container-routing" >
+          <!-- <div class="food-card-container">
+            <div class="products-container" *ngFor="let category of categories">
+          
+              <div class="food-card">
+                <div class="food-img">
+                  <img [src]="category.image" />
+                </div>
+                <div class="food-info">
+                  <h4>{{ category.name }}</h4>
+                  <p>${{ category.price }}</p>
+                  <button type="button" (click)="addProduct(category)"  class="btn-add-product">+</button>
+                </div>
+              </div>
+          
+            </div>
+          </div> -->
+
+          <div class="orders-container">
+            <div class="orders-cards-container">
+
+                <div class ="order-card">
+                    <div class="order-info-container">
+                        <div class="table-and-client">
+                            <h4>Table #1</h4>
+                            <h4>To: Mitch</h4>
+                        </div>
+                        <div class="time">
+                            <p>10m</p>
+                        </div>
+                    </div>
+
+                    <div class="products-container">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="../../../../assets/images/simple bur 2.png">
+                            </div>
+                            <div class="product-info">
+                                <p>French fries</p>
+                                <p>Qty: 1</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+          </div>
+
+
+        
+        </div>
+      </section>
+
+  </div>
+  
 

@@ -1,0 +1,85 @@
+.container-chef-view {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.section-orders-container-routing{
+    // flex: 2.5;
+    display: flex;
+    flex-direction: column;
+    height: 94%;
+    padding: 25px;
+    width: 100%;
+    row-gap: 40px;
+}
+
+.nav-btns-menu {
+    // flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .nav-menu {
+        text-align: center;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        width: 12%;
+        padding: 10px;
+
+        &:hover {
+            background-color: rgb(255, 252, 248);
+            color: rgb(75, 158, 235, 1);
+            border: 1px solid rgb(75, 158, 235, 1);
+            border-radius: 20px;
+        }
+    }
+}
+
+.order-card {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 12px;
+    border-radius: 20px;
+    row-gap: 15px;
+
+    .order-info-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .products-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+.table-and-client {
+    h4 {
+        margin: 4px;
+    }
+}
+
+.product-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.product-info {
+    p {
+        margin: 0px;
+    }
+}
+
+
+
+
+
