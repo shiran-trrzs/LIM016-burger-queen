@@ -1,1 +1,58 @@
-<p>orders-view works!</p>
+<div class="container-order-view">
+
+    <section class="section-orders-container-routing">
+        <nav class="nav-btns-menu" data-value="">
+          <a class="nav-menu" data-value="all">
+              All
+          </a>
+          <a class="nav-menu" data-value="pending">
+              Pending
+          </a>
+          <a class="nav-menu" data-value="ready-to-serve">
+              Ready to serve
+          </a>
+          <a class="nav-menu" data-value="delivered">
+              Delivered
+          </a>
+        </nav>
+  
+        <div class="menu-container-routing" >
+          <div class="orders-cards-container">
+            
+            <div class="orders-cards-container">
+                <div class ="order-card" *ngFor="let order of allOrders">
+                    <div class="order-info-container">
+                        <div class="table-and-client">
+                            <h4>Table #1</h4>
+                            <h4>To: {{order.client}} </h4>
+                        </div>
+                        <div class="time">
+                            <p>{{order.dateEntry | date}}</p>
+                        </div>
+                    </div>
+
+                    <div class="products-container">
+                        <div class="product-card" *ngFor="let product of order.products">
+                            <div class="product-img">
+                                <img [src]="product.product.image">
+                            </div>
+                            <div class="product-info">
+                                <p> {{product.product.name}} </p>
+                                <p>Qty: {{product.qty}} </p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-status">{{order.status | titlecase}}</button>
+                </div>
+
+            </div>
+          </div>
+
+
+        
+        </div>
+      </section>
+
+  </div>
+  
+
