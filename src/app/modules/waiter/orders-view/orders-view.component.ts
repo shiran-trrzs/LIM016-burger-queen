@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/_services/auth.service';
+
 
 @Component({
   selector: 'app-orders-view',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrdersViewComponent implements OnInit {
 
-  constructor() { }
+  allOrders: any = []
 
-  ngOnInit(): void {
+  arrProducts: any = []
+  
+  constructor(
+    private authService: AuthService
+  ) { }
+
+  ngOnInit() {
+    this.authService.getOrders().subscribe({
+      next: response => {
+        console.log(response);
+        this.allOrders = response
+      },
+      error: error => {
+        console.error('There was an error!', error);
+    }
+    })
+
+    
+
   }
 
 }

@@ -12,8 +12,6 @@ export class ChefViewComponent implements OnInit {
 
   arrProducts: any = [];
 
-  kkk: any = [];
-
   constructor(
     private authService: AuthService
   ) {}
@@ -23,21 +21,11 @@ export class ChefViewComponent implements OnInit {
     this.authService.getOrders().subscribe({
       next: response => {
         this.allOrders = response;
-        this.jjj()
         console.log(this.allOrders)
       },
       error: error => {
         console.error('There was an error!', error);
     }
     })
-
   }
-
-   jjj() {
-      this.allOrders.forEach((element: any) => {
-        this.arrProducts.push(element.products);
-         return this.arrProducts
-      });
-    }
-
 }
