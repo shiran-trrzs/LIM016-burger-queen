@@ -134,4 +134,10 @@ export class AuthService {
       catchError(this.handleError)
     )
   }
+
+  changeStatusOrder(data: OrderInfo, ): Observable<NewOrder> {
+    return this.http
+    .post<NewOrder>(this.basePath+ `orders/${this.user.email}`, data, this.httpOptions())
+  }
+
 }

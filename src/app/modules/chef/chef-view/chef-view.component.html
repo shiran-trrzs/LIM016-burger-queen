@@ -41,7 +41,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn-status" >{{order.status | titlecase}}</button>
+                    <button class="btn-status" (click)="changeStatus($event)" #btnStatus data-id={{order._id}}>{{order.status | titlecase}}</button>
                 </div>
 
           </div>

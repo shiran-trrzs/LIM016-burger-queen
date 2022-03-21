@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AuthService,  } from 'src/app/_services/auth.service';
 
 @Component({
@@ -7,6 +7,11 @@ import { AuthService,  } from 'src/app/_services/auth.service';
   styleUrls: ['./chef-view.component.scss']
 })
 export class ChefViewComponent implements OnInit {
+
+  @ViewChild('btnStatus')
+  btnStatus!: ElementRef;
+
+  // this.inputName.nativeElement.value = '';
 
   allOrders: any = [];
 
@@ -38,6 +43,13 @@ export class ChefViewComponent implements OnInit {
         this.arrProducts.push(element.products);
          return this.arrProducts
       });
+    }
+
+    changeStatus(e: any) {
+      this.allOrders[1].status = 'cooking';
+    const type = e.target.id;
+    console.log(type)
+    console.log(this.allOrders[1].status)
     }
 
 }
