@@ -8,22 +8,22 @@ import { AuthService } from '../_services/auth.service';
 })
 export class ChefPanelComponent implements OnInit {
 
-  allOrders: any = []
+  // allOrders: any = []
 
   constructor(
     private authService: AuthService
   ) { }
 
   ngOnInit() {
-    this.authService.getOrders().subscribe({
-      next: response => {
-        console.log(response);
-         return this.allOrders = response
-      },
-      error: error => {
-        console.error('There was an error!', error);
-    }
-    })
+    // this.authService.getOrders().subscribe({
+    //   next: response => {
+    //     console.log(response);
+    //      return this.allOrders = response
+    //   },
+    //   error: error => {
+    //     console.error('There was an error!', error);
+    // }
+    // })
   }
 
   logoutUser() {

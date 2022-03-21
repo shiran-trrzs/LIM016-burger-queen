@@ -1,67 +1,49 @@
 <div class="container-chef-view">
 
     <section class="section-orders-container-routing">
-        <nav class="nav-btns-menu" data-value="">
-          <a class="nav-menu" data-value="all">
+        <nav class="nav-btns-order" data-value="">
+          <a class="nav-order" data-value="all">
               All
           </a>
-          <a class="nav-menu" data-value="pending">
+          <a class="nav-order" data-value="pending">
               Pending
           </a>
-          <a class="nav-menu" data-value="cooking">
+          <a class="nav-order" data-value="cooking">
               Cooking
           </a>
-          <a class="nav-menu" data-value="ready-to-serve">
+          <a class="nav-order" data-value="ready-to-serve">
             Ready to serve
           </a>
         </nav>
   
-        <div class="menu-container-routing" >
-          <!-- <div class="food-card-container">
-            <div class="products-container" *ngFor="let category of categories">
-          
-              <div class="food-card">
-                <div class="food-img">
-                  <img [src]="category.image" />
-                </div>
-                <div class="food-info">
-                  <h4>{{ category.name }}</h4>
-                  <p>${{ category.price }}</p>
-                  <button type="button" (click)="addProduct(category)"  class="btn-add-product">+</button>
-                </div>
-              </div>
-          
-            </div>
-          </div> -->
-
-          <div class="orders-container">
+        <div class="orders-container-routing" >
             <div class="orders-cards-container">
 
-                <div class ="order-card">
+                <div class ="order-card" *ngFor="let order of allOrders">
                     <div class="order-info-container">
                         <div class="table-and-client">
                             <h4>Table #1</h4>
-                            <h4>To: Mitch</h4>
+                            <h4>To: {{ order.client }}</h4>
                         </div>
                         <div class="time">
-                            <p>10m</p>
+                            <p>{{order.dateEntry | date}}</p>
                         </div>
                     </div>
-
+                    <!-- *ngFor="let x of arrProducts" -->
                     <div class="products-container">
-                        <div class="product-card">
+                        <div class="product-card" *ngFor="let x of order.products">
                             <div class="product-img">
-                                <img src="../../../../assets/images/simple bur 2.png">
+                                <img [src]="x.product.image">
                             </div>
                             <div class="product-info">
-                                <p>French fries</p>
-                                <p>Qty: 1</p>
+                                <p>Qty: {{x.qty}}</p>
+                                <p>Name: {{x.product.name}}</p>
                             </div>
                         </div>
                     </div>
+                    <button class="btn-status" >{{order.status | titlecase}}</button>
                 </div>
 
-            </div>
           </div>
 
 
