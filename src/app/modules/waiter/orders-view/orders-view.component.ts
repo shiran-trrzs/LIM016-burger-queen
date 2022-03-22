@@ -11,24 +11,58 @@ export class OrdersViewComponent implements OnInit {
 
   allOrders: any = []
 
-  arrProducts: any = []
+  allStatusOrders: Array<object> = []
   
   constructor(
     private authService: AuthService
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.getOrdersOnTime() 
+  }
+
+  getOrdersOnTime() {
     this.authService.getOrders().subscribe({
       next: response => {
-        console.log(response);
-        this.allOrders = response
+        this.allOrders = response;
+        this.allStatusOrders = this.allOrders
+        console.log(this.allOrders)
       },
       error: error => {
         console.error('There was an error!', error);
     }
     })
+  }
 
-    
+  changeStatus(e: any) {
+    // this.allOrders[1].status = 'cooking';
+  const idOrder = e.target.id;
+  console.log(idOrder)
+
+  const status = e.target.value;
+  console.log(status);
+
+  let statusOnTime = '';
+
+  switch (status) {
+    case 'delivering':
+      statusOnTime = 'delivered'
+      break;
+      
+    default: alert('No tienes permisos de chef :(');
+      break;
+  }  
+
+  const objStatus = {
+    status: statusOnTime
+  }
+
+  this.authService.changeStatusOrder(idOrder, objStatus).subscribe({
+    next: response => {
+      console.log(response);
+      this.getOrdersOnTime()
+    }
+  })
 
   }
 

@@ -118,6 +118,7 @@ export class MenuViewComponent implements OnInit {
   
     this.authService.newOrder(objOrder).subscribe({
       next: response => {
+        localStorage.setItem('idOrder', response._id)
         console.log(response)
         }, 
       error: error => {

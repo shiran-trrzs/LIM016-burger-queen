@@ -2,31 +2,34 @@
 
     <section class="section-orders-container-routing">
         <nav class="nav-btns-order" data-value="">
-          <a class="nav-order" data-value="all">
-              All
-          </a>
-          <a class="nav-order" data-value="pending">
-              Pending
-          </a>
-          <a class="nav-order" data-value="cooking">
-              Cooking
-          </a>
-          <a class="nav-order" data-value="ready-to-serve">
-            Ready to serve
-          </a>
+            <a class="nav-order" data-value="all">
+                All
+            </a>
+            <a class="nav-order" data-value="pending">
+                Pending
+            </a>
+            <a class="nav-order" data-value="delivering">
+                Delivering
+            </a>
+            <a class="nav-order" data-value="delivered">
+                Delivered
+            </a>
+            <a class="nav-order" data-value="canceled">
+                Canceled
+            </a>
         </nav>
-  
-        <div class="orders-container-routing" >
+
+        <div class="orders-container-routing">
             <div class="orders-cards-container">
 
-                <div class ="order-card" *ngFor="let order of allOrders">
+                <div class="order-card" *ngFor="let order of allStatusOrders">
                     <div class="order-info-container">
                         <div class="table-and-client">
                             <h4>Table #1</h4>
                             <h4>To: {{ order.client }}</h4>
                         </div>
                         <div class="time">
-                            <p>{{order.dateEntry | date}}</p>
+                            <p>{{order.dateEntry | date: 'short'}}</p>
                         </div>
                     </div>
                     <!-- *ngFor="let x of arrProducts" -->
@@ -41,16 +44,18 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn-status" (click)="changeStatus($event)" #btnStatus data-id={{order._id}}>{{order.status | titlecase}}</button>
+                    <button class="btn-status" (click)="changeStatus($event)" data-value={{order.status}}
+                        data-id={{order._id}}
+                        [ngClass]="{'btn-pending': order.status === 'pending', 'btn-delivering': order.status === 'delivering', 'btn-delivered': order.status === 'delivered'}">
+                        {{order.status | titlecase}}
+                    </button>
                 </div>
 
-          </div>
+            </div>
 
 
-        
+
         </div>
-      </section>
+    </section>
 
-  </div>
-  
-
+</div>

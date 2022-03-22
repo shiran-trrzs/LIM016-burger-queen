@@ -8,24 +8,25 @@ import { AuthService,  } from 'src/app/_services/auth.service';
 })
 export class ChefViewComponent implements OnInit {
 
-  @ViewChild('btnStatus')
-  btnStatus!: ElementRef;
-
   // this.inputName.nativeElement.value = '';
 
   allOrders: any = [];
 
-  arrProducts: any = [];
+  allStatusOrders: any = [];
 
   constructor(
     private authService: AuthService
   ) {}
 
   ngOnInit(): void {
+    this.getOrdersOnTime() 
+  }
 
+  getOrdersOnTime() {
     this.authService.getOrders().subscribe({
       next: response => {
         this.allOrders = response;
+        this.allStatusOrders = this.allOrders
         console.log(this.allOrders)
       },
       error: error => {
@@ -35,9 +36,41 @@ export class ChefViewComponent implements OnInit {
   }
 
   changeStatus(e: any) {
-    this.allOrders[1].status = 'cooking';
-  const type = e.target.id;
-  console.log(type)
-  console.log(this.allOrders[1].status)
+    // this.allOrders[1].status = 'cooking';
+  const idOrder = e.target.id;
+  console.log(idOrder)
+
+  const status = e.target.value;
+  console.log(status);
+
+  let statusOnTime = '';
+
+  switch (status) {
+    case 'pending':
+      statusOnTime = 'delivering'
+      break;
+
+    case 'delivering':
+      statusOnTime = 'delivered'
+      break;
+      
+    default:
+      break;
+  }  
+
+  const objStatus = {
+    status: statusOnTime
+  }
+
+  this.authService.changeStatusOrder(idOrder, objStatus).subscribe({
+    next: response => {
+      console.log(response);
+      this.getOrdersOnTime()
+    },
+    error: error => {
+      console.error('There was an error!', error);
+  }
+  })
+
   }
 }

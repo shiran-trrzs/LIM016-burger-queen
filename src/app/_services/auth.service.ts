@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
-import { LoginResponse, LoginPayload, User, Roles, Products, NewOrder, OrderInfo } from '../interface/loginInterface';
+import { LoginResponse, LoginPayload, User, Roles, Products, NewOrder, OrderInfo, Status } from '../interface/loginInterface';
 
 @Injectable({
   providedIn: 'root'
@@ -135,9 +135,9 @@ export class AuthService {
     )
   }
 
-  changeStatusOrder(data: OrderInfo, ): Observable<NewOrder> {
+  changeStatusOrder(idOrder: string, data: Status ): Observable<NewOrder> {
     return this.http
-    .post<NewOrder>(this.basePath+ `orders/${this.user.email}`, data, this.httpOptions())
+    .put<NewOrder>(this.basePath+ `orders/${idOrder}`, data, this.httpOptions())
   }
 
 }

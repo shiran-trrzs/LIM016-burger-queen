@@ -84,3 +84,7 @@ export interface Product {
   qty:       number;
   productId: string;
 }
+
+export interface Status {
+  status: string
+}
