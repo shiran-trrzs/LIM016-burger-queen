@@ -1,15 +1,15 @@
 <div class="container-chef-view">
 
     <section class="section-orders-container-routing">
-        <nav class="nav-btns-order" data-value="">
-            <a class="nav-order" data-value="all">
+        <nav class="nav-btns-order" data-value="" (click)="changeSectionStatus($event)">
+            <a class="nav-order" data-value="">
                 All
             </a>
             <a class="nav-order" data-value="pending">
                 Pending
             </a>
             <a class="nav-order" data-value="delivering">
-                Delivering
+                Ready to serve
             </a>
             <a class="nav-order" data-value="delivered">
                 Delivered
@@ -22,10 +22,10 @@
         <div class="orders-container-routing">
             <div class="orders-cards-container">
 
-                <div class="order-card" *ngFor="let order of allStatusOrders">
+                <div class="order-card" *ngFor="let order of allStatusOrders"> 
+                    <!-- (allStatusOrders | filterOrders: statusPipe | sortOrders | statusBtn) -->
                     <div class="order-info-container">
                         <div class="table-and-client">
-                            <h4>Table #1</h4>
                             <h4>To: {{ order.client }}</h4>
                         </div>
                         <div class="time">

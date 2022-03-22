@@ -13,5 +13,3 @@ export class StatusBtnPipe implements PipeTransform {
 
 }
 
-// this.arrOrder = this.arrOrder.map((x:any) => x._id == order._id ? {...x, qty: x.qty + 1, totalPrice: x.price * (x.qty + 1) } : x)
-
