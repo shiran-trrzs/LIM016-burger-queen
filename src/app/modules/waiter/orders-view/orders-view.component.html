@@ -1,28 +1,28 @@
 <div class="container-order-view">
 
     <section class="section-orders-container-routing">
-        <nav class="nav-btns-menu" data-value="">
-            <a class="nav-menu" data-value="all">
+        <nav class="nav-btns-menu" data-value="" (click)="changeSectionStatus($event)">
+            <button class="nav-menu" data-value="">
                 All
-            </a>
-            <a class="nav-menu" data-value="pending">
+            </button>
+            <button class="nav-menu" data-value="pending">
                 Pending
-            </a>
-            <a class="nav-menu" data-value="delivering">
+            </button>
+            <button class="nav-menu" data-value="delivering" >
                 Delivering
-            </a>
-            <a class="nav-menu" data-value="delivered">
+            </button>
+            <button class="nav-menu" data-value="delivered" >
                 Delivered
-            </a>
-            <a class="nav-menu" data-value="canceled">
+            </button>
+            <button class="nav-menu" data-value="canceled" >
                 Canceled
-            </a>
+            </button>
         </nav>
 
         <div class="menu-container-routing">
 
             <div class="orders-cards-container">
-                <div class="order-card" *ngFor="let order of allOrders">
+                <div class="order-card" *ngFor="let order of (allOrders | filterOrders: statusPipe | sortOrders | statusBtn)">
                     <div class="order-info-container">
                         <div class="table-and-client">
                             <h4>To: {{order.client}} </h4>
@@ -45,7 +45,7 @@
                     </div>
                     <button class="btn-status" (click)="changeStatus($event)" data-value={{order.status}}
                         data-id={{order._id}}
-                        [ngClass]="{'btn-pending': order.status === 'pending', 'btn-delivering': order.status === 'delivering', 'btn-delivered': order.status === 'delivered'}">{{order.status
+                        [ngClass]="{'btn-pending': order.status === 'pending', 'btn-delivering': order.status === 'ready to serve', 'btn-delivered': order.status === 'delivered'}">{{order.status
                         | titlecase}}</button>
                 </div>
 

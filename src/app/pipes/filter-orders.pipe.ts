@@ -7,11 +7,13 @@ import { NewOrder } from '../interface/loginInterface'
 export class FilterOrdersPipe implements PipeTransform {
 
   transform(value: NewOrder[], arg: string): NewOrder[] {
-    
-    return value.filter((e: any) => {
-      e.status == arg
-    })
-
+    let result: NewOrder[] = []
+    if (arg != '') {
+      result = value.filter((e: any) => e.status == arg)
+    } else {
+      result = value
+    }
+    return result
   }
 
 }

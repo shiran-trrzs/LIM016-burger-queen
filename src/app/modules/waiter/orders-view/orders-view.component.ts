@@ -9,9 +9,11 @@ import { AuthService } from 'src/app/_services/auth.service';
 })
 export class OrdersViewComponent implements OnInit {
 
+  statusPipe !: string 
+
   allOrders: any = []
 
-  allStatusOrders: Array<object> = []
+  allStatusOrders: object[] = []
   
   constructor(
     private authService: AuthService
@@ -19,8 +21,9 @@ export class OrdersViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.getOrdersOnTime() 
+    this.statusPipe= ''
   }
-
+  
   getOrdersOnTime() {
     this.authService.getOrders().subscribe({
       next: response => {
@@ -64,6 +67,12 @@ export class OrdersViewComponent implements OnInit {
     }
   })
 
+  }
+
+  changeSectionStatus(e: any) {
+    let statusSection = e.target.dataset.value;
+    console.log(statusSection)
+    this.statusPipe = statusSection
   }
 
 }
