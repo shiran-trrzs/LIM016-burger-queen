@@ -94,7 +94,7 @@
     justify-content: space-evenly;
     row-gap: 30px;
     overflow-y: scroll;
-    height: 75%;
+    height: 700px;
     column-gap: 65px;
     padding-bottom: 10px;
 
@@ -142,6 +142,21 @@
         color: aqua;
         background-color: black;
     }
+}
+
+.btn-pending {
+    background-color: rgba(255, 248, 248, 1);
+    color: rgba(139, 5, 5, 1)
+}
+
+.btn-delivering {
+    background-color: rgba(248, 255, 250, 1);
+    color: rgba(5, 139, 83, 1)
+}
+
+.btn-delivered {
+    background-color: rgba(251, 248, 255, 1);
+    color: rgba(56, 5, 139, 1);
 }
 
 
