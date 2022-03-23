@@ -25,8 +25,7 @@ export class ChefViewComponent implements AfterViewInit {
   ) {}
 
   ngAfterViewInit(): void {
-    this.getOrdersOnTime() 
-    console.log(this.totalPrice.nativeElement)
+    this.getOrdersOnTime()
   }
 
   getOrdersOnTime() {
@@ -84,20 +83,19 @@ export class ChefViewComponent implements AfterViewInit {
     this.statusPipe = statusSection
   }
 
-  foo(h: any) {
-    console.log(h)
-
+  foo(idOfOrder: any) {
+    let x !: any;
     this.allStatusOrders.map((e:any) => {
-    if (h == e._id) {
-        e.products.map((ee: any) => {
-          console.log(ee.qty, ee.product.price)
+    if (idOfOrder == e._id) {
+        x = e.products.map((ee: any) => {
           this.intentou = ee.qty * ee.product.price
-          console.log(this.intentou)
+          return this.intentou
         })
       }
     })
+    console.log(this.intentou, x)
   //this.intentou = this.totalPriceOrder.reduce((acc: number, num: number) => acc + num)
-
+  return this.intentou
   }
 
 
