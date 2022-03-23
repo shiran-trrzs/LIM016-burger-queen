@@ -23,6 +23,9 @@
 
             <div class="orders-cards-container">
                 <div class="order-card" *ngFor="let order of (allOrders | filterOrders: statusPipe | sortOrders | statusBtn)">
+                    <div >
+                        <button class="btn-cancel-order" *ngIf="order.status !== 'delivered' && 'canceled'">x</button>
+                    </div>
                     <div class="order-info-container">
                         <div class="table-and-client">
                             <h4>To: {{order.client}} </h4>
@@ -30,7 +33,7 @@
                         <div class="time">
                             <p>{{order.dateEntry | date: 'short'}}</p>
                         </div>
-                    </div>
+                    </div> 
 
                     <div class="products-container">
                         <div class="product-card" *ngFor="let product of order.products">
