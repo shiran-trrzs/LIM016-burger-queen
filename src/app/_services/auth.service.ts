@@ -77,6 +77,7 @@ export class AuthService {
     this.token = resp.token
     this.getUser().subscribe((res) => {
       localStorage.setItem('idUser', res._id);
+      localStorage.setItem('username', res.nameUser)
      console.log(res)
       if (res.roles.name === 'chef') {
         console.log('Log in chef')
@@ -139,5 +140,6 @@ export class AuthService {
     return this.http
     .put<NewOrder>(this.basePath+ `orders/${idOrder}`, data, this.httpOptions())
   }
+
 
 }

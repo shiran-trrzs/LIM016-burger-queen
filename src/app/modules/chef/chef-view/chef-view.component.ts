@@ -36,7 +36,6 @@ export class ChefViewComponent implements OnInit {
   }
 
   changeStatus(e: any) {
-    // this.allOrders[1].status = 'cooking';
   const idOrder = e.target.id;
   console.log(idOrder)
 
@@ -69,7 +68,7 @@ export class ChefViewComponent implements OnInit {
     },
     error: error => {
       console.error('There was an error!', error);
-  }
+    }
   })
   }
   
