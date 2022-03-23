@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ViewChildren, AfterViewInit, Renderer2 } from '@angular/core';
 import { AuthService,  } from 'src/app/_services/auth.service';
 
 @Component({
@@ -6,28 +6,33 @@ import { AuthService,  } from 'src/app/_services/auth.service';
   templateUrl: './chef-view.component.html',
   styleUrls: ['./chef-view.component.scss']
 })
-export class ChefViewComponent implements OnInit {
+export class ChefViewComponent implements AfterViewInit {
 
-  statusPipe !: string 
+  @ViewChildren('totalPrice')
+  totalPrice!: ElementRef;
+
+  statusPipe !: string;
 
   allOrders: any = [];
 
   allStatusOrders: any = [];
 
+  intentou: any;
+
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private renderer: Renderer2
   ) {}
 
-  ngOnInit(): void {
-    this.getOrdersOnTime() 
+  ngAfterViewInit(): void {
+    this.getOrdersOnTime()
   }
 
   getOrdersOnTime() {
     this.authService.getOrders().subscribe({
       next: response => {
-        this.allOrders = response;
+        this.allOrders = response; 
         this.allStatusOrders = this.allOrders
-        console.log(this.allOrders)
       },
       error: error => {
         console.error('There was an error!', error);
@@ -68,13 +73,29 @@ export class ChefViewComponent implements OnInit {
     },
     error: error => {
       console.error('There was an error!', error);
-    }
-  })
-  }
-  
+   }
+  })  
+}
+
   changeSectionStatus(e: any) {
     let statusSection = e.target.dataset.value;
-    console.log(statusSection)
     this.statusPipe = statusSection
   }
+
+  foo(idOfOrder: any) {
+    let x !: any;
+    this.allStatusOrders.map((e:any) => {
+    if (idOfOrder == e._id) {
+        x = e.products.map((ee: any) => {
+          this.intentou = ee.qty * ee.product.price
+          return this.intentou
+        })
+      }
+    })
+    console.log(this.intentou, x)
+  //this.intentou = this.totalPriceOrder.reduce((acc: number, num: number) => acc + num)
+  return this.intentou
+  }
+
+
 }

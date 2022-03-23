@@ -30,19 +30,22 @@
                         </div>
                         <div class="time">
                             <p>{{order.dateEntry | date: 'short'}}</p>
+                            <!-- <p>Update at: {{order.updatedAt | date: 'short'}}</p> -->
                         </div>
                     </div>
-                    <!-- *ngFor="let x of arrProducts" -->
                     <div class="products-container">
                         <div class="product-card" *ngFor="let x of order.products">
                             <div class="product-img">
                                 <img [src]="x.product.image">
                             </div>
                             <div class="product-info">
-                                <p>Qty: {{x.qty}}</p>
                                 <p>{{x.product.name}}</p>
+                                <p>Qty: {{x.qty}}</p>
                             </div>
                         </div>
+                    </div>
+                    <div class="totalPrice-container">
+                        <p data-id={{order._id}} #totalPrice >Total price: {{foo(order._id)}}</p> 
                     </div>
                     <button class="btn-status" (click)="changeStatus($event)" data-value={{order.status}}
                         data-id={{order._id}}
@@ -52,10 +55,8 @@
                 </div>
 
             </div>
-
-
-
         </div>
+
     </section>
 
 </div>
