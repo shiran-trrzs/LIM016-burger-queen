@@ -41,7 +41,6 @@ export class ChefViewComponent implements AfterViewInit {
   }
 
   changeStatus(e: any) {
-    // this.allOrders[1].status = 'cooking';
   const idOrder = e.target.id;
   console.log(idOrder)
 

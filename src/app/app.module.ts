@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModulesModule } from './modules/modules.module';
 import { HttpClientModule } from '@angular/common/http'; // to make HTTP calls
 
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { JwtModule } from '@auth0/angular-jwt';
@@ -14,6 +15,7 @@ import { HeaderLoginComponent } from './header-login/header-login.component';
 import { WaiterPanelComponent } from './waiter-panel/waiter-panel.component';
 import { ChefPanelComponent } from './chef-panel/chef-panel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     }),
     NgbModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

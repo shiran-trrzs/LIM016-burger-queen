@@ -8,11 +8,16 @@ import { AuthService } from '../_services/auth.service';
 })
 export class WaiterPanelComponent implements OnInit {
 
+  name!: any;
+
   constructor(
     private authService: AuthService
   ) {}
 
-  ngOnInit(): void {} 
+  ngOnInit(): void {
+    const meserx = localStorage.getItem('username')
+    this.name = meserx
+  } 
 
   logoutUser() {
     this.authService.logout();

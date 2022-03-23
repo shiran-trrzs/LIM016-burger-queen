@@ -8,6 +8,7 @@ export interface LoginPayload {
   }
   
 export  interface User {
+    nameUser: string;
     roles:     Roles;
     _id:       string;
     email:     string;
