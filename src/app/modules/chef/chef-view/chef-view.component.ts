@@ -8,7 +8,7 @@ import { AuthService,  } from 'src/app/_services/auth.service';
 })
 export class ChefViewComponent implements OnInit {
 
-  // this.inputName.nativeElement.value = '';
+  statusPipe !: string 
 
   allOrders: any = [];
 
@@ -71,6 +71,11 @@ export class ChefViewComponent implements OnInit {
       console.error('There was an error!', error);
   }
   })
-
+  }
+  
+  changeSectionStatus(e: any) {
+    let statusSection = e.target.dataset.value;
+    console.log(statusSection)
+    this.statusPipe = statusSection
   }
 }
