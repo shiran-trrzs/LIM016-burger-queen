@@ -3,6 +3,9 @@
         <div class="btn-login" id="btn-email">
             <i class="fa-solid fa-envelope"></i>
             <input type="email" class="login-box" formControlName="email" name="first" #email placeholder="Email" required/>
+            <!-- <mat-error *ngIf="validateForm.hasError('email') && !validateForm.hasError('required')">
+                Please enter a valid email address
+            </mat-error> -->
         </div>
     
         <div class="btn-login" id="btn-password">
