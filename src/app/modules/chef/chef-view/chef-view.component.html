@@ -22,8 +22,7 @@
         <div class="orders-container-routing">
             <div class="orders-cards-container">
 
-                <div class="order-card" *ngFor="let order of allStatusOrders"> 
-                    <!-- (allStatusOrders | filterOrders: statusPipe | sortOrders | statusBtn) -->
+                <div class="order-card" *ngFor="let order of (allStatusOrders | filterOrders: statusPipe | sortOrders | statusBtn)"> 
                     <div class="order-info-container">
                         <div class="table-and-client">
                             <h4>To: {{ order.client }}</h4>
@@ -46,7 +45,7 @@
                     </div>
                     <button class="btn-status" (click)="changeStatus($event)" data-value={{order.status}}
                         data-id={{order._id}}
-                        [ngClass]="{'btn-pending': order.status === 'pending', 'btn-delivering': order.status === 'delivering', 'btn-delivered': order.status === 'delivered'}">
+                        [ngClass]="{'btn-pending': order.status === 'pending', 'btn-delivering': order.status === 'ready to serve', 'btn-delivered': order.status === 'delivered'}">
                         {{order.status | titlecase}}
                     </button>
                 </div>

@@ -19,7 +19,8 @@ export class ChefViewComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getOrdersOnTime() 
+    this.getOrdersOnTime(),
+    this.statusPipe= ''
   }
 
   getOrdersOnTime() {
