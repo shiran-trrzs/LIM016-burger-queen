@@ -129,7 +129,7 @@ export class AuthService {
   // Get json with all orders
   getOrders(): Observable<NewOrder> {
     return this.http
-    .get<NewOrder>(this.basePath + 'orders', this.httpOptions())
+    .get<NewOrder>(this.basePath + 'orders?limit=100', this.httpOptions())
     .pipe(
       retry(2),
       catchError(this.handleError)

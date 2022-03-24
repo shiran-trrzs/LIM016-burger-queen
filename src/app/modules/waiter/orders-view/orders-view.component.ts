@@ -15,6 +15,8 @@ export class OrdersViewComponent implements OnInit {
 
   allStatusOrders: object[] = []
   
+  arrOrderByUserId : any = []
+
   constructor(
     private authService: AuthService
   ) { }
@@ -27,9 +29,12 @@ export class OrdersViewComponent implements OnInit {
   getOrdersOnTime() {
     this.authService.getOrders().subscribe({
       next: response => {
+        let meserxId = localStorage.getItem('idUser')
         this.allOrders = response;
-        this.allStatusOrders = this.allOrders
-        console.log(this.allOrders)
+        this.arrOrderByUserId = this.allOrders.filter((e:any) => {
+          return meserxId === e.userId
+        })
+        this.allStatusOrders = this.arrOrderByUserId
       },
       error: error => {
         console.error('There was an error!', error);
@@ -38,7 +43,7 @@ export class OrdersViewComponent implements OnInit {
   }
 
   changeStatus(e: any) {
-    // this.allOrders[1].status = 'cooking';
+    
   const idOrder = e.target.id;
   console.log(idOrder)
 
@@ -62,7 +67,6 @@ export class OrdersViewComponent implements OnInit {
 
   this.authService.changeStatusOrder(idOrder, objStatus).subscribe({
     next: response => {
-      console.log(response);
       this.getOrdersOnTime()
     }
   })
@@ -71,7 +75,6 @@ export class OrdersViewComponent implements OnInit {
 
   changeSectionStatus(e: any) {
     let statusSection = e.target.dataset.value;
-    console.log(statusSection)
     this.statusPipe = statusSection
   }
 
