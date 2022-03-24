@@ -23,9 +23,13 @@ export class ChefViewComponent implements AfterViewInit {
     private authService: AuthService,
     private renderer: Renderer2
   ) {}
-
   ngAfterViewInit(): void {
-    this.getOrdersOnTime()
+    throw new Error('Method not implemented.');
+  }
+
+  ngOnInit(): void {
+    this.getOrdersOnTime(),
+    this.statusPipe= ''
   }
 
   getOrdersOnTime() {
