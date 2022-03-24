@@ -6,12 +6,11 @@ import { WaiterModule } from './waiter/waiter.module';
 import { NotFoundModule } from './not-found/not-found.module';
 import { ChefModule } from './chef/chef.module';
 
-
 @NgModule({
   declarations: [ 
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
     ChefModule,
