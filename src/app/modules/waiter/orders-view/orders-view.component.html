@@ -22,10 +22,8 @@
         <div class="menu-container-routing">
 
             <div class="orders-cards-container">
-                <div class="order-card" *ngFor="let order of (allOrders | filterOrders: statusPipe | sortOrders | statusBtn)">
-                    <div >
-                        <button class="btn-cancel-order" *ngIf="order.status !== 'delivered' && 'canceled'">x</button>
-                    </div>
+                <div class="order-card" *ngFor="let order of (arrOrderByUserId | filterOrders: statusPipe | sortOrders | statusBtn)">
+                    <button class="btn-cancel-order" *ngIf="order.status !== 'delivered' && 'canceled'">x</button>
                     <div class="order-info-container">
                         <div class="table-and-client">
                             <h4>To: {{order.client}} </h4>

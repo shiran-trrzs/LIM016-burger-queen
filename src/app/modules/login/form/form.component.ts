@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../_services/auth.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { LoginPayload } from 'src/app/interface/loginInterface';
 
 @Component({
   selector: 'app-form',
@@ -8,17 +10,25 @@ import { AuthService } from '../../../_services/auth.service';
 })
 export class FormComponent implements OnInit {
 
-  model: any = {};
-
   constructor(
     private authService: AuthService
   ) {}
 
   ngOnInit(): void {} 
 
-  login() {
-    this.model.action = 'login';
-    this.authService.loginForm(this.model).subscribe({
+  validateForm = new FormGroup({
+    email : new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required)
+  })
+
+  login(form: LoginPayload) {
+    console.log(typeof form)
+    const loginData = {
+      email: form.email,
+      password: form.password
+    }
+
+    this.authService.loginForm(loginData).subscribe({
       next: response => {
         if (response.token) {
           console.log(response.token)

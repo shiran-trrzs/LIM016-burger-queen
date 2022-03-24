@@ -17,6 +17,7 @@ import { ChefPanelComponent } from './chef-panel/chef-panel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,9 +45,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   
       }
     }),
-    NgbModule
-  ],
-  providers: [
   ],
   bootstrap: [AppComponent]
 })
