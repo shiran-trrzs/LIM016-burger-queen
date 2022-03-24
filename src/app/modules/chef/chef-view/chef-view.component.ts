@@ -8,16 +8,11 @@ import { AuthService,  } from 'src/app/_services/auth.service';
 })
 export class ChefViewComponent implements AfterViewInit {
 
-  @ViewChildren('totalPrice')
-  totalPrice!: ElementRef;
-
   statusPipe !: string;
 
   allOrders: any = [];
 
   allStatusOrders: any = [];
-
-  intentou: any;
 
   constructor(
     private authService: AuthService,
@@ -86,20 +81,7 @@ export class ChefViewComponent implements AfterViewInit {
     this.statusPipe = statusSection
   }
 
-  foo(idOfOrder: any) {
-    let x !: any;
-    this.allStatusOrders.map((e:any) => {
-    if (idOfOrder == e._id) {
-        x = e.products.map((ee: any) => {
-          this.intentou = ee.qty * ee.product.price
-          return this.intentou
-        })
-      }
-    })
-    console.log(this.intentou, x)
-  //this.intentou = this.totalPriceOrder.reduce((acc: number, num: number) => acc + num)
-  return this.intentou
-  }
+  
 
 
 }

@@ -43,9 +43,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="totalPrice-container">
-                        <p data-id={{order._id}} #totalPrice >Total price: {{foo(order._id)}}</p> 
-                    </div>
                     <button class="btn-status" (click)="changeStatus($event)" data-value={{order.status}}
                         data-id={{order._id}}
                         [ngClass]="{'btn-pending': order.status === 'pending', 'btn-delivering': order.status === 'ready to serve', 'btn-delivered': order.status === 'delivered'}">
