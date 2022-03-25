@@ -53,7 +53,7 @@ export class OrdersViewComponent implements OnInit {
   let statusOnTime = '';
 
   switch (status) {
-    case 'delivering':
+    case 'ready to serve':
       statusOnTime = 'delivered'
       break;
       

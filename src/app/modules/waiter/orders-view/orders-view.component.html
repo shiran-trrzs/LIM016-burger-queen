@@ -24,8 +24,10 @@
             <div class="orders-cards-container">
                 <div class="order-card"
                     *ngFor="let order of (arrOrderByUserId | filterOrders: statusPipe | sortOrders | statusBtn)">
-                    <button class="btn-cancel-order" *ngIf="order.status !== 'delivered' && order.status !=='canceled'"
-                        data-id={{order._id}} (click)="cancelOrder($event)">x</button>
+                    <div class="cancel-order">
+                        <button class="btn-cancel-order" *ngIf="order.status !== 'delivered' && order.status !=='canceled'"
+                            data-id={{order._id}} (click)="cancelOrder($event)"><p class="cross-btn">X</p></button>
+                    </div>
                     <div class="order-info-container">
                         <div class="table-and-client">
                             <h4>To: {{order.client}} </h4>

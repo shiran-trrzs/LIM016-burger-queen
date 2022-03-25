@@ -45,7 +45,7 @@
     flex-direction: column;
     background-color: white;
     padding: 12px;
-    border-radius: 5px;
+    border-radius: 10px;
     row-gap: 15px;
     justify-content: space-between;
     align-items: center;
@@ -67,6 +67,7 @@
         align-items: flex-start;
         row-gap: 25px;
         column-gap: 50%;
+        padding-bottom: 10%;
     }
 }
 
@@ -136,7 +137,7 @@
 .btn-status {
     width: 40%;
     border-radius: 10px;
-    padding: 3px;
+    padding: 8px;
     border: 1px solid;
     font-weight: bold;
 
@@ -161,4 +162,24 @@
     color: rgba(56, 5, 139, 1);
 }
 
+.cancel-order {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
 
+.btn-cancel-order {
+    background-color: red;
+    color: white;
+    border: none;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    border-radius: 3px;
+    align-items: center;
+}
+
+.cross-btn {
+    font-weight: bold;
+    margin-left: 1px;
+}
