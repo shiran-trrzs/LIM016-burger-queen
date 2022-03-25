@@ -57,7 +57,11 @@ export class OrdersViewComponent implements OnInit {
       statusOnTime = 'delivered'
       break;
       
-    default: alert('No tienes permisos de chef :(');
+    default: Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'You do not have permission to make this status change!',
+    });
       break;
   }  
 

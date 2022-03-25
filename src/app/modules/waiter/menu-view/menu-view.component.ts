@@ -1,7 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthService,  } from 'src/app/_services/auth.service';
-import {Products, Order} from '../../../interface/loginInterface'
+import {Products, Order} from '../../../interface/loginInterface';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-menu-view',
