@@ -116,23 +116,41 @@ export class MenuViewComponent implements OnInit {
       "client": valueInput,
       "products": this.eachProduct()
     }
-  
-    this.authService.newOrder(objOrder).subscribe({
-      next: response => {
-        localStorage.setItem('idOrder', response._id)
-        console.log(response)
-        }, 
-      error: error => {
-        console.error(error);
-      },
-      complete: () => {
-        console.log('Request complete');
-      }
     
-    }) 
-    this.inputName.nativeElement.value = '';
-    this.arrOrder.length = 0;
-    this.totalPriceOrder = 0;
+    if ( valueInput != '') {
+      this.authService.newOrder(objOrder).subscribe({
+        next: response => {
+          localStorage.setItem('idOrder', response._id)
+          console.log(response)
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your order has been sent',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          }, 
+        error: error => {
+          console.error(error);
+        },
+        complete: () => {
+          console.log('Request complete');
+        }
+      
+      }) 
+
+      this.inputName.nativeElement.value = '';
+      this.arrOrder.length = 0;
+      this.totalPriceOrder = 0;
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'The name field is empty, fill it and try again!'
+      })      
+    }
+
+
   } 
 
 }
