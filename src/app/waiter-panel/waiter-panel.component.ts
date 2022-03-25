@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-waiter-panel',
@@ -21,6 +22,16 @@ export class WaiterPanelComponent implements OnInit {
 
   logoutUser() {
     this.authService.logout();
+    // setTimeout(() => {
+    //   console.log('hi bish');
+    //   Swal.fire({
+    //     position: 'top-end',
+    //     icon: 'success',
+    //     title: 'You are successfully logged out!',
+    //     showConfirmButton: false,
+    //     timer: 1000
+    //   })
+    // }, 1000)
   }
 
 }

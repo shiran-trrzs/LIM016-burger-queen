@@ -146,7 +146,7 @@ export class MenuViewComponent implements OnInit {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'The name field is empty, fill it and try again!'
+        text: 'Something seems to be missing from your order, check it and try again!'
       })      
     }
 
