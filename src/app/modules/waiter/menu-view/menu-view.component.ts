@@ -125,7 +125,7 @@ export class MenuViewComponent implements OnInit {
           Swal.fire({
             position: 'top-end',
             icon: 'success',
-            title: 'Your order has been sent',
+            title: 'Your order has been sent! :)',
             showConfirmButton: false,
             timer: 1500
           })
