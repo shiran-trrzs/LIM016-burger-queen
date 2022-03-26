@@ -17,6 +17,8 @@ export class OrdersViewComponent implements OnInit {
   
   arrOrderByUserId : any = []
 
+  totalPrice: any;
+
   constructor(
     private authService: AuthService
   ) { }
@@ -80,6 +82,21 @@ export class OrdersViewComponent implements OnInit {
   changeSectionStatus(e: any) {
     let statusSection = e.target.dataset.value;
     this.statusPipe = statusSection
+  }
+
+  getTotalPrice(idOfOrder: any) {
+    let priceOfEachProduct !: any;
+    let arrPrices !: any;
+    this.allStatusOrders.map((e:any) => {
+    if (idOfOrder == e._id) {
+      arrPrices = e.products.map((ee: any) => {
+        priceOfEachProduct = ee.qty * ee.product.price
+          return priceOfEachProduct
+        })
+      }
+    })
+  this.totalPrice = arrPrices.reduce((acc: number, num: number) => acc + num)
+  return this.totalPrice
   }
 
   cancelOrder(e:any) {
