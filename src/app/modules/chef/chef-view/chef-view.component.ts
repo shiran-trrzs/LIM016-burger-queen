@@ -15,6 +15,8 @@ export class ChefViewComponent implements OnInit {
 
   allStatusOrders: any = [];
 
+  cookingTime: any
+
   constructor(
     private authService: AuthService
   ) {}
@@ -29,6 +31,7 @@ export class ChefViewComponent implements OnInit {
       next: response => {
         this.allOrders = response;
         this.allStatusOrders = this.allOrders
+        console.log(this.allStatusOrders)
       },
       error: error => {
         console.error('There was an error!', error);
@@ -73,5 +76,12 @@ export class ChefViewComponent implements OnInit {
   changeSectionStatus(e: any) {
     let statusSection = e.target.dataset.value;
     this.statusPipe = statusSection
+  }
+
+  getCookingTime(e:any) {
+    this.allStatusOrders.filter((e:any) => {
+      this.cookingTime = e.updatedAt
+      console.log(e.updatedAt);
+    })
   }
 }
