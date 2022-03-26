@@ -1,16 +1,26 @@
 <form class="btns-form" id="btns-login" [formGroup]="validateForm" (ngSubmit)="login(validateForm.value)" #form="ngForm">
     <div class="fix-position">
-        <div class="btn-login" id="btn-email">
+
+        <div class="form-email-container">
+            <div class="btn-login" id="btn-email">
             <i class="fa-solid fa-envelope"></i>
-            <input type="email" class="login-box" formControlName="email" name="first" #email placeholder="Email" required/>
-            <!-- <mat-error *ngIf="validateForm.hasError('email') && !validateForm.hasError('required')">
-                Please enter a valid email address
-            </mat-error> -->
+            <input type="email" class="login-box" formControlName="email" name="first" #email placeholder="Email"/>   
+        </div>  
+            <small *ngIf="emailFailed == true" class="messageEmailError">{{ messageEmailError }}</small>
         </div>
+        
     
         <div class="btn-login" id="btn-password">
             <i class="fa-solid fa-lock"></i>
-            <input type="password" class="login-box" formControlName="password" name="second" #password placeholder="Password" required/>
+            <input type="password" class="login-box" formControlName="password" name="second" #password placeholder="Password"/>
+        </div>
+
+        <div>
+            <small *ngIf="passwordFailed == true">{{ messagePasswordError }}</small>
+        </div>
+
+        <div>
+            <small *ngIf="requestFailed == true">{{ messageError }}</small>
         </div>
         
         <button type="submit" class="btn"> Log in </button>
