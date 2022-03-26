@@ -7,7 +7,7 @@ import Swal from 'sweetalert2'
   templateUrl: './chef-view.component.html',
   styleUrls: ['./chef-view.component.scss']
 })
-export class ChefViewComponent implements AfterViewInit {
+export class ChefViewComponent implements OnInit {
 
   statusPipe !: string;
 
@@ -21,9 +21,6 @@ export class ChefViewComponent implements AfterViewInit {
     private authService: AuthService,
     private renderer: Renderer2
   ) {}
-  ngAfterViewInit(): void {
-    throw new Error('Method not implemented.');
-  }
 
   ngOnInit(): void {
     this.getOrdersOnTime(),

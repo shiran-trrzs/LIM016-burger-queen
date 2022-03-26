@@ -56,12 +56,14 @@ export class FormComponent implements OnInit {
     if(form.email == '' && form.password !== '') {
       this. emailFailed= true;
       this.messagePasswordError = '';
-      this.messageEmailError = 'error email';
+      this.messageError = '';
+      this.messageEmailError = 'Email is missing';
     } else if (form.password == '' && form.email !== '') {
       this. passwordFailed= true;
+      this.messageError = '';
       this.messageEmailError = '';
-      this.messagePasswordError = 'error password';
-    } else {
+      this.messagePasswordError = ' Password is missing';
+    } else { 
       this.requestFailed = true;
       this.messageEmailError = '';
       this.messagePasswordError = '';
