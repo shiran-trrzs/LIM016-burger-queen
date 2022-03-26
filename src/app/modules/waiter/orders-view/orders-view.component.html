@@ -37,7 +37,7 @@
                         <div class="time">
                             <p>{{order.dateEntry | date: 'short'}}</p>
                         </div>
-                    </div>
+                    </div> 
 
                     <div class="products-container">
                         <div class="product-card" *ngFor="let product of order.products">
@@ -49,6 +49,9 @@
                                 <p>Qty: {{product.qty}} </p>
                             </div>
                         </div>
+                    </div>
+                    <div class="totalPrice-container">
+                        <p data-id={{order._id}} >Total price: {{getTotalPrice(order._id)}}</p> 
                     </div>
                     <button class="btn-status" (click)="changeStatus($event)" data-value={{order.status}}
                         data-id={{order._id}}

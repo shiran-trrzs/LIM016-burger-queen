@@ -10,6 +10,13 @@ import { LoginPayload } from 'src/app/interface/loginInterface';
 })
 export class FormComponent implements OnInit {
 
+  messageError !: string;
+  messageEmailError !: string;
+  messagePasswordError !: string;
+  requestFailed: boolean = false;
+  emailFailed: boolean = false;
+  passwordFailed: boolean = false;
+
   constructor(
     private authService: AuthService
   ) {}
@@ -22,7 +29,7 @@ export class FormComponent implements OnInit {
   })
 
   login(form: LoginPayload) {
-    console.log(typeof form)
+
     const loginData = {
       email: form.email,
       password: form.password
@@ -35,13 +42,32 @@ export class FormComponent implements OnInit {
           this.authService.setUser(response);
         }
       }, 
-      error: error => {
-        console.error(error);
+      error: () => {
+        this.showError(form);
       },
       complete: () => {
         console.log('Request complete');
       }
     });
+  }
+
+  showError(form: LoginPayload) {
+
+    if(form.email == '' && form.password !== '') {
+      this. emailFailed= true;
+      this.messagePasswordError = '';
+      this.messageEmailError = 'error email';
+    } else if (form.password == '' && form.email !== '') {
+      this. passwordFailed= true;
+      this.messageEmailError = '';
+      this.messagePasswordError = 'error password';
+    } else {
+      this.requestFailed = true;
+      this.messageEmailError = '';
+      this.messagePasswordError = '';
+      this.messageError = 'Something bad happened; please try again';
+    }
+   
   }
   
 }

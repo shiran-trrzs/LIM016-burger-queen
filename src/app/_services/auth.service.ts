@@ -44,7 +44,7 @@ export class AuthService {
     } else {
       console.error(
         `Backend returned code ${error.status}, ` +
-        `body was: ${error.error}`);
+        `body was: ${error}`);
     }
     return throwError(
       'Something bad happened; please try again later.');

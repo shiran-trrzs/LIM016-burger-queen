@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ViewChildren, AfterViewInit, Renderer2 } from '@angular/core';
 import { AuthService,  } from 'src/app/_services/auth.service';
 import Swal from 'sweetalert2'
 
@@ -7,9 +7,9 @@ import Swal from 'sweetalert2'
   templateUrl: './chef-view.component.html',
   styleUrls: ['./chef-view.component.scss']
 })
-export class ChefViewComponent implements OnInit {
+export class ChefViewComponent implements AfterViewInit {
 
-  statusPipe !: string 
+  statusPipe !: string;
 
   allOrders: any = [];
 
@@ -18,8 +18,12 @@ export class ChefViewComponent implements OnInit {
   cookingTime: any
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private renderer: Renderer2
   ) {}
+  ngAfterViewInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
   ngOnInit(): void {
     this.getOrdersOnTime(),
@@ -29,7 +33,7 @@ export class ChefViewComponent implements OnInit {
   getOrdersOnTime() {
     this.authService.getOrders().subscribe({
       next: response => {
-        this.allOrders = response;
+        this.allOrders = response; 
         this.allStatusOrders = this.allOrders
         console.log(this.allStatusOrders)
       },
@@ -69,10 +73,10 @@ export class ChefViewComponent implements OnInit {
     },
     error: error => {
       console.error('There was an error!', error);
-    }
-  })
-  }
-  
+   }
+  })  
+}
+
   changeSectionStatus(e: any) {
     let statusSection = e.target.dataset.value;
     this.statusPipe = statusSection

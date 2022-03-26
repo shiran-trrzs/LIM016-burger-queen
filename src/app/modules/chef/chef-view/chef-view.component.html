@@ -30,6 +30,7 @@
                         <div class="time">
                             <p>{{order.dateEntry | date: 'short'}}</p>
                             <!-- <p>{{cookingTime}}</p> -->
+                            <!-- <p>Update at: {{order.updatedAt | date: 'short'}}</p> -->
                         </div>
                     </div>
                     <div class="products-container">
@@ -38,8 +39,8 @@
                                 <img [src]="x.product.image">
                             </div>
                             <div class="product-info">
-                                <p>Qty: {{x.qty}}</p>
                                 <p>{{x.product.name}}</p>
+                                <p>Qty: {{x.qty}}</p>
                             </div>
                         </div>
                     </div>
@@ -52,6 +53,7 @@
 
             </div>
         </div>
+
     </section>
 
 </div>
