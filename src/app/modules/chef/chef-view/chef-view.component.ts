@@ -82,10 +82,6 @@ export class ChefViewComponent implements AfterViewInit {
     this.statusPipe = statusSection
   }
 
-  getCookingTime(e:any) {
-    this.allStatusOrders.filter((e:any) => {
-      this.cookingTime = e.updatedAt
-      console.log(e.updatedAt);
-    })
-  }
+ 
+
 }

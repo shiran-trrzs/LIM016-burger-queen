@@ -28,12 +28,14 @@
         font-weight: bold;
         width: 12%;
         padding: 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 15px;
 
         &:hover {
             background-color: rgb(255, 252, 248);
             color: rgb(75, 158, 235, 1);
-            border: 1px solid rgb(75, 158, 235, 1);
-            border-radius: 20px;
+            border: 1px solid rgb(75, 158, 235, 1);   
         }
     }
 }
