@@ -3,24 +3,22 @@
 
         <div class="form-email-container">
             <div class="btn-login" id="btn-email">
-            <i class="fa-solid fa-envelope"></i>
-            <input type="email" class="login-box" formControlName="email" name="first" #email placeholder="Email"/>   
-        </div>  
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" class="login-box" formControlName="email" name="first" #email placeholder="Email"/>   
+            </div>  
             <small *ngIf="emailFailed == true" class="messageEmailError">{{ messageEmailError }}</small>
         </div>
         
-    
-        <div class="btn-login" id="btn-password">
-            <i class="fa-solid fa-lock"></i>
-            <input type="password" class="login-box" formControlName="password" name="second" #password placeholder="Password"/>
-        </div>
-
-        <div>
+        <div class="form-password-container">
+            <div class="btn-login" id="btn-password">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" class="login-box" formControlName="password" name="second" #password placeholder="Password"/>
+            </div>
             <small *ngIf="passwordFailed == true">{{ messagePasswordError }}</small>
         </div>
 
-        <div>
-            <small *ngIf="requestFailed == true">{{ messageError }}</small>
+        <div class="general-message-container" *ngIf="requestFailed == true">
+            <small>{{ messageError }}</small>
         </div>
         
         <button type="submit" class="btn"> Log in </button>

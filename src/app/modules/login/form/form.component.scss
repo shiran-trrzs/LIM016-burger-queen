@@ -4,21 +4,22 @@
     margin-left: 48%;
     align-items: flex-end;
     height: 35vh;
-    padding-top: 150px;
+    padding-top: 100px;
+    padding-bottom: 52px;
       
         .btn-login {
             display: flex;
             align-items: center;
             padding-left: 7%;
-            width: 18vw;
-            height: 5vh;
+            width: 22vw;
+            height: 5.2vh;
             background: rgba(255, 255, 255, 0.465);
             border-radius: 30px;
             text-align: center;
-            margin: 93px;
             color: rgba(244, 164, 43, 1);
-            font-size: 20px;
+            font-size: 25px;
             border: 2.8px solid #F4A42B;
+            margin-bottom: 19px;
         }
 }
 
@@ -50,16 +51,44 @@ input:-webkit-autofill:active{
 
 .btn {
     width: 9vw;
-	height: 5vh;
-	background: linear-gradient(90deg, #FFE259 15.1%, #FFA751 85.42%);
-	border-radius: 30px;
-	border-style: none;
-	text-align: center;
-	font-size: 18px;
-    color: rgb(255, 255, 255);
-    margin-left: 170px;
+    background: linear-gradient(90deg, #FFE259 15.1%, #FFA751 85.42%);
+    border-radius: 30px;
+    border-style: none;
+    text-align: center;
+    font-size: 23px;
+    color: white;
+    padding: 13px;
+}
+
+.fix-position {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.general-message-container {
+    margin-top: -40px;
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+    color: peru;
+    font-weight: bold;
 }
 
 .messageEmailError {
     margin: 0px;
+}
+
+.form-email-container, .form-password-container {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    small {
+        font-size: 1.3rem;
+        color: peru;
+        font-weight: bold;
+    }
 }
