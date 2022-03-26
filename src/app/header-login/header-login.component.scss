@@ -84,3 +84,24 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
 }
+
+@media(min-width: 1700px) {
+    .container-login {
+      background-image: url("../../assets/images/inicio-background.png");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      height: 100vh;
+    }
+
+    .nav-login {
+        padding-top: 3%;
+        margin-right: 8%;
+        margin-left: 0%;
+    }
+
+    .btn-suggestion {
+        width: 74vw
+    }
+  }

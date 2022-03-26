@@ -183,3 +183,10 @@
     font-weight: bold;
     margin-left: 1px;
 }
+
+@media(min-width: 1700px) {
+
+    .orders-cards-container {
+        height: 680px;
+    }
+}
