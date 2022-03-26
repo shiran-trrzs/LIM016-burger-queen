@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AuthService,  } from 'src/app/_services/auth.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-chef-view',
@@ -28,7 +29,6 @@ export class ChefViewComponent implements OnInit {
       next: response => {
         this.allOrders = response;
         this.allStatusOrders = this.allOrders
-        console.log(this.allOrders)
       },
       error: error => {
         console.error('There was an error!', error);
@@ -38,10 +38,8 @@ export class ChefViewComponent implements OnInit {
 
   changeStatus(e: any) {
   const idOrder = e.target.id;
-  console.log(idOrder)
 
   const status = e.target.value;
-  console.log(status);
 
   let statusOnTime = '';
 
@@ -49,12 +47,12 @@ export class ChefViewComponent implements OnInit {
     case 'pending':
       statusOnTime = 'delivering'
       break;
-
-    case 'delivering':
-      statusOnTime = 'delivered'
-      break;
       
-    default:
+    default: Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'You do not have permission to make this status change!',
+    });
       break;
   }  
 
@@ -64,7 +62,6 @@ export class ChefViewComponent implements OnInit {
 
   this.authService.changeStatusOrder(idOrder, objStatus).subscribe({
     next: response => {
-      console.log(response);
       this.getOrdersOnTime()
     },
     error: error => {
@@ -75,7 +72,6 @@ export class ChefViewComponent implements OnInit {
   
   changeSectionStatus(e: any) {
     let statusSection = e.target.dataset.value;
-    console.log(statusSection)
     this.statusPipe = statusSection
   }
 }
