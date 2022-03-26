@@ -199,6 +199,7 @@ h2, h4 {
     border-radius: 10px;
     width:100%;
     padding: 10px;
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
 
     .food-img {
         display: flex;
@@ -249,7 +250,7 @@ input {
     border: 2.8px solid #F4A42B;
     width: 70%;
     margin: 1.5%;
-    padding: 1%;
+    padding-left: 3%;
 }
 
 input:focus {
@@ -258,7 +259,7 @@ input:focus {
 }
 
 .name-client {
-    margin-left: 13.5%;
+    margin-left: 10%;
 }
 
 .container-name {

@@ -8,13 +8,13 @@
             <button class="nav-menu" data-value="pending">
                 Pending
             </button>
-            <button class="nav-menu" data-value="delivering" >
+            <button class="nav-menu" data-value="delivering">
                 Ready to serve
             </button>
-            <button class="nav-menu" data-value="delivered" >
+            <button class="nav-menu" data-value="delivered">
                 Delivered
             </button>
-            <button class="nav-menu" data-value="canceled" >
+            <button class="nav-menu" data-value="canceled">
                 Canceled
             </button>
         </nav>
@@ -22,8 +22,14 @@
         <div class="menu-container-routing">
 
             <div class="orders-cards-container">
-                <div class="order-card" *ngFor="let order of (arrOrderByUserId | filterOrders: statusPipe | sortOrders | statusBtn)">
-                    <button class="btn-cancel-order" *ngIf="order.status !== 'delivered' && 'canceled'">x</button>
+                <div class="order-card"
+                    *ngFor="let order of (arrOrderByUserId | filterOrders: statusPipe | sortOrders | statusBtn)">
+                    <div class="cancel-order">
+                        <button class="btn-cancel-order"
+                            *ngIf="order.status !== 'delivered' && order.status !=='canceled'">
+                            <p class="cross-btn" data-id={{order._id}} (click)="cancelOrder($event)">X</p>
+                        </button>
+                    </div>
                     <div class="order-info-container">
                         <div class="table-and-client">
                             <h4>To: {{order.client}} </h4>
