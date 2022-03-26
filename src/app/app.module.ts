@@ -14,9 +14,6 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { HeaderLoginComponent } from './header-login/header-login.component';
 import { WaiterPanelComponent } from './waiter-panel/waiter-panel.component';
 import { ChefPanelComponent } from './chef-panel/chef-panel.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-
 
 @NgModule({
   declarations: [
