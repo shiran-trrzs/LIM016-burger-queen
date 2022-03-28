@@ -98,3 +98,9 @@ input:-webkit-autofill:active{
         font-weight: bold;
     }
 }
+
+@media(min-width: 1700px) {
+    .btns-form {
+        margin-left: 36%;
+    }
+}

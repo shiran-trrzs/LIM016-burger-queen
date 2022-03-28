@@ -5,7 +5,7 @@
             <button class="nav-menu" data-value="">
                 All
             </button>
-            <button class="nav-menu" data-value="pending"  routerLink="/waiter/pending" >
+            <button class="nav-menu" data-value="pending" >
                 Pending
             </button>
             <button class="nav-menu" data-value="delivering" >
@@ -35,7 +35,8 @@
                             <h4>To: {{order.client}} </h4>
                         </div>
                         <div class="time">
-                            <p>{{order.dateEntry | date: 'short'}}</p>
+                            <p>Created at: {{order.dateEntry | date: 'short'}}</p>
+                            <p *ngIf="order.status !== 'pending' ">Updated at: {{order.updatedAt | date: 'short'}}</p>
                         </div>
                     </div> 
 

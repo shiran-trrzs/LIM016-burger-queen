@@ -1,0 +1,62 @@
+.scroll-container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    background-image: url('../../../../assets/images/404-complete.gif');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100%;
+    overflow-y: hidden;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.scroll-text {
+    display: flex;
+    align-items: center;
+    height: 10%;
+    color:white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+    background-color: rgba(22, 22, 22, 0.28);
+}
+
+.scroll-text-two {
+    display: flex;
+    align-items: center;
+    height: 10%;
+    color:white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+    background-color: rgba(22, 22, 22, 0.28);
+}
+
+@keyframes cambio{
+    0%{margin-left: 0;}
+    20%{margin-left: 0;}
+  
+    40%{margin-left: -100%;}
+    50%{margin-left: -100%;}
+  
+    70%{margin-left: -200%;}
+    100%{margin-left: -200%;}
+  }
+  .fondo1{
+    background-image: url("https://studioghiblimovies.com/wp-content/uploads/2018/11/sNZ1Ux2.jpg");
+    width: 100%;
+    height: 45rem;
+  }
+  .fondo2{
+    background: url("https://i.pinimg.com/originals/2a/5e/72/2a5e72b3abdc165f368a8eaa23c7797c.jpg");
+    width: 100%;
+    height: 45rem;
+  }
+  .fondo3{
+    background: url("https://images3.alphacoders.com/245/thumb-1920-245067.jpg");
+    width: 100%;
+    height: 45rem;
+  }
