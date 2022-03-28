@@ -15,6 +15,7 @@ import { HeaderLoginComponent } from './header-login/header-login.component';
 import { WaiterPanelComponent } from './waiter-panel/waiter-panel.component';
 import { ChefPanelComponent } from './chef-panel/chef-panel.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,7 @@ import { ChefPanelComponent } from './chef-panel/chef-panel.component';
         },
   
       }
-    }),
+    })
   ],
   bootstrap: [AppComponent]
 })

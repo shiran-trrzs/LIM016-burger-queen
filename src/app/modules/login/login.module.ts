@@ -6,6 +6,7 @@ import { LoginRoutingModule } from './login-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { QuoteComponent } from './quote/quote.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
   ],
   exports: [
     FormComponent
-  ]
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class LoginModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from './_services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ export class AppComponent implements OnInit {
   tareas: any[] = [];
 
   constructor (
+    private appService: AuthService,
   ){}
 
   ngOnInit(): void {
