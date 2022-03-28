@@ -2,7 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OrdersViewComponent } from './orders-view.component';
 import { RouterTestingModule } from '@angular/router/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing'
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { PipeModuleModule } from 'src/app/pipe-module.module';
 
 describe('OrdersViewComponent', () => {
   let component: OrdersViewComponent;
@@ -14,6 +15,7 @@ describe('OrdersViewComponent', () => {
       imports: [
         RouterTestingModule,
         HttpClientTestingModule,
+        PipeModuleModule
       ]
     })
     .compileComponents();

@@ -1,8 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChefViewComponent } from './chef-view.component';
-import { RouterTestingModule } from '@angular/router/testing'
-import { HttpClientTestingModule } from '@angular/common/http/testing'
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { PipeModuleModule } from 'src/app/pipe-module.module';
 
 describe('ChefViewComponent', () => {
   let component: ChefViewComponent;
@@ -14,6 +15,7 @@ describe('ChefViewComponent', () => {
       imports: [
         RouterTestingModule,
         HttpClientTestingModule,
+        PipeModuleModule
       ]
     })
     .compileComponents();

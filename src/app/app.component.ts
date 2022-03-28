@@ -8,7 +8,7 @@ import { AuthService } from './_services/auth.service';
 })
 
 export class AppComponent implements OnInit {
-  title = 'burgerland';
+  title = 'Burgerland';
 
   tareas: any[] = [];
 
