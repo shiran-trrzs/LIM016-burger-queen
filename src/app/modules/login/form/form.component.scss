@@ -1,3 +1,8 @@
+:root {
+    --animate-delay: 2s;
+  }
+  
+
 .btns-form {
     display: flex;
     justify-content: center;
@@ -74,6 +79,7 @@ input:-webkit-autofill:active{
     font-size: 1.3rem;
     color: peru;
     font-weight: bold;
+    animation: bounce;
 }
 
 .messageEmailError {
