@@ -1,0 +1,125 @@
+{
+  "configVersion": 1,
+  "timestamp": 1648489884126,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/index.html",
+        "/main.e4ba88fc00b1dc3e.js",
+        "/manifest.webmanifest",
+        "/polyfills.a23b98e842c5ad2e.js",
+        "/runtime.9bbe0b203bd223b6.js",
+        "/styles.4fa86f86e6f8ff5b.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/404-complete.d6ac2d29247224c8.gif",
+        "/Inicio.1add70b2d1427c20.png",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/images/404-complete.gif",
+        "/assets/images/Icon.png",
+        "/assets/images/Inicio.png",
+        "/assets/images/MESERX 1.png",
+        "/assets/images/Trash.png",
+        "/assets/images/chefx.png",
+        "/assets/images/flag.png",
+        "/assets/images/good food, good mood!.png",
+        "/assets/images/hamburger.png",
+        "/assets/images/icon-logout.png",
+        "/assets/images/icon-menu.png",
+        "/assets/images/icon-orders.png",
+        "/assets/images/inicio-background.png",
+        "/assets/images/menos.png",
+        "/assets/images/màs.png",
+        "/assets/images/simple bur 2.png",
+        "/assets/images/trash-item.png",
+        "/assets/images/waiter-panel-background.png",
+        "/inicio-background.a32c0160e17097fe.png",
+        "/màs.2fe356b65637e983.png",
+        "/waiter-panel-background.11c4cc306b37b9ad.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/404-complete.d6ac2d29247224c8.gif": "99cf8ba708c1ea6423e14ae95baaa0436489f632",
+    "/Inicio.1add70b2d1427c20.png": "54676a3d9c248b03ee1779ca7ccadaaa518e6be3",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/images/404-complete.gif": "99cf8ba708c1ea6423e14ae95baaa0436489f632",
+    "/assets/images/Icon.png": "dde72297067a2d0789653c63fac6463234e90683",
+    "/assets/images/Inicio.png": "54676a3d9c248b03ee1779ca7ccadaaa518e6be3",
+    "/assets/images/MESERX 1.png": "8fd073dee075d6a779dbf98a1ab5560adce10f1f",
+    "/assets/images/Trash.png": "e985617284ca6f7bc1ea37e48eefd5ff48313bbd",
+    "/assets/images/chefx.png": "dd5fe434513d782dcb6e29fbeb16b748514c2976",
+    "/assets/images/flag.png": "31440d94447d96d8b56cd5bf4e2484b01e77df46",
+    "/assets/images/good food, good mood!.png": "3b584aa5d8e3d101cf853e5d87bd0a5b91d3580f",
+    "/assets/images/hamburger.png": "66828b4d7e485fd8ce74ce84a63b326959f40d9a",
+    "/assets/images/icon-logout.png": "a34efad8aa86dfcf9450f194f7e0fb228a909709",
+    "/assets/images/icon-menu.png": "bf6f92d999d13f9fe47cddbfcd6e619dabdc9344",
+    "/assets/images/icon-orders.png": "1e8862ba7d047e021514935923e1f2787489cc94",
+    "/assets/images/inicio-background.png": "7474e6c027b437a091e840059c08af5a38312fb6",
+    "/assets/images/menos.png": "a233a4b342b0f53cb48ef185bed9bb45cc68a622",
+    "/assets/images/màs.png": "b16e7c071f7d1e7c5cb81a1c60f4fa6c93072d6e",
+    "/assets/images/simple bur 2.png": "a8db9b2618a3f59dd7260b6c563a85e301419d7a",
+    "/assets/images/trash-item.png": "fd70b735dbac603bfb4768f16b49caa3a37f2eb6",
+    "/assets/images/waiter-panel-background.png": "73343c1f097905bb4eafb40bde4a1d76a1f046d2",
+    "/index.html": "3c96d9f311c264fb4173642c6404a0b1d650fcef",
+    "/inicio-background.a32c0160e17097fe.png": "7474e6c027b437a091e840059c08af5a38312fb6",
+    "/main.e4ba88fc00b1dc3e.js": "9264f5b8f5141961ac5d748075eb992b8c59c804",
+    "/manifest.webmanifest": "c0986bcb6de9dee65078f6d6aea6aa84b1721ef8",
+    "/màs.2fe356b65637e983.png": "b16e7c071f7d1e7c5cb81a1c60f4fa6c93072d6e",
+    "/polyfills.a23b98e842c5ad2e.js": "128592c800c5e0c405a0daed0ce158d0666e1692",
+    "/runtime.9bbe0b203bd223b6.js": "a97a1656c872e7c58dd281f674ce22f136cac69e",
+    "/styles.4fa86f86e6f8ff5b.css": "0bb5a19d2b35f4c1128f711b383d1462f4c4be71",
+    "/waiter-panel-background.11c4cc306b37b9ad.png": "73343c1f097905bb4eafb40bde4a1d76a1f046d2"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
