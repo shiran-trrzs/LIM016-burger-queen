@@ -1,3 +1,39 @@
+@mixin minimum-size {
+    @media (min-width: 1000px) and (max-width: 1340px) {
+        @content
+    }
+  }
+  
+  @mixin medium-size {
+    @media (min-width: 1341px) and (max-width: 1410px) {
+        @content
+    }
+  }
+  
+  @mixin max-size {
+    @media (min-width: 1411px) and (max-width: 1439px) {
+        @content
+    }
+  }
+  
+  @mixin min-height($height) {
+    @media (min-height: $height) {
+        @content
+    }
+  }
+  
+  @mixin media-query-custom-width($min-width, $max-width) {
+    @media (min-width: $min-width) and (max-width: $max-width) {
+        @content
+    }
+  }
+  
+  @mixin media-query-custom-height($min-height, $max-height) {
+    @media (min-height: $min-height) and (max-height: $max-height) {
+        @content
+    }
+  }
+
 .container-chef-view {
     display: flex;
     flex-direction: row;
@@ -12,6 +48,10 @@
     padding: 25px;
     width: 100%;
     row-gap: 25px;
+
+    @include media-query-custom-width (1000px, 1439px) { 
+        row-gap: 25px;
+    }
 }
 
 .nav-btns-order {
@@ -53,13 +93,22 @@
     font-size: 0.8rem;
     font-weight: bold;
     width: 22%;
+
+    @include media-query-custom-width (1000px, 1439px) { 
+        font-size: 0.6rem;
+    }
 }
 
 
     .order-info-container {
         display: flex;
         column-gap: 50px;
-        align-items: center
+        align-items: center;
+
+        @include media-query-custom-width (1000px, 1439px) { 
+            font-size:  0.75rem;
+         }
+
     }
 
     .products-container {
@@ -69,6 +118,10 @@
         align-items: flex-start;
         row-gap: 25px;
         column-gap: 50%;
+
+        @include media-query-custom-width (1000px, 1439px) { 
+            row-gap: 18px;
+        }
     }
 
 .table-and-client {
@@ -112,6 +165,30 @@
         width: 6px; /*ancho del scroll vertical*/
         
     }
+
+    @include media-query-custom-width (1000px, 1439px) { 
+        height: 440px;
+    }
+
+    @include min-height(693px) {
+        height: 460px;
+    }
+
+    @include min-height(730px) {
+        height: 485px;
+    }
+
+    @include min-height(770px) {
+        height: 520px;
+    }
+
+    @include min-height(800px) {
+        height: 565px;
+    }
+
+    @include min-height(840px) {
+        height: 590px;
+    }
 }
 
 .product-img {
@@ -123,6 +200,10 @@
      img {
          height: 40px;
      }
+
+     @include media-query-custom-width (1000px, 1439px) { 
+        height: 32px;
+    }
 }
 
 .product-info {

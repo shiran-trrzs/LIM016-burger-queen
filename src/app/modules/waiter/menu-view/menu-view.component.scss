@@ -1,3 +1,33 @@
+@mixin minimum-size {
+    @media (min-width: 1000px) and (max-width: 1340px) {
+        @content
+    }
+  }
+  
+  @mixin medium-size {
+    @media (min-width: 1341px) and (max-width: 1410px) {
+        @content
+    }
+  }
+  
+  @mixin max-size {
+    @media (min-width: 1411px) and (max-width: 1439px) {
+        @content
+    }
+  }
+  
+  @mixin max-height {
+    @media (min-height: 700px) {
+        @content
+    }
+  }
+  
+  @mixin media-query-custom($min-width, $max-width) {
+    @media (min-width: $min-width) and (max-width: $max-width) {
+        @content
+    }
+  }
+
 h2, h4 {
     margin: 0px;
 }
@@ -38,6 +68,10 @@ h2, h4 {
     padding: 22px;
     border-radius: 20px;
     justify-content: space-between;
+
+    @include media-query-custom(1000px, 1439px) { 
+        height: 89%;
+      }
 }
 
 .order{
@@ -66,7 +100,12 @@ h2, h4 {
 
 .img-order {
     height: 70px;
-    max-width: 60px
+    max-width: 60px;
+
+    @include media-query-custom (1000px, 1439px) { 
+        height: 50px;
+    max-width: 60px;
+    }
 }
 
 .plus-trash {
@@ -107,6 +146,11 @@ h2, h4 {
     }
     &::-webkit-scrollbar {
         width: 4px; /*ancho del scroll vertical*/
+    }
+
+    @include media-query-custom (1000px, 1439px) { 
+        height: 35%;
+        margin-bottom: 12px;
     }
 } 
 
@@ -207,6 +251,10 @@ h2, h4 {
 
         img {
             height: 90px;
+
+            @include media-query-custom (1000px, 1439px) { 
+                height: 52px;
+            }
         }
     }
 
@@ -224,7 +272,11 @@ h2, h4 {
     display: flex;
     flex-direction: column;
     height: 59vh;
-    margin-top: 10%
+    margin-top: 10%;
+
+    @include media-query-custom(1000px, 1439px) { 
+        height: 52vh;
+    }
 }
 
 .container-position {
