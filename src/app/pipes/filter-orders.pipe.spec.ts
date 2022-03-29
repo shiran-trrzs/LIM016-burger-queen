@@ -5,4 +5,10 @@ describe('FilterOrdersPipe', () => {
     const pipe = new FilterOrdersPipe();
     expect(pipe).toBeTruthy();
   });
+
+  it('', () => {
+    const pipe = new FilterOrdersPipe();
+    // const result = pipe.transform('')
+  })
 });
+
