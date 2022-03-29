@@ -52,12 +52,18 @@ describe('FormComponent', () => {
     expect(component.validateForm.invalid).toBeFalse()
   });
 
-  it('Should return valid form', () => {
+  it('Should update user data', () => {
     const email = component.validateForm.controls['email']
     const password = component.validateForm.controls['password']
-    email.setValue('hannah@burgerland.com')
-    password.setValue('12345')
+    email.setValue('waiter@burgerland.com')
+    password.setValue('changeme')
 
-    expect(component.validateForm.invalid).toBeFalse()
+    const btnElement = fixture.debugElement.query(By.css('button.btn'))
+    btnElement.nativeElement.click()
+    const testData = {
+      email: 'waiter@burgerland.com',
+      password: 'changeme'
+    }
+    expect(component.loginData).toEqual(testData)
   });
 });

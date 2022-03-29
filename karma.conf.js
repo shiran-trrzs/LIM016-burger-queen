@@ -26,7 +26,7 @@ module.exports = function (config) {
     },
     coverageReporter: {
       dir: require('path').join(__dirname, './coverage/burgerland'),
-      subdir: '.',
+      subdir: './src',
       reporters: [
         { type: 'html' },
         { type: 'text-summary' }

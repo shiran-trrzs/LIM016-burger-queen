@@ -10,6 +10,7 @@ import { LoginPayload } from 'src/app/interface/loginInterface';
 })
 export class FormComponent implements OnInit {
 
+  loginData !: LoginPayload;
   messageError !: string;
   messageEmailError !: string;
   messagePasswordError !: string;
@@ -30,12 +31,12 @@ export class FormComponent implements OnInit {
 
   login(form: LoginPayload) {
 
-    const loginData = {
+    this.loginData = {
       email: form.email,
       password: form.password
     }
 
-    this.authService.loginForm(loginData).subscribe({
+    this.authService.loginForm(this.loginData).subscribe({
       next: response => {
         if (response.token) {
           console.log(response.token)
