@@ -7,17 +7,13 @@ import { AuthGuard } from './_guards/auth.guard';
 import { ChefPanelComponent } from './chef-panel/chef-panel.component';
 
 const routes: Routes = [  
-    {
-        path: '', 
-        pathMatch:'full', 
-        redirectTo:'Home'
-    },
+
     {
         path:'',
         component: HeaderLoginComponent,
         children: [
           {
-            path:'Home',
+            path:'',
             loadChildren: ()=>
             import ('./modules/login/login.module').then((m)=> m.LoginModule)
           }
