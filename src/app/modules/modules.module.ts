@@ -6,7 +6,7 @@ import { WaiterModule } from './waiter/waiter.module';
 import { NotFoundModule } from './not-found/not-found.module';
 import { ChefModule } from './chef/chef.module';
 import { PipeModuleModule } from '../pipe-module.module';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
   declarations: [ 
@@ -20,6 +20,7 @@ import { PipeModuleModule } from '../pipe-module.module';
     LoginModule,
     WaiterModule,
     NotFoundModule
-  ]
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class ModulesModule { }

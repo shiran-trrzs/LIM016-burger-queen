@@ -14,7 +14,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { HeaderLoginComponent } from './header-login/header-login.component';
 import { WaiterPanelComponent } from './waiter-panel/waiter-panel.component';
 import { ChefPanelComponent } from './chef-panel/chef-panel.component';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -44,6 +44,7 @@ import { ChefPanelComponent } from './chef-panel/chef-panel.component';
       }
     })
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

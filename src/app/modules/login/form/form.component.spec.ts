@@ -5,6 +5,7 @@ import { FormComponent } from './form.component';
 import { RouterTestingModule } from '@angular/router/testing'
 import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { By } from '@angular/platform-browser'
 
 describe('FormComponent', () => {
   let component: FormComponent;
@@ -33,5 +34,30 @@ describe('FormComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('Should return invalid form', () => {
+    const email = component.validateForm.controls['email']
+    email.setValue('waitress@burgerland.com')
+
+    expect(component.validateForm.invalid).toBeTrue()
+  });
+
+  it('Should return valid form', () => {
+    const email = component.validateForm.controls['email']
+    const password = component.validateForm.controls['password']
+    email.setValue('hannah@burgerland.com')
+    password.setValue('12345')
+
+    expect(component.validateForm.invalid).toBeFalse()
+  });
+
+  it('Should return valid form', () => {
+    const email = component.validateForm.controls['email']
+    const password = component.validateForm.controls['password']
+    email.setValue('hannah@burgerland.com')
+    password.setValue('12345')
+
+    expect(component.validateForm.invalid).toBeFalse()
   });
 });
