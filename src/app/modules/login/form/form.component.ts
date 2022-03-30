@@ -43,8 +43,9 @@ export class FormComponent implements OnInit {
           this.authService.setUser(response);
         }
       }, 
-      error: () => {
+      error: (err) => {
         this.showError(form);
+        console.log(err.error.message);
       },
       complete: () => {
         console.log('Request complete');

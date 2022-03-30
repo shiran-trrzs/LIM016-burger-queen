@@ -42,7 +42,7 @@ export class AuthService {
     } else {
       console.error(
         `Backend returned code ${error.status}, ` +
-        `body was: ${error}`);
+        `body was: ${error.message}`);
     }
     return throwError(
       'Something bad happened; please try again later.');
@@ -53,13 +53,13 @@ export class AuthService {
    this.user.email= data.email
    return this.http
       .post<LoginResponse>(this.basePath + 'auth', data)
-      .pipe(
-        retry(2),
-        catchError(this.handleError)
-      );
+      // .pipe(
+      //   retry(2),
+      //   catchError(this.handleError)
+      // );
   }
 
-    // Get data from backend (users object)
+    // Get data from backend (users object) | Revisar si lo necesitamos
     getData(data: LoginPayload): Observable<LoginResponse> {
       return this.http
         .post<LoginResponse>(this.basePath + 'users', data, this.httpOptions())
