@@ -7,7 +7,6 @@ import { AuthGuard } from './_guards/auth.guard';
 import { ChefPanelComponent } from './chef-panel/chef-panel.component';
 
 const routes: Routes = [  
-
     {
         path:'',
         component: HeaderLoginComponent,

@@ -53,36 +53,24 @@ export class AuthService {
    this.user.email= data.email
    return this.http
       .post<LoginResponse>(this.basePath + 'auth', data)
-      // .pipe(
-      //   retry(2),
-      //   catchError(this.handleError)
-      // );
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      );
   }
-
-    // Get data from backend (users object) | Revisar si lo necesitamos
-    getData(data: LoginPayload): Observable<LoginResponse> {
-      return this.http
-        .post<LoginResponse>(this.basePath + 'users', data, this.httpOptions())
-        .pipe(
-          retry(2),
-          catchError(this.handleError)
-        );
-    }
 
   //  After login save token and other values(if any) in localStorage
   setUser(resp: LoginResponse) {
     localStorage.setItem('token', resp.token);
     this.token = resp.token
+
     this.getUser().subscribe((res) => {
       localStorage.setItem('idUser', res._id);
       localStorage.setItem('username', res.nameUser)
-     console.log(res)
       if (res.roles.name === 'chef') {
-        console.log('Log in chef')
         this.router.navigate(['/chef']);
       } else if (res.roles.name === 'meserx') {
-        console.log('Log in meserx')
-        this.router.navigate(['/waiter'])
+        this.router.navigate(['/waiter']);
       }
       localStorage.setItem('rol', res.roles.name);
     })
@@ -106,7 +94,6 @@ export class AuthService {
   // After clearing localStorage redirect to login screen
   logout() {
     localStorage.clear();
-    // this.router.navigate(['Home/aboutus']);
   }
 
   // Get json with all products
