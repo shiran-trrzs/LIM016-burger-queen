@@ -11,7 +11,7 @@ import { LoginPayload } from 'src/app/interface/loginInterface';
 export class FormComponent implements OnInit {
 
   loginData !: LoginPayload;
-  messageError !: string;
+  messageError !: string; 
   messageEmailError !: string;
   messagePasswordError !: string;
   requestFailed: boolean = false;

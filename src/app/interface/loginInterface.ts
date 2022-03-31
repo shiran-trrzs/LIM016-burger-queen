@@ -52,10 +52,10 @@ export interface NewOrder {
     client:        string;
     products:      ProductElement[];
     status:        string;
-    dateEntry:     Date;
-    dateProcessed: Date;
-    createdAt:     Date;
-    updatedAt:     Date;
+    dateEntry:     string;
+    dateProcessed: string;
+    createdAt:     string;
+    updatedAt:     string;
 }
 
 export interface ProductElement {
@@ -70,9 +70,9 @@ export interface ProductProduct {
     price:     number;
     image:     string;
     type:      string;
-    dateEntry: Date;
-    createdAt: Date;
-    updatedAt: Date;
+    dateEntry: string;
+    createdAt: string;
+    updatedAt: string;
 }
 
 export interface OrderInfo {

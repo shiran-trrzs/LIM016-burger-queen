@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1648506127329,
+  "timestamp": 1648705279199,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -12,7 +12,7 @@
       },
       "urls": [
         "/index.html",
-        "/main.06f9be64d28a871d.js",
+        "/main.d703b7bf9bd62eff.js",
         "/manifest.webmanifest",
         "/polyfills.707854fcfb8e95ca.js",
         "/runtime.9c8af933fc71dfa2.js",
@@ -93,10 +93,10 @@
     "/assets/images/simple bur 2.png": "a8db9b2618a3f59dd7260b6c563a85e301419d7a",
     "/assets/images/trash-item.png": "fd70b735dbac603bfb4768f16b49caa3a37f2eb6",
     "/assets/images/waiter-panel-background.png": "73343c1f097905bb4eafb40bde4a1d76a1f046d2",
-    "/index.html": "724793b8ff94cc3e65b460c12a2e68994bcfcaa1",
+    "/index.html": "ace4d7ccadd520a333d1edc7d33a94178aa8a96c",
     "/inicio-background.a32c0160e17097fe.png": "7474e6c027b437a091e840059c08af5a38312fb6",
-    "/main.06f9be64d28a871d.js": "50a71b3e2296866c15cd8cf05ad9b63de387b80d",
-    "/manifest.webmanifest": "12b12f63af4f8ff96e6546f995d36a7dd6c6a937",
+    "/main.d703b7bf9bd62eff.js": "061902a49e5ad57a3cd35d7da66b64f0eda6fea1",
+    "/manifest.webmanifest": "1673a4c2f87d6604ee57095bf80b0af830a7b9fd",
     "/màs.2fe356b65637e983.png": "b16e7c071f7d1e7c5cb81a1c60f4fa6c93072d6e",
     "/polyfills.707854fcfb8e95ca.js": "ec619509d04cdbdf51f48e97a0ee4ab673a97d4b",
     "/runtime.9c8af933fc71dfa2.js": "91f652801dc52e39c4bcdf232d59ab8b04efd1d1",
