@@ -284,7 +284,6 @@ describe('FilterOrdersPipe', () => {
     const pipe = new FilterOrdersPipe();
     // const data = x;
     const result = pipe.transform(ordersData, "pending") 
-    console.log(result)
     expect(result.length).toBe(1)
   })
 });
