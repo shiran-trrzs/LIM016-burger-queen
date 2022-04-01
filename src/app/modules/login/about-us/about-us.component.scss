@@ -1,0 +1,66 @@
+@mixin minimum-size {
+    @media (min-width: 1000px) and (max-width: 1340px) {
+        @content
+    }
+}
+
+@mixin medium-size {
+    @media (min-width: 1341px) and (max-width: 1410px) {
+        @content
+    }
+}
+
+@mixin max-size {
+    @media (min-width: 1411px) and (max-width: 1439px) {
+        @content
+    }
+}
+
+@mixin media-query-custom($min-width, $max-width) {
+    @media (min-width: $min-width) and (max-width: $max-width) {
+        @content
+    }
+}
+
+.about-us {
+    display: flex;
+    height: 50vh;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    text-align: center;
+    margin-right: 107px;
+    padding-top: 30px;
+    margin-bottom: -1.5%;
+
+    p {
+        width: 35vw;
+        font-weight: bolder;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.5rem;
+
+        @include minimum-size {
+            font-size: 1.1rem;
+        }
+
+        @include medium-size {
+            font-size: 1.2rem;
+        }
+
+        @include max-size {
+            font-size: 1.3rem;
+        }
+    
+    }
+
+    @include media-query-custom(1000px, 1439px){
+        padding-top: 0px; 
+        padding-bottom: 74px;
+    }
+}
+
+@media(min-width: 1700px) {
+    .about-us {
+        margin-right: 270px;
+    }
+}
