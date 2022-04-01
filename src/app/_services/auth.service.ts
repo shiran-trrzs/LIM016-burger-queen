@@ -74,7 +74,6 @@ export class AuthService {
       }
       localStorage.setItem('rol', res.roles.name);
     })
-    
   }
 
   isLoggedIn() {

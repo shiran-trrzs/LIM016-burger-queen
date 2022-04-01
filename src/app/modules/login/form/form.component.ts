@@ -12,8 +12,6 @@ export class FormComponent implements OnInit {
 
   loginData !: LoginPayload;
   messageError !: string; 
-  messageEmailError !: string;
-  messagePasswordError !: string;
   requestFailed: boolean = false;
   emailFailed: boolean = false;
   passwordFailed: boolean = false;
@@ -38,9 +36,9 @@ export class FormComponent implements OnInit {
 
     this.authService.loginForm(this.loginData).subscribe({
       next: response => {
-        if (response.token) {
+        // if (response.token) {
           this.authService.setUser(response);
-        }
+        // }
       }, 
       error: (err) => {
         this.requestFailed = true;

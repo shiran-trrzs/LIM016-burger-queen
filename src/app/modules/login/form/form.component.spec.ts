@@ -49,12 +49,6 @@ describe('FormComponent', () => {
 
   });
 
-  // beforeEach(() => {
-  //   fixture = TestBed.createComponent(FormComponent);
-  //   component = fixture.componentInstance;
-  //   fixture.detectChanges();
-  // });
-
   it('should create', () => {
     expect(component).toBeTruthy();
   });
@@ -90,18 +84,18 @@ describe('FormComponent', () => {
     expect(component.loginData).toEqual(testData)
   });
 
-  it('should return an error when the server returns a 404', (done: DoneFn) => {
+  it('should return an error message when data is incomplete', (done: DoneFn) => {
 
     const data = {
       email: "",
-      password: "huhuhu"
+      password: "datapassword123"
     }
 
     const basePath = 'https://bbqueen.herokuapp.com/';
     const errorResponse = "No ingresaste correo o contraseña";
   
      httpClient.post<LoginResponse>(basePath + 'auth', data).subscribe({
-      // next: () => done.fail('should have failed with the 404 error'),
+      next: () => done.fail('should have failed with the 404 error'),
       error: (error: HttpErrorResponse) => {
         expect(error.error).withContext('message').toEqual(errorResponse);
         done();
@@ -109,10 +103,17 @@ describe('FormComponent', () => {
     });
 
     const req = httpTestingController.expectOne(basePath + 'auth');
-
-  // Respond with mock error
   req.flush(errorResponse, { status: 404, statusText: 'Not Found' });
 
   }, 10000);
+
+  it('The value of requestFailed should return true when there is a login error', () => {
+    const email = component.validateForm.controls['email']
+    const password = component.validateForm.controls['password']
+    email.setValue('hannah@burgerland.com')
+    password.setValue('12345')
+
+    expect(component.validateForm.invalid).toBeFalse()
+  });
 
 });
