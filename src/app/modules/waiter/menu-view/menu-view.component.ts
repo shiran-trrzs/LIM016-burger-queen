@@ -32,7 +32,6 @@ export class MenuViewComponent implements OnInit {
   ngOnInit() {
     this.authService.getProducts().subscribe({
       next: response => {
-        // console.log(response)
         this.allProducts = response;
         this.categories = this.allProducts;
       },
@@ -121,7 +120,6 @@ export class MenuViewComponent implements OnInit {
       this.authService.newOrder(objOrder).subscribe({
         next: response => {
           localStorage.setItem('idOrder', response._id)
-          console.log(response)
           Swal.fire({
             position: 'top-end',
             icon: 'success',
