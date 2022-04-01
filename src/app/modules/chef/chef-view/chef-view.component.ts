@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, ViewChildren, AfterViewInit, Renderer2 } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService,  } from 'src/app/_services/auth.service';
 import Swal from 'sweetalert2'
 
@@ -15,11 +15,8 @@ export class ChefViewComponent implements OnInit {
 
   allStatusOrders: any = [];
 
-  cookingTime: any
-
   constructor(
-    private authService: AuthService,
-    private renderer: Renderer2
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
