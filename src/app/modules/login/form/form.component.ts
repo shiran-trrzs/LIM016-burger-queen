@@ -46,9 +46,6 @@ export class FormComponent implements OnInit {
       error: (err) => {
         this.showError(form);
         console.log(err.error.message);
-      },
-      complete: () => {
-        console.log('Request complete');
       }
     });
   }

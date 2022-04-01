@@ -55,7 +55,7 @@ export class AuthService {
       .post<LoginResponse>(this.basePath + 'auth', data)
       .pipe(
         retry(2),
-        catchError(this.handleError)
+        // catchError(this.handleError)
       );
   }
 
