@@ -15,9 +15,9 @@ export class OrdersViewComponent implements OnInit {
 
   allStatusOrders: object[] = []
   
-  arrOrderByUserId : object[] = []
+  arrOrderByUserId : any = []
 
-  totalPrice !: []
+  totalPrice: any;
 
   constructor(
     private authService: AuthService
@@ -36,6 +36,7 @@ export class OrdersViewComponent implements OnInit {
         this.arrOrderByUserId = this.allOrders.filter((e:any) => {
           return meserxId === e.userId
         })
+        console.log(this.allOrders);
         this.allStatusOrders = this.arrOrderByUserId
       },
       error: error => {
