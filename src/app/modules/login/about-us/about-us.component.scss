@@ -64,3 +64,16 @@
         margin-right: 270px;
     }
 }
+
+@media (max-width:769px) {
+    .about-us {
+        height: auto;
+        margin-right: 25%;
+        padding-top: 53%;
+
+        p {
+            width: 50vw;
+            font-size: 1.1rem;
+        }
+    }
+}

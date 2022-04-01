@@ -137,3 +137,30 @@
         width: 74vw
     }
   }
+
+  @media (max-width:769px) {
+    .container-login {
+        background-image: url("../../assets/images/Inicio-ipad.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        height: 100vh;
+    }
+
+    .btn-suggestion {
+        display: flex;
+        width: auto;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    
+    .nav-login {
+        margin-left: auto;
+        padding-top: 3%;
+    }
+
+    .buttons-container {
+        column-gap: 50px;
+    }
+  }
