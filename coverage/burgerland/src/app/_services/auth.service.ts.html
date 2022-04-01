@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -278,7 +278,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -317,7 +317,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -407,8 +407,8 @@ export class AuthService {
   }
 &nbsp;
   // Captures the email address to identify which user is logging in
-<span class="fstat-no" title="function not covered" >  getUser(</span>): Observable&lt;User&gt; {
-<span class="cstat-no" title="statement not covered" >    return this.http</span>
+  getUser(): Observable&lt;User&gt; {
+    return this.http
     .get&lt;User&gt;(this.basePath + `users/${this.user.email}`, this.httpOptions())
     .pipe(
       retry(2),
@@ -446,8 +446,8 @@ export class AuthService {
     )
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  changeStatusOrder(</span>idOrder: string, data: Status ): Observable&lt;NewOrder&gt; {
-<span class="cstat-no" title="statement not covered" >    return this.http</span>
+  changeStatusOrder(idOrder: string, data: Status ): Observable&lt;NewOrder&gt; {
+    return this.http
     .put&lt;NewOrder&gt;(this.basePath+ `orders/${idOrder}`, data, this.httpOptions())
   }
 &nbsp;
