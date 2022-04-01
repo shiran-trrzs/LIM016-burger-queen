@@ -1,0 +1,88 @@
+<div class="container-menu-view">
+
+  <section class="section-menu-container-routing">
+      <nav class="nav-btns-menu" (click)="filterCategories($event)" data-value="">
+        <button class="nav-menu" data-value="breakfast">
+            Breakfast
+        </button>
+        <button class="nav-menu" data-value="lunch">
+            Lunch
+        </button>
+        <button class="nav-menu" data-value="">
+            All
+        </button>
+      </nav>
+
+      <div class="menu-container-routing" >
+        <div class="food-card-container">
+          <div class="products-container" *ngFor="let category of categories">
+        
+            <div class="food-card">
+              <div class="food-img">
+                <img [src]="category.image" />
+              </div>
+              <div class="food-info">
+                <h4>{{ category.name }}</h4>
+                <p>${{ category.price }}</p>
+                <button type="button" (click)="addProduct(category)"  class="btn-add-product">+</button>
+              </div>
+            </div>
+        
+          </div>
+        </div>
+      
+      </div>
+
+    </section>
+
+  <section class="container-food-order" >
+    <div class="food-order-card">
+      <div class="container-position">
+        <div class="container-name">
+          <h4>To: <input type="text" class="name-client" #inputName> </h4> 
+        </div>
+      <div class="container-product">
+        <div class="order-container" *ngFor="let order of arrOrder">
+            <div class="order-list-container">
+              <div class="order">
+                <div class="img-food-order">
+                  <img [src]="order.image"
+                    class="img-order"/>
+                </div>
+                <div class="order-info">
+                  <h4> {{order.name}} </h4>
+  
+                  <div class="add-and-price">
+                    <div class="add-or-less">
+                      <img src="../../../../assets/images/menos.png" (click)="deleteQty(order)" />
+                      <p> {{order.qty}} </p>
+                      <img src="../../../../assets/images/màs.png" (click)="addQty(order)" />
+                    </div>
+                    <p>$ {{order.totalPrice}} </p>
+                  </div>
+                </div>
+              </div>
+              <div class="plus-trash">
+                <img src="../../../../assets/images/trash-item.png" (click)="deleteProduct(order)" />
+              </div>
+            </div>
+        </div>
+      </div>  
+      </div>
+
+      <div class="total-container">
+        <div>
+          <img
+            src="../../../../assets/images/Trash.png"
+            class="img-trash-final"
+            (click)="deleteOrder()"
+          />
+        </div>
+        <div class="total-and-btn-send">
+          <p>Total: ${{totalPriceOrder}}</p>
+          <button (click)="addNewOrder()">Send <img src="../../../../assets/images/Icon.png" /></button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

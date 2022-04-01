@@ -1,0 +1,69 @@
+<div class="container-order-view">
+
+    <section class="section-orders-container-routing">
+        <nav class="nav-btns-menu" data-value="" (click)="changeSectionStatus($event)">
+            <button class="nav-menu" data-value="">
+                All
+            </button>
+            <button class="nav-menu" data-value="pending" >
+                Pending
+            </button>
+            <button class="nav-menu" data-value="delivering" >
+                Ready to serve
+            </button>
+            <button class="nav-menu" data-value="delivered">
+                Delivered
+            </button>
+            <button class="nav-menu" data-value="canceled">
+                Canceled
+            </button>
+        </nav>
+
+        <div class="menu-container-routing">
+
+            <div class="orders-cards-container">
+                <div class="order-card"
+                    *ngFor="let order of (arrOrderByUserId | filterOrders: statusPipe | sortOrders | statusBtn)">
+                    <div class="cancel-order" *ngIf="order.status !== 'delivered' && order.status !=='canceled'">
+                        <button class="btn-cancel-order"
+                            *ngIf="order.status !== 'delivered' && order.status !=='canceled'">
+                            <p class="cross-btn" data-id={{order._id}} (click)="cancelOrder($event)">X</p>
+                        </button>
+                    </div>
+                    <div class="order-info-container">
+                        <div class="table-and-client">
+                            <h4>To: {{order.client}} </h4>
+                        </div>
+                        <div class="time">
+                            <p>Created at: {{order.dateEntry | date: 'short'}}</p>
+                            <p *ngIf="order.status !== 'pending' ">Updated at: {{order.updatedAt | date: 'short'}}</p>
+                        </div>
+                    </div> 
+
+                    <div class="products-container">
+                        <div class="product-card" *ngFor="let product of order.products">
+                            <div class="product-img">
+                                <img [src]="product.product.image">
+                            </div>
+                            <div class="product-info">
+                                <p> {{product.product.name}} </p>
+                                <p>Qty: {{product.qty}} </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="totalPrice-container">
+                        <p data-id={{order._id}} >Total price: ${{getTotalPrice(order._id)}}</p> 
+                    </div>
+                    <button class="btn-status" (click)="changeStatus($event)" data-value={{order.status}}
+                        data-id={{order._id}}
+                        [ngClass]="{'btn-pending': order.status === 'pending', 'btn-delivering': order.status === 'ready to serve', 'btn-delivered': order.status === 'delivered'}">{{order.status
+                        | titlecase}}</button>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+
+</div>
