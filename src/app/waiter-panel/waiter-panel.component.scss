@@ -146,3 +146,22 @@
   font-size: 18px;
   font-weight: bold;
 }
+
+@media (max-width:769px) {
+
+  .username {
+    margin-left: 15px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+    width: 99%;
+
+    .icon {
+      width: 25px;
+      margin-left: 5px;
+    }
+  }
+
+
+}
