@@ -70,7 +70,7 @@ export class ChefViewComponent implements OnInit {
    }
   })  
 }
-
+ 
   changeSectionStatus(e: any) {
     let statusSection = e.target.dataset.value;
     this.statusPipe = statusSection

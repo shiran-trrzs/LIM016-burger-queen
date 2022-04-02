@@ -41,7 +41,7 @@ export class MenuViewComponent implements OnInit {
     })
     
   }
-
+ 
   filterCategories(e: any) {
     const type = e.target.dataset.value;
     if(type != ''){
