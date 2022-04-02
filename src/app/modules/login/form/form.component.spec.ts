@@ -4,12 +4,10 @@ import { AuthService } from '../../../_services/auth.service';
 import { RouterTestingModule } from '@angular/router/testing'
 import { HttpClientTestingModule, HttpTestingController  } from '@angular/common/http/testing'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
-import { of } from 'rxjs';
 import { By } from '@angular/platform-browser'
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { LoginResponse } from 'src/app/interface/loginInterface';
-
+ 
 describe('FormComponent', () => {
   let httpClient: HttpClient;
   let httpTestingController: HttpTestingController;
@@ -18,16 +16,8 @@ describe('FormComponent', () => {
   let fixture: ComponentFixture<FormComponent>;
 
   let service: AuthService;
-  // let httpClientSpy: jasmine.SpyObj<HttpClient>;
-  // // let httpClientSpy: { post: jasmine.Spy }
-
   beforeEach(async () => {
-    // let routerSpy = jasmine.createSpyObj<Router>('Router', ['navigate']);
-    // // httpClientSpy = jasmine.SpyObj<HttpClient>;
-    // httpClientSpy = jasmine.createSpyObj('HttpClient', ['post']);
-    // service = new AuthService(routerSpy as any, httpClientSpy as any)
-
-  await TestBed.configureTestingModule({
+     await TestBed.configureTestingModule({
       declarations: [ 
         FormComponent
       ],
