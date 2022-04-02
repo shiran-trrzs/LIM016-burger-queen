@@ -244,4 +244,23 @@
 }
 
 
+@media(max-width: 769px) {
+    .nav-btns-order {
+        column-gap: 30px;
 
+        .nav-order {
+            width: 30%;
+            height: 99%;
+        }
+    }
+
+    .orders-cards-container {
+        height: 800px;
+        justify-content: space-around;
+        column-gap: 20px;
+    }
+
+    .order-card {
+        width: 40%;
+    }
+}
