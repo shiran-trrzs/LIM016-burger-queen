@@ -275,3 +275,24 @@
         height: 680px;
     }
 }
+
+@media(max-width: 769px) {
+    .nav-btns-menu {
+        column-gap: 30px;
+
+        .nav-menu {
+            width: 30%;
+            height: 99%;
+        }
+    }
+
+    .orders-cards-container {
+        height: 800px;
+        justify-content: space-around;
+        column-gap: 20px;
+    }
+
+    .order-card {
+        width: 40%;
+    }
+}

@@ -104,7 +104,7 @@ h2, h4 {
 
     @include media-query-custom (1000px, 1439px) { 
         height: 50px;
-    max-width: 60px;
+        max-width: 60px;
     }
 }
 
@@ -330,4 +330,76 @@ input:focus {
 .container-name {
     display: flex;
     flex-direction: column;
+}
+
+@media (max-width:769px) {
+    .nav-btns-menu {
+        display: flex;
+        flex-direction: column-reverse;
+        padding-bottom: 30px;
+        padding-top: 15px;
+        row-gap: 20%;
+
+        .nav-menu {
+            width: 40%;
+        }
+    }
+
+    .products-container {
+        width: 30%;
+    }
+
+    .food-card-container {
+        display: flex;
+        column-gap: 30px;
+        justify-content: space-evenly;
+        margin-left: -16px;
+    }
+
+    .food-card {
+        height: 125px;
+        width: 115px;
+        
+        .food-img {
+            img {
+                height: 40px;
+            }
+        }
+    }
+
+    .name-client {
+        margin-left: 0px;
+    }
+    
+    .container-product {
+        row-gap: 42px;
+    }
+
+    .order-list-container {
+        margin-right: 5px;
+    }
+
+    .img-order {
+        height: 40px;
+        max-width: 50px;
+    }
+
+    .add-and-price {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .total-container {
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    .img-trash-final {
+        height: 32px;
+    }
+
+    .total-and-btn-send {
+        display: flex;
+        align-items: flex-end;
+    }
 }
