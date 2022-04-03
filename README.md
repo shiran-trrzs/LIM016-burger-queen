@@ -16,12 +16,34 @@ Burgerland es una interfaz en la que el/la mesero/a puede tomar pedidos usando u
 
 La aplicación es una `Single Page App`, se puede usar como una `PWA` y de manera `offline`.
 
-[Link a la documentación](https://laboratoria.github.io/burger-queen-api/) que especifica el comportamiento esperado de la API 
+[Link a la documentación](https://laboratoria.github.io/burger-queen-api/) que especifica el comportamiento esperado de la API.
 
 Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
 ## 2. Prototipado
 
+  ### Login
+  * Horizontal
+  
+  ![image](https://user-images.githubusercontent.com/91855816/161438507-db38348d-0e8d-416e-b610-0f113058e278.png)
+
+  * Vertical
+  
+  ![image](https://user-images.githubusercontent.com/91855816/161438581-fec14ae7-ba62-4fc0-b2fa-fa493e68a770.png)
+
+  ### Interfaz Mesero
+  * Vista donde puede elegir/eliminar/aumentar/disminuir productos a la orden
+  
+  ![image](https://user-images.githubusercontent.com/91855816/161438666-50e161d7-6e31-4302-923e-61b0bf946736.png)
+  
+  * Vista donde puede visualizar las ordenes enviadas
+  
+  ![image](https://user-images.githubusercontent.com/91855816/161438942-e3d793ab-aa58-407a-9840-e53b2f1b73f1.png)
+  
+   ### Interfaz Chef
+  * Vista donde visualizar las ordenes 
+  
+  ![image](https://user-images.githubusercontent.com/91855816/161439027-d84c3170-5120-47a4-8bb7-bd4deead72de.png)
 
 ## 3. Vista final
 
@@ -83,6 +105,7 @@ research
  - [✔️] Planear y ejecutar testeos de usabilidad de prototipos en distintos niveles de fidelidad
 
 Angular
+
  - [✔️] Components & templates
  - [✔️] Directivas estructurales (ngIf / ngFor)
  - [✔️] Creación y uso de servicios
@@ -90,4 +113,14 @@ Angular
  - [✔️] Creación y uso Observables.
  - [✔️] Uso de HttpClient
  - [✔️] Estilos de componentes (ngStyle / ngClass)
+
+HTTP
+
+ - [✔️] Consulta o petición (request) y respuesta (response).
+ - [✔️] Cabeceras (headers)
+ - [✔️] Cuerpo (body)
+ - [✔️] Verbos HTTP
+ - [✔️] Codigos de status de HTTP
+ - [✔️] Encodings y JSON
+ - 
  
