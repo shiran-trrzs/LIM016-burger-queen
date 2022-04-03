@@ -335,7 +335,8 @@ input:focus {
 @media (max-width:769px) {
     .nav-btns-menu {
         display: flex;
-        flex-direction: column-reverse;
+        // flex-direction: column-reverse
+        flex-direction: column;
         padding-bottom: 30px;
         padding-top: 15px;
         row-gap: 20%;
@@ -358,7 +359,7 @@ input:focus {
 
     .food-card {
         height: 125px;
-        width: 115px;
+        // width: 115px;
         
         .food-img {
             img {
