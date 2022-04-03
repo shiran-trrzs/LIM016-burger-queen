@@ -12,11 +12,7 @@
 
 ## 1. Sobre el proyecto 
 
-Burgerland es una interfaz en la que el/la mesero/a puede tomar pedidos usando una tablet, y enviarlos a la cocina para que se preparen ordenada y eficientemente consumiendo una `API REST` proporcionada previamente por el backend. El usuario puede ir eligiendo qué productos agregar/eliminar. La interfaz a su vez muestra el resumen del pedido con el costo total de la orden y de cada producto según la cantidad.
-
-La aplicación es una `Single Page App`, se puede usar como una `PWA` y de manera `offline`.
-
-[Link a la documentación](https://laboratoria.github.io/burger-queen-api/) que especifica el comportamiento esperado de la API.
+Burgerland es una interfaz en la que el/la mesero/a puede tomar pedidos usando una tablet, y enviarlos a la cocina para que se preparen ordenada y eficientemente consumiendo una `API REST` proporcionada previamente por el backend junto con su [documentación](https://laboratoria.github.io/burger-queen-api/) que especifica el comportamiento esperado. El usuario puede ir eligiendo qué productos agregar/eliminar. La interfaz a su vez muestra el resumen del pedido con el costo total de la orden y de cada producto según la cantidad. La aplicación es una `Single Page App`, se puede usar como una [PWA](https://codigofacilito.com/articulos/progressive-apps) y de manera `offline`.
 
 Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
