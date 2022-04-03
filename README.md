@@ -6,15 +6,13 @@
 
 * [1. Sobre el proyecto](#1-sobre-el-proyecto)
 * [2. Prototipado](#2-prototipado)
-* [3. Historias de usuario](#4-historias-de-usuario)
-* [4. Vista final](#3-vista-final)
+* [3. Historias de usuario](#3-historias-de-usuario)
+* [4. Vista final](#4-vista-final)
 * [5. Tecnologias implementadas](#5-tecnologias-implementadas)
 
 ## 1. Sobre el proyecto 
 
 Burgerland es una interfaz en la que el/la mesero/a puede tomar pedidos usando una tablet, y enviarlos a la cocina para que se preparen ordenada y eficientemente consumiendo una `API REST` proporcionada previamente por el backend junto con su [documentación](https://laboratoria.github.io/burger-queen-api/) que especifica el comportamiento esperado. El usuario puede ir eligiendo qué productos agregar/eliminar. La interfaz a su vez muestra el resumen del pedido con el costo total de la orden y de cada producto según la cantidad. La aplicación es una `Single Page App`, se puede usar como una [PWA](https://codigofacilito.com/articulos/progressive-apps) y de manera `offline`.
-
-Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
 ## 2. Prototipado
 
@@ -101,6 +99,9 @@ Criterios de aceptación
 
 ## 5. Tecnologias implementadas
 
+![Canal oficial de](https://user-images.githubusercontent.com/91855816/161452636-ce0c6849-0d2c-4c92-91c7-15fa044ad416.png)
+
+Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
 ##  Objetivos de aprendizaje
 
