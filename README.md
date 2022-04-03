@@ -46,6 +46,78 @@ Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-
 
 ## 4. Historias de usuario
 
+La organización del proyecto se llevo por sprints con martes como la fecha de la deadline.
+
+### HU 1 Meserx y chef pueden ver las tres secciones 
+Yo como usuario puedo visualizar las tres vistas de Home(Quote, Log in y About us) para posteriormente logearme a la plataforma.
+
+Criterios de aceptación
+- Hacer el prototipado para Home de manera horizontal y vertical para iPad.
+- Ver la primera parte de Home, que es el lema del restaurante.
+- Ver la sección de About us.
+- Ver la sección de Login.
+
+![image](https://user-images.githubusercontent.com/91855816/161446468-1e47f80b-16e6-4e39-9a05-7550660a233d.png)
+
+### HU 2 Meserx debe logearse y filtrar el menú
+Yo como meserx quiero logearme y filtrar los productos para tomar la orden de una manera más eficiente y rápida.
+
+Criterios de aceptación
+
+- Logearse haciendo la validación con la base de datos de users de la API.
+- Se puede ver los productos ya diseñados.
+- Botones que indiquen qué tipo de producto son.
+- Filtrar productos usando pipes.
+
+![image](https://user-images.githubusercontent.com/91855816/161447549-7be5e76f-4450-4b10-9f66-8780d171849a.png)
+
+### HU 3 Mesero/a debe poder tomar pedido de cliente
+Yo como meserx quiero tomar el pedido de un cliente para no depender de mi mala memoria, para saber cuánto cobrar, y enviarlo a la cocina para evitar errores y que se puedan ir preparando en orden.
+
+Criterios de aceptación
+
+- Anotar nombre de cliente.
+- Agregar productos al pedido.
+- Eliminar productos.
+- Ver resumen y el total de la compra.
+- Enviar pedido a cocina guardandolo en la base de datos de orders de la API.
+- Se ve y funciona bien en una tablet.
+
+![image](https://user-images.githubusercontent.com/91855816/161448990-19128b9b-627b-4c9b-ab0d-29d362638716.png)
+
+### HU 1 Mesero/a debe poder tomar pedido de cliente
+Yo como meserx quiero tomar el pedido de un cliente para no depender de mi mala memoria, para saber cuánto cobrar, y enviarlo a la cocina para evitar errores y que se puedan ir preparando en orden.
+
+Criterios de aceptación
+Lo que debe ocurrir para que se satisfagan las necesidades del usuario)
+
+Anotar nombre de cliente.
+Agregar productos al pedido.
+Eliminar productos.
+Ver resumen y el total de la compra.
+Enviar pedido a cocina (guardar en alguna base de datos).
+Se ve y funciona bien en una tablet
+
+![image](https://user-images.githubusercontent.com/91855816/161446468-1e47f80b-16e6-4e39-9a05-7550660a233d.png)
+
+### HU 1 Mesero/a debe poder tomar pedido de cliente
+Yo como meserx quiero tomar el pedido de un cliente para no depender de mi mala memoria, para saber cuánto cobrar, y enviarlo a la cocina para evitar errores y que se puedan ir preparando en orden.
+
+Criterios de aceptación
+Lo que debe ocurrir para que se satisfagan las necesidades del usuario)
+
+Anotar nombre de cliente.
+Agregar productos al pedido.
+Eliminar productos.
+Ver resumen y el total de la compra.
+Enviar pedido a cocina (guardar en alguna base de datos).
+Se ve y funciona bien en una tablet
+
+![image](https://user-images.githubusercontent.com/91855816/161446468-1e47f80b-16e6-4e39-9a05-7550660a233d.png)
+
+
+
+
 
 ## 5. Tecnologias implementadas
 
