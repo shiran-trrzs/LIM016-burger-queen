@@ -6,8 +6,8 @@
 
 * [1. Sobre el proyecto](#1-sobre-el-proyecto)
 * [2. Prototipado](#2-prototipado)
-* [3. Vista final](#3-vista-final)
-* [4. Historias de usuario](#4-historias-de-usuario)
+* [3. Historias de usuario](#4-historias-de-usuario)
+* [4. Vista final](#3-vista-final)
 * [5. Tecnologias implementadas](#5-tecnologias-implementadas)
 
 ## 1. Sobre el proyecto 
@@ -41,10 +41,7 @@ Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-
   
   ![image](https://user-images.githubusercontent.com/91855816/161439027-d84c3170-5120-47a4-8bb7-bd4deead72de.png)
 
-## 3. Vista final
-
-
-## 4. Historias de usuario
+## 3. Historias de usuario
 
 La organización del proyecto se llevo por sprints con martes como la fecha de la deadline.
 
@@ -85,37 +82,20 @@ Criterios de aceptación
 
 ![image](https://user-images.githubusercontent.com/91855816/161448990-19128b9b-627b-4c9b-ab0d-29d362638716.png)
 
-### HU 1 Mesero/a debe poder tomar pedido de cliente
-Yo como meserx quiero tomar el pedido de un cliente para no depender de mi mala memoria, para saber cuánto cobrar, y enviarlo a la cocina para evitar errores y que se puedan ir preparando en orden.
+### HU 4 Chef y meserx debe ver pedidos listos para preparar y servir
+Yo como jefx de cocina quiero ver los pedidos de los clientes en orden y marcar cuáles están listos para saber qué se debe cocinar.
+Yo como meserx quiero ver los pedidos que están preparados para entregarlos rápidamente a los clientes que las hicieron.
 
 Criterios de aceptación
-Lo que debe ocurrir para que se satisfagan las necesidades del usuario)
 
-Anotar nombre de cliente.
-Agregar productos al pedido.
-Eliminar productos.
-Ver resumen y el total de la compra.
-Enviar pedido a cocina (guardar en alguna base de datos).
-Se ve y funciona bien en una tablet
+- Ver los pedidos ordenados según se van haciendo.
+- Marcar los pedidos que se han preparado y están listos para prepararse y servirse.
+- Ver listado de pedido listos para servir.
+- Marcar pedidos que han sido entregados.
 
-![image](https://user-images.githubusercontent.com/91855816/161446468-1e47f80b-16e6-4e39-9a05-7550660a233d.png)
+![image](https://user-images.githubusercontent.com/91855816/161449413-a895ff27-3e63-4212-9a47-9c206bfd9680.png)
 
-### HU 1 Mesero/a debe poder tomar pedido de cliente
-Yo como meserx quiero tomar el pedido de un cliente para no depender de mi mala memoria, para saber cuánto cobrar, y enviarlo a la cocina para evitar errores y que se puedan ir preparando en orden.
-
-Criterios de aceptación
-Lo que debe ocurrir para que se satisfagan las necesidades del usuario)
-
-Anotar nombre de cliente.
-Agregar productos al pedido.
-Eliminar productos.
-Ver resumen y el total de la compra.
-Enviar pedido a cocina (guardar en alguna base de datos).
-Se ve y funciona bien en una tablet
-
-![image](https://user-images.githubusercontent.com/91855816/161446468-1e47f80b-16e6-4e39-9a05-7550660a233d.png)
-
-
+## 4. Vista final
 
 
 
@@ -190,5 +170,3 @@ HTTP
  - [✔️] Verbos HTTP
  - [✔️] Codigos de status de HTTP
  - [✔️] Encodings y JSON
- - 
- 
