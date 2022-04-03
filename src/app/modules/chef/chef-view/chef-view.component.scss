@@ -48,10 +48,6 @@
     padding: 25px;
     width: 100%;
     row-gap: 25px;
-
-    // @include media-query-custom-width (1000px, 1439px) { 
-    //     row-gap: 25px;
-    // }
 }
 
 .nav-btns-order {
@@ -187,7 +183,7 @@
     }
 
     @include min-height(840px) {
-        height: 590px;
+        height: 690px;
     }
 }
 
