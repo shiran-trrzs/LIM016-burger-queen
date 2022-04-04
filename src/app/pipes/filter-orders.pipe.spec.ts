@@ -266,7 +266,11 @@ const ordersData = [
               "_id": "623363315f4f1173a3bc9259"
           }
       ],
+<<<<<<< HEAD
       "status": "canceled",
+=======
+      "status": "delivered",
+>>>>>>> e64bc16f9228956697ad96fbdce23eb29e105775
       "dateEntry": "2022-03-17T16:34:57.290Z",
       "dateProcessed": "2022-03-17T16:34:57.290Z",
       "createdAt": "2022-03-17T16:34:57.298Z",
