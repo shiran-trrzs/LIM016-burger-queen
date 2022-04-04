@@ -95,7 +95,24 @@ Criterios de aceptación
 
 ## 4. Vista final
 
+  * Home
+  
+  ![image](https://user-images.githubusercontent.com/91855816/161461190-8e049510-c074-4a53-9dde-80da77452bd5.png) ![image](https://user-images.githubusercontent.com/91855816/161463971-7f54c7f4-70f5-4e76-b1ce-b261ef7ec28c.png) ![image](https://user-images.githubusercontent.com/91855816/161464036-40c3490b-b07f-4212-a227-e682400f612a.png)
+  
+  * Waiter
+  
+  ![image](https://user-images.githubusercontent.com/91855816/161462732-a992b276-ef59-4cca-99e4-5d2275a31ee7.png) 
+  ![image](https://user-images.githubusercontent.com/91855816/161462788-105b9cf7-dd6f-4a05-80c0-8f897e7940ba.png)
+  ![image](https://user-images.githubusercontent.com/91855816/161462916-51f305d0-d8b3-4089-88af-af62742a7fa0.png)
 
+  * Chef 
+  
+  ![image](https://user-images.githubusercontent.com/91855816/161462323-622533f4-c6d1-44c3-8310-67ae4105a356.png) ![image](https://user-images.githubusercontent.com/91855816/161462498-d5f95593-a171-4ce6-8b4e-64f5eb62e832.png)
+
+
+
+
+ 
 
 ## 5. Tecnologias implementadas
 
