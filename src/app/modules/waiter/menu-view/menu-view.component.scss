@@ -253,7 +253,7 @@ h2, h4 {
         justify-content: center;
 
         img {
-            height: 90px;
+            height: 50px;
 
             @include media-query-custom (1000px, 1439px) { 
                 height: 52px;
@@ -335,7 +335,8 @@ input:focus {
 @media (max-width:769px) {
     .nav-btns-menu {
         display: flex;
-        flex-direction: column-reverse;
+        // flex-direction: column-reverse
+        flex-direction: column;
         padding-bottom: 30px;
         padding-top: 15px;
         row-gap: 20%;
