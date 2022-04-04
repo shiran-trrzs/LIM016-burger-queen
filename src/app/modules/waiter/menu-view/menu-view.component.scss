@@ -4,6 +4,13 @@
     }
   }
 
+@mixin d-flex($flex, $j-content,$a-items, $f-direction){
+    display: $flex;
+    flex-direction: $f-direction;
+    justify-content: $j-content;
+    align-items: $a-items;
+}
+
 h2, h4 {
     margin: 0px;
 }
@@ -38,12 +45,10 @@ h2, h4 {
 .food-order-card {
     margin: 10px;
     background-color: rgb(255, 255, 255);
-    display:flex;
-    flex-direction: column;
     height: 92%;
     padding: 22px;
     border-radius: 20px;
-    justify-content: space-between;
+    @include d-flex(flex, space-between, none, column);
 
     @include media-query-custom(1000px, 1439px) { 
         height: 89%;
@@ -51,17 +56,12 @@ h2, h4 {
 }
 
 .order{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    @include d-flex(flex, space-around, center, row);
 }  
 
 .add-and-price {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     border-bottom: 1px solid rgb(160, 157, 157);
+    @include d-flex(flex, space-between, none, row);
 }
 
 .add-or-less {
@@ -103,11 +103,9 @@ h2, h4 {
 }
 
 .total-container {
-    display: flex;
+    // display: flex;
     border-top: 1px solid #a09d9d;
-    padding-top: 10px;
-    align-items: center;
-    justify-content: space-between;
+    @include d-flex(flex, space-between, center, none);
 }
 
 .order-container {
@@ -136,20 +134,16 @@ h2, h4 {
 }
 
 .total-and-btn-send {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include d-flex(flex, none, center, column);
 
     button {
         border-radius: 8px;
         padding: 7px;
         border: 1px solid rgb(7, 240, 27);
         background-color: white;
-        display: flex;
-        justify-content: space-around;
         width: 100px;
-        align-items: center;
         color: green;
+        @include d-flex(flex, space-around, center, none)
     }
 
     img {
@@ -159,10 +153,7 @@ h2, h4 {
 
 .nav-btns-menu {
     flex: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+    @include d-flex(flex, space-evenly, center, row);
 
     .nav-menu {
         text-align: center;
