@@ -5,7 +5,7 @@ import Swal from 'sweetalert2'
 @Component({
   selector: 'app-chef-view',
   templateUrl: './chef-view.component.html',
-  styleUrls: ['./chef-view.component.scss']
+  styleUrls: ['./chef-view.component.scss', './chefview2.component.scss']
 })
 export class ChefViewComponent implements OnInit {
 
