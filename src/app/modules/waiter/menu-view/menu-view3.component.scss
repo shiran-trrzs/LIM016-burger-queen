@@ -10,7 +10,7 @@
     justify-content: $j-content;
     align-items: $a-items;
 }
-
+ 
 .plus-btn {
     border: none;
     background: none;
@@ -117,33 +117,4 @@
     &::-webkit-scrollbar {
         width: 4px; 
     }
-}
-
-.container-product {
-    overflow-y: scroll;
-    display: flex;
-    flex-direction: column;
-    height: 59vh;
-    margin-top: 10%;
-
-    @include media-query-custom(1000px, 1439px) { 
-        height: 52vh;
-    }
-    &::-webkit-scrollbar-track {
-        background-color: transparent; 
-    }
-    &::-webkit-scrollbar-thumb {
-        background-color: rgb(107, 108, 109); 
-    }
-    &::-webkit-scrollbar {
-        width: 4px;
-    }
-
-}
-
-.container-position {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-around;
 }
