@@ -12,7 +12,7 @@
     background-color: $color;
     padding: $padding;
 }
- 
+
 @mixin d-flex($flex, $j-content,$a-items, $f-direction){
     display: $flex;
     flex-direction: $f-direction;

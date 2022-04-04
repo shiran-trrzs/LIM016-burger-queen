@@ -1,0 +1,179 @@
+@mixin media-query-custom($min-width, $max-width) {
+    @media (min-width: $min-width) and (max-width: $max-width) {
+        @content
+    }
+  }
+
+@mixin d-flex($flex, $j-content,$a-items, $f-direction){
+    display: $flex;
+    flex-direction: $f-direction;
+    justify-content: $j-content;
+    align-items: $a-items;
+}
+
+.products-container {
+    width: 20%;
+}
+
+.food-card {
+    background-color: white;
+    border-radius: 10px;
+    width:100%;
+    padding: 10px;
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+
+    .food-img {
+        display: flex;
+        justify-content: center;
+
+        img {
+            height: 50px;
+
+            @include media-query-custom (1000px, 1439px) { 
+                height: 52px;
+            }
+        }
+    }
+
+    .food-info {
+        text-align: center;
+
+        h4, p {
+            margin: 5px;
+        }
+    }
+}
+
+.container-product {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    height: 59vh;
+    margin-top: 10%;
+
+    @include media-query-custom(1000px, 1439px) { 
+        height: 52vh;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: transparent; 
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: rgb(107, 108, 109); 
+    }
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+}
+
+.container-position {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.btn-add-product {
+    background-color: #78ce1b;
+    color: white;
+    border: none;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 80%;
+    border-radius: 10%;
+}
+
+input {
+    border-radius: 30px;
+    font-size: 16px;
+    border: 2.8px solid #F4A42B;
+    width: 70%;
+    margin: 1.5%;
+    padding-left: 3%;
+}
+
+input:focus {
+	outline: none;
+    background-color:#ffffff00;
+}
+
+.name-client {
+    margin-left: 10%;
+}
+
+.container-name {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width:769px) {
+    .nav-btns-menu {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 30px;
+        padding-top: 15px;
+        row-gap: 20%;
+
+        .nav-menu {
+            width: 40%;
+        }
+    }
+
+    .products-container {
+        width: 30%;
+    }
+
+    .food-card-container {
+        display: flex;
+        column-gap: 30px;
+        justify-content: space-evenly;
+        margin-left: -16px;
+    }
+
+    .food-card {
+        height: 125px;
+        width: 115px;
+        
+        .food-img {
+            img {
+                height: 40px;
+            }
+        }
+    }
+
+    .name-client {
+        margin-left: 0px;
+    }
+    
+    .container-product {
+        row-gap: 42px;
+    }
+
+    .order-list-container {
+        margin-right: 5px;
+    }
+
+    .img-order {
+        height: 40px;
+        max-width: 50px;
+    }
+
+    .add-and-price {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .total-container {
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    .img-trash-final {
+        height: 32px;
+    }
+
+    .total-and-btn-send {
+        display: flex;
+        align-items: flex-end;
+    }
+}

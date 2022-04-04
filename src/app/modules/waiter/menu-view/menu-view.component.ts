@@ -7,7 +7,7 @@ import Swal from 'sweetalert2'
 @Component({
   selector: 'app-menu-view',
   templateUrl: './menu-view.component.html',
-  styleUrls: ['./menu-view.component.scss']
+  styleUrls: ['./menu-view.component.scss', './menu-view2.component.scss']
 })
 export class MenuViewComponent implements OnInit {
 
