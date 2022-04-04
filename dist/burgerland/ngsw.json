@@ -29,6 +29,7 @@
       },
       "urls": [
         "/404-complete.d6ac2d29247224c8.gif",
+        "/Inicio-ipad.31afe29c9d3d10d3.png",
         "/Inicio.1add70b2d1427c20.png",
         "/assets/images/404-complete.gif",
         "/assets/images/Icon.png",
@@ -57,6 +58,7 @@
   "dataGroups": [],
   "hashTable": {
     "/404-complete.d6ac2d29247224c8.gif": "99cf8ba708c1ea6423e14ae95baaa0436489f632",
+    "/Inicio-ipad.31afe29c9d3d10d3.png": "1c9233952e23b2bab77f99a922db624d8040b0a0",
     "/Inicio.1add70b2d1427c20.png": "54676a3d9c248b03ee1779ca7ccadaaa518e6be3",
     "/assets/images/404-complete.gif": "99cf8ba708c1ea6423e14ae95baaa0436489f632",
     "/assets/images/Icon.png": "dde72297067a2d0789653c63fac6463234e90683",
@@ -79,7 +81,6 @@
     "/index.html": "e1ef3842ed14832af10248bbb0625a3d775d0122",
     "/main.9c012fff56131684.js": "c3c12a902e814533d768f91a2428ec8e0f4cc406",
     "/manifest.webmanifest": "1673a4c2f87d6604ee57095bf80b0af830a7b9fd",
-    "/màs.2fe356b65637e983.png": "b16e7c071f7d1e7c5cb81a1c60f4fa6c93072d6e",
     "/polyfills.707854fcfb8e95ca.js": "ec619509d04cdbdf51f48e97a0ee4ab673a97d4b",
     "/runtime.9c8af933fc71dfa2.js": "91f652801dc52e39c4bcdf232d59ab8b04efd1d1",
     "/styles.4fa86f86e6f8ff5b.css": "0bb5a19d2b35f4c1128f711b383d1462f4c4be71",

@@ -35,13 +35,6 @@ h2, h4 {
     border-left: 1px solid rgb(160, 157, 157);
 }
 
-.btn {
-    border-radius: 50%;
-    background-image: url("../../../../assets/images/màs.png");
-    width: 40px;
-    height: 40px;
-}
-
 .food-order-card {
     margin: 10px;
     background-color: rgb(255, 255, 255);
@@ -50,9 +43,6 @@ h2, h4 {
     border-radius: 20px;
     @include d-flex(flex, space-between, none, column);
 
-    @include media-query-custom(1000px, 1439px) { 
-        height: 89%;
-      }
 }
 
 .order{
@@ -77,11 +67,6 @@ h2, h4 {
 .img-order {
     height: 70px;
     max-width: 60px;
-
-    @include media-query-custom (1000px, 1439px) { 
-        height: 50px;
-        max-width: 60px;
-    }
 }
 
 .plus-trash {
