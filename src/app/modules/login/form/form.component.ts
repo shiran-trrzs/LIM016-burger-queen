@@ -12,8 +12,6 @@ export class FormComponent implements OnInit {
 
   loginData !: LoginPayload;
   messageError !: string; 
-  messageEmailError !: string;
-  messagePasswordError !: string;
   requestFailed: boolean = false;
   emailFailed: boolean = false;
   passwordFailed: boolean = false;
@@ -38,37 +36,15 @@ export class FormComponent implements OnInit {
 
     this.authService.loginForm(this.loginData).subscribe({
       next: response => {
-        if (response.token) {
-          console.log(response.token)
+        // if (response.token) {
           this.authService.setUser(response);
-        }
+        // }
       }, 
       error: (err) => {
-        this.showError(form);
-        console.log(err.error.message);
-      }
+        this.requestFailed = true;
+        this.messageError = err.error.message;
+      },
     });
-  }
-
-  showError(form: LoginPayload) {
-
-    if(form.email == '' && form.password !== '') {
-      this. emailFailed= true;
-      this.messagePasswordError = '';
-      this.messageError = '';
-      this.messageEmailError = 'Email is missing';
-    } else if (form.password == '' && form.email !== '') {
-      this. passwordFailed= true;
-      this.messageError = '';
-      this.messageEmailError = '';
-      this.messagePasswordError = ' Password is missing';
-    } else { 
-      this.requestFailed = true;
-      this.messageEmailError = '';
-      this.messagePasswordError = '';
-      this.messageError = 'Something bad happened; please try again';
-    }
-   
   }
   
 }

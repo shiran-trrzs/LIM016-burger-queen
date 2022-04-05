@@ -69,3 +69,15 @@
     }
 
 }
+
+@media (max-width:769px) {
+    .section-quote {
+        display: flex;
+        width: 241px;
+        height: 162px;
+        justify-content: flex-start;
+        margin-top: 45%;
+        margin-left: 25%;
+        margin-bottom: 7.5%;
+    }
+}

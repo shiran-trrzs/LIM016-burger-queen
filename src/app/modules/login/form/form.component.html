@@ -6,7 +6,6 @@
                 <i class="fa-solid fa-envelope"></i>
                 <input type="email" class="login-box" formControlName="email" name="first" #email placeholder="Email"/>   
             </div>  
-            <small *ngIf="emailFailed == true" class="messageEmailError">{{ messageEmailError }}</small>
         </div>
         
         <div class="form-password-container">
@@ -14,7 +13,6 @@
                 <i class="fa-solid fa-lock"></i>
                 <input type="password" class="login-box" formControlName="password" name="second" #password placeholder="Password"/>
             </div>
-            <small *ngIf="passwordFailed == true">{{ messagePasswordError }}</small>
         </div>
 
         <div class="general-message-container" *ngIf="requestFailed == true">

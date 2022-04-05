@@ -104,3 +104,23 @@ input:-webkit-autofill:active{
         margin-left: 36%;
     }
 }
+
+@media (max-width:769px) {
+    .btns-form {
+        margin-left: auto;
+        padding-bottom: 0px;
+        margin-top: 40%;
+    }
+
+    .form-email-container, .form-password-container {
+        margin-bottom: 25px;
+
+        .btn-login {
+            width: 37vw;
+        }
+    }
+
+    .btn {
+        width: 18vw;
+    }
+}
