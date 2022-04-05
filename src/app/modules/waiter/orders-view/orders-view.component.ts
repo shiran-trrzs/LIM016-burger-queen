@@ -5,7 +5,7 @@ import Swal from 'sweetalert2'
 @Component({
   selector: 'app-orders-view',
   templateUrl: './orders-view.component.html',
-  styleUrls: ['./orders-view.component.scss']
+  styleUrls: ['./orders-view.component.scss', './ordersview2.component.scss']
 })
 export class OrdersViewComponent implements OnInit {
 
