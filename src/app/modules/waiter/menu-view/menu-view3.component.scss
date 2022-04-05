@@ -20,7 +20,8 @@
 .total-container {
     // display: flex;
     border-top: 1px solid #a09d9d;
-    @include d-flex(flex, space-between, center, none);
+    @include d-flex(flex, space-between, flex-start, none);
+    padding-top: 5%;
 }
 
 .order-container {
@@ -68,14 +69,14 @@
 
 .nav-btns-menu {
     flex: 1;
-    @include d-flex(flex, space-evenly, center, row);
+    @include d-flex(flex, space-evenly, center, column);
 
     .nav-menu {
         text-align: center;
         text-decoration: none;
         color: black;
         font-weight: bold;
-        width: 12%;
+        width: 30%;
         padding: 10px;
         border: none;
         border-radius: 20px;
