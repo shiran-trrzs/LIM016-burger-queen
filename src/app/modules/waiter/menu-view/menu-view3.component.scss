@@ -67,16 +67,17 @@
     }
 }
 
-.nav-btns-menu {
-    flex: 1;
-    @include d-flex(flex, space-evenly, center, column);
+@media (min-width: 900px) {
+    .nav-btns-menu {
+        flex: 1;
+        @include d-flex(flex, space-evenly, center, row);
 
     .nav-menu {
         text-align: center;
         text-decoration: none;
         color: black;
         font-weight: bold;
-        width: 30%;
+        width: 12%;
         padding: 10px;
         border: none;
         border-radius: 20px;
@@ -89,6 +90,7 @@
             border-radius: 20px;
         }
     }
+}
 }
 
 .menu-container-routing {
