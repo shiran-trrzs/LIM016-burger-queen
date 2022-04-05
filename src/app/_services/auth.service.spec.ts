@@ -5,7 +5,6 @@ import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
 
-
 describe('AuthService', () => {
   let service: AuthService;
   let serviceGet: AuthService;
