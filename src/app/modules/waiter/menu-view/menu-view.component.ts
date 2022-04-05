@@ -7,7 +7,7 @@ import Swal from 'sweetalert2'
 @Component({
   selector: 'app-menu-view',
   templateUrl: './menu-view.component.html',
-  styleUrls: ['./menu-view.component.scss']
+  styleUrls: ['./menu-view.component.scss', './menu-view2.component.scss', './menu-view3.component.scss']
 })
 export class MenuViewComponent implements OnInit {
 
@@ -32,7 +32,6 @@ export class MenuViewComponent implements OnInit {
   ngOnInit() {
     this.authService.getProducts().subscribe({
       next: response => {
-        // console.log(response)
         this.allProducts = response;
         this.categories = this.allProducts;
       },
@@ -42,7 +41,7 @@ export class MenuViewComponent implements OnInit {
     })
     
   }
-
+ 
   filterCategories(e: any) {
     const type = e.target.dataset.value;
     if(type != ''){
@@ -121,7 +120,6 @@ export class MenuViewComponent implements OnInit {
       this.authService.newOrder(objOrder).subscribe({
         next: response => {
           localStorage.setItem('idOrder', response._id)
-          console.log(response)
           Swal.fire({
             position: 'top-end',
             icon: 'success',
