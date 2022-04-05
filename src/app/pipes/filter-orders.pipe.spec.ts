@@ -266,7 +266,7 @@ const ordersData = [
               "_id": "623363315f4f1173a3bc9259"
           }
       ],
-      "status": "delivered",
+      "status": "canceled",
       "dateEntry": "2022-03-17T16:34:57.290Z",
       "dateProcessed": "2022-03-17T16:34:57.290Z",
       "createdAt": "2022-03-17T16:34:57.298Z",
@@ -280,12 +280,29 @@ describe('FilterOrdersPipe', () => {
     expect(pipe).toBeTruthy();
   });
 
-  it('The cards should be filtered according to status if it is different from an empty string', () => {
+  it('The orders should be filtered according to pending status if it is different from an empty string', () => {
     const pipe = new FilterOrdersPipe();
-    // const data = x;
     const result = pipe.transform(ordersData, "pending") 
-    console.log(result)
     expect(result.length).toBe(1)
   })
+
+  it('The orders should be filtered according to delivered status if it is different from an empty string', () => {
+    const pipe = new FilterOrdersPipe();
+    const result = pipe.transform(ordersData, "delivered") 
+    expect(result.length).toBe(2)
+  })
+
+  it('The orders should be filtered according to canceled status if it is different from an empty string', () => {
+    const pipe = new FilterOrdersPipe();
+    const result = pipe.transform(ordersData, "canceled") 
+    expect(result.length).toBe(2)
+  })
+
+  it('Should return all orders except canceled orders if equal to an empty string', () => {
+    const pipe = new FilterOrdersPipe();
+    const result = pipe.transform(ordersData, "") 
+    expect(result.length).toBe(3)
+  })
+
 });
 
