@@ -28,9 +28,9 @@ export interface Products {
     image:     string;
     type:      string;
     _id:       string;
-    dateEntry: Date;
-    createdAt: Date;
-    updatedAt: Date;
+    dateEntry: string;
+    createdAt: string;
+    updatedAt: string;
 }
 
 export interface Order {
@@ -41,9 +41,9 @@ export interface Order {
   _id:       string;
   qty:       number;
   totalPrice:number;
-  dateEntry: Date;
-  createdAt: Date;
-  updatedAt: Date;
+  dateEntry: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface NewOrder {
