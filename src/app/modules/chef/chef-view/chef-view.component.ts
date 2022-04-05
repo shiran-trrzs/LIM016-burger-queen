@@ -1,11 +1,11 @@
-import { Component, OnInit, ViewChild, ElementRef, ViewChildren, AfterViewInit, Renderer2 } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService,  } from 'src/app/_services/auth.service';
 import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-chef-view',
   templateUrl: './chef-view.component.html',
-  styleUrls: ['./chef-view.component.scss']
+  styleUrls: ['./chef-view.component.scss', './chefview2.component.scss']
 })
 export class ChefViewComponent implements OnInit {
 
@@ -15,11 +15,8 @@ export class ChefViewComponent implements OnInit {
 
   allStatusOrders: any = [];
 
-  cookingTime: any
-
   constructor(
-    private authService: AuthService,
-    private renderer: Renderer2
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -73,7 +70,7 @@ export class ChefViewComponent implements OnInit {
    }
   })  
 }
-
+ 
   changeSectionStatus(e: any) {
     let statusSection = e.target.dataset.value;
     this.statusPipe = statusSection
